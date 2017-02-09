@@ -2,8 +2,8 @@
 %% Trim Size : 11in x 8.5in
 %% Text Area : 9.6in (include Runningheads) x 7in
 %% Created   : 26 April 2012
-%% Support   : Yolande Koh, <ykoh@wspc.com.sg>
-%%             D. Rajesh Babu, <rajesh@wspc.com.sg>
+%% Support   : Yolande Koh, <ykoh@wspc.com.sg>                         
+%%             D. Rajesh Babu, <rajesh@wspc.com.sg>            
 %%             World Scientific Publishing Co.
 %%
 %% The content, structure, format and layout of this style file
@@ -228,13 +228,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%Title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \def\title#1{
-\gdef\@title{\def\@makefnmark{\rlap{\ifnum\c@footnote=1{\raise5pt\hbox{\rm{\foot*}\,}}\else
+\gdef\@title{\def\@makefnmark{\rlap{\ifnum\c@footnote=1{\raise5pt\hbox{\rm{\thefootnote}\,}}\else
            \@textsuperscript{{\foot\@thefnmark}}\fi}}\vspace*{-10.3pt}{#1}}}
 \def\subtitle#1{{\titlefont:~#1}}
 \newcommand\maketitle{\par
   \begingroup
-   \renewcommand\thefootnote{\@fnsymbol\c@footnote}%
-   \def\@makefnmark{\rlap{\ifnum\c@footnote=1{\raise5pt\hbox{\rm{\foot*}\,}}\else
+%   \renewcommand\thefootnote{\@fnsymbol\c@footnote}%
+    \renewcommand\thefootnote{\arabic{footnote}}
+   \def\@makefnmark{\rlap{\ifnum\c@footnote=1{\raise5pt\hbox{\rm{\thefootnote}\,}}\else
            \@textsuperscript{{\foot\@thefnmark}}\fi}}%
     \long\def\@makefntext##1{\noindent
 %   \@textsuperscript{\normalfont\@thefnmark}{\lowercase{##1}}}%
@@ -699,7 +700,7 @@
 \def\@wsrfiguref{\begin{sidewaysfigure}\begin{center}}
 \def\@wsrfigure[#1]{\begin{sidewaysfigure}\begin{center}}
 \newenvironment{rotatefigure}{\@ifnextchar[{\@wsrfigure}{\@wsrfiguref}}
-{\end{center}\end{sidewaysfigure}}
+{\end{center}\end{sidewaysfigure}} 
 %
 \newcounter{table}
 \def\tablename{Table}
@@ -865,8 +866,8 @@
     \mathchar "278\or \mathchar "27B\or \|\or **\or \dagger\dagger
     \or \ddagger\ddagger \else\@ctrerr\fi}}
 %
-%\def\thefootnote{\alph{footnote}}
-\def\thefootnote{\arabic{footnote}}
+\def\thefootnote{\alph{footnote}}
+%\def\thefootnote{\arabic{footnote}}
 \def\@makefnmark{{$^{\rm \@thefnmark}$}}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Page Style %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1361,7 +1362,7 @@ height6pt}}}
 \RequirePackage{amsmath}
 \RequirePackage{graphicx}
 \RequirePackage{dcolumn}
-%\RequirePackage{ws-rotating}
+\RequirePackage{ws-rotating}
 \RequirePackage{natbib}
     \let\cite=\citep
     \setlength{\bibhang}{24pt}
@@ -1385,9 +1386,9 @@ height6pt}}}
 
 \newcolumntype{d}[1]{D{.}{.}{#1}}
 
-\def\vvsp#1{\vadjust{\vspace{#1pt}\pagebreak}}
-\def\x{\end{document}}
-\def\tra#1{\spaceskip0.#1em plus0.09em minus0.06em}
+\def\vvsp#1{\vadjust{\vspace{#1pt}\pagebreak}} 
+\def\x{\end{document}} 
+\def\tra#1{\spaceskip0.#1em plus0.09em minus0.06em} 
 \def\ol#1{\kern0.025cm\overline{\kern-0.025cm #1\kern-0.025cm}\kern0.025cm}
 \def\ds{\displaystyle}
 \def\nn{\nonumber}
