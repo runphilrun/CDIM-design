@@ -1,2 +1,2 @@
 
-Copyright (C) 2017 runphilrun
+Copyright (C) 2017 Philip J. Linden
