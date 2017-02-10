@@ -65,7 +65,7 @@ Based on spectral resolution and FoV, need between 1m-1.5m. Based on cost estima
 \section{Detector}
 Recall requirements of spatial resolution, wavelength range, and sensitivity. Technical requirement of temperature. Explain detector type and pixel size that fulfils these.
 
-Multiple detectors are satisfactory, range in TRL, but all are pretty far in development and have been demonstrated in NEOCam, SPHEREx, and JWST.
+Multiple detectors are satisfactory, range in TRL, but all are pretty far in development and have been demonstrated in NEOCam, SPHEREx, and JWST\@.
 
 Using H2RG, need this many which results in this power draw.
 
@@ -76,12 +76,20 @@ General approach to cooling with passive and active. Explain tradeoffs between p
 Explain generally how v-groove radiators work. Used on planck and jwst. Desired final temp based on material, setup and location. Area based on general size of telescope. May need to be deployable.
 
 \subsection{Active Cooling}
+\textbf{NEEDS RESEARCH}\\
 Detectors use active cooling to bring temp below passive temp. Explain why active needed to manage thermals of detectors. Target temperature and estimated heat dissipation.
 
 Describe types of cryocoolers and the high-level traits/tradeoffs between them. Choose one in particular, but leave wiggle room for others to be chosen. Explain the architecture for implementing this type of cooler, including power draw and mass.
 
-\section{Attitude Control}
-Recall attitude control requirements for science objectives. Briefly explain inertial and propulsive attitude control and the limitations of each.
+\section{Attitude Determination and Control}
+\textbf{NEEDS RESEARCH}\\
+Recall attitude control requirements for science objectives. System architecture requires the spacecraft to first understand its orientation and then act to align itself with a given area of the sky.
+
+\subsection{Determination Systems}
+Explain the star tracker among other attitude control systems. Select a class of star tracker.
+
+\subsection{Control Systems}
+Briefly explain inertial and propulsive attitude control and the limitations of each. The system will ideally be inertial only, but larger systems like JWST needa combination of both
 
 \section*{Acknowledgments}
 Thanks.
