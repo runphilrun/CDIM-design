@@ -58,17 +58,26 @@ Describe the scope of the paper, including how the design of the spacecraft is d
 \label{sS:requirements}
 Also explain the requirements of a spacecraft that should make these observations, including the spectral and spatial characteristics, sensitivity, and logistics (\textit{i.e.} location, lifetime).
 
+\section{Mirror}
+Recall requirements such as FoV, spectral resolution. Technical requirement of temperature.
+Based on spectral resolution and FoV, need between 1m-1.5m. Based on cost estimates from Stahl, estimate target diameter, which rersults in target mass.
+
+\section{Detector}
+Recall requirements of spatial resolution, wavelength range, and sensitivity. Technical requirement of temperature. Explain detector type and pixel size that fulfils these.
+
+Multiple detectors are satisfactory, range in TRL, but all are pretty far in development and have been demonstrated in NEOCam, SPHEREx, and JWST.
+
+Using H2RG, need this many which results in this power draw.
+
+\section{Thermal Regulation}
+General approach to cooling with passive and active. Explain tradeoffs between passive and active.
+
+\subsection{Passive Cooling}
+Explain generally how v-groove radiators work. Used on planck and jwst. Desired final temp based on material, setup and location.
+
 \section*{Acknowledgments}
 Thanks.
 
-\section*{References}
-\noindent A complete list of references cited, arranged in
-alphabetical order according to the surname of the first author,
-should be provided. References by the same author will follow a
-chronological sequence, \textit{i.e.},~\cite{Lie00} precedes~\cite{Lie01}.
-Article titles should be stated in full but standard abbreviations
-should be used for journal names. Typeset reference in 10 pt Times
-Roman, single spaced with baselineskip of 12 pt.
+\bibliography{cdim_design}
 
-\bibliography{apj-jour,cdim_design}
 \end{document}
