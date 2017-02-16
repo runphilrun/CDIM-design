@@ -59,10 +59,12 @@ Describe the scope of the paper, including how the design of the spacecraft is d
 Also explain the requirements of a spacecraft that should make these observations, including the spectral and spatial characteristics, sensitivity, and logistics (\textit{i.e.} location, lifetime).
 
 \section{Mirror}
+\label{S:mirror}
 Recall requirements such as FoV, spectral resolution. Technical requirement of temperature.
 Based on spectral resolution and FoV, need between 1m-1.5m. Based on cost estimates from Stahl, estimate target diameter, which rersults in target mass.
 
 \section{Detector}
+\label{S:detector}
 Recall requirements of spatial resolution, wavelength range, and sensitivity. Technical requirement of temperature. Explain detector type and pixel size that fulfils these.
 
 Multiple detectors are satisfactory, range in TRL, but all are pretty far in development and have been demonstrated in NEOCam, SPHEREx, and JWST\@.
@@ -70,26 +72,84 @@ Multiple detectors are satisfactory, range in TRL, but all are pretty far in dev
 Using H2RG, need this many which results in this power draw.
 
 \section{Thermal Regulation}
+\label{S:tempregulation}
 General approach to cooling with passive and active. Explain tradeoffs between passive and active.
 
 \subsection{Passive Cooling}
+\label{sS:vgrooves}
 Explain generally how v-groove radiators work. Used on planck and jwst. Desired final temp based on material, setup and location. Area based on general size of telescope. May need to be deployable.
 
 \subsection{Active Cooling}
-\textbf{NEEDS RESEARCH}\\
+\label{sS:cryocooler}
 Detectors use active cooling to bring temp below passive temp. Explain why active needed to manage thermals of detectors. Target temperature and estimated heat dissipation.
 
 Describe types of cryocoolers and the high-level traits/tradeoffs between them. Choose one in particular, but leave wiggle room for others to be chosen. Explain the architecture for implementing this type of cooler, including power draw and mass.
 
-\section{Attitude Determination and Control}
-\textbf{NEEDS RESEARCH}\\
+\section{Spacecraft}
+\label{S:spacecraft}
+The spacecraft/vehicle/bus houses all non-instrumentation systems including the cryocooler, ADCS, and power modules. It would have approximately some dimensions and be made of standard materials. The bus will also include hard points for integration with the launch vehicle.
+
+\subsection{Attitude Determination and Control}
+\label{sS:adcs}
 Recall attitude control requirements for science objectives. System architecture requires the spacecraft to first understand its orientation and then act to align itself with a given area of the sky.
 
-\subsection{Determination Systems}
+\subsubsection{Determination Systems}
+\label{ssS:determination}
 Explain the star tracker among other attitude control systems. Select a class of star tracker.
 
-\subsection{Control Systems}
-Briefly explain inertial and propulsive attitude control and the limitations of each. The system will ideally be inertial only, but larger systems like JWST needa combination of both
+\subsubsection{Control Systems}
+\label{ssS:control}
+Briefly explain inertial and propulsive attitude control and the limitations of each. The system will ideally be inertial only, but larger systems like JWST need a combination of both.
+
+Attitude determination and control systems account for a percentage of the total power draw of the system.
+
+\subsection{Telemetry}
+\label{sS:telemetry}
+The spacecraft must receive commands from ground stations at Earth and transmit telemetry and data from L2. Since the desired data transfer rate is what it is, this type of telemetry system is required.
+
+\subsection{Power}
+\label{sS:power}
+All power generation will come from an array of photovoltaic cells facing the sun. In order to survey the entire sky, the cells must be able to adjust to account for different incident angles to the sun. The array must deploy after the launch portion of the mission.
+
+Based on a rough power budget and the spacecraft's position at L2, the array must be a bunch of square meters in area to sustain operation. The dark side of the array acts as a radiator to contribute to the thermal regulation of the spacecraft bus.
+
+Battery banks will store energy.
+
+\section{Mission Profile}
+\label{S:mission}
+The mission profile encompasses spacecraft and ground operations from launch until the end of the scientific mission (5 years).
+
+\subsection{Launch Phase}
+\label{sS:launch}
+The spacecraft will be integrated to a launch vehicle such as a Falcon 9 or Atlas V and delivered to L2. Launch vehicle selection is limited by spacecraft mass and size.
+
+\subsection{Initialization Phase}
+\label{sS:initphase}
+The deployables deploy and the v-grooves begin to cool the spacecraft down to the passive threshold. The response time of the passive coolers is very long as mentioned above. After the initial cooldown, active cooling engages.
+
+\subsection{Observation Phase}
+\label{sS:obsphase}
+The spacecraft is ready to perform observations and survey the early universe. This is the nominal operation phase and will last five years.
+
+\section{Cost}
+\label{S:cost}
+The overall cost of CDIM is a composite of hardware and ground operations costs. Since all of the technologies proposed are relatively well developed, R&D does not contribute very much to the overall cost estimation.
+
+\textbf{TABLE} Estimated costs of hardware systems.
+
+\textbf{FIGURE} Chart of relative costs by subsystem.
+
+By a parametric study of missions for which data was available, Stahl correlated space telescope overall mission cost as a function of mirror aperture diameter. Using the median trendline, it is estimated that this telescope falls under the Probe class designation.
+
+Feeding estimated hardware costs into the mission cost relationship between ground ops, hardware, etc., the estimated cost ends up falling into this range, confirming the estimate.
+
+\textbf{FIGURE} Chart of relative costs by category (hardware, ground ops, etc.).
+
+\section{Conclusion}
+\label{S:conclusion}
+Summarize points made above. Notable points include mirror diameter, detector, power budget, mass budget, total cost, and the fact that technologies are already significantly developed.
+
+\textbf{FIGURE} Render of spacecraft with bus?
 
 \section*{Acknowledgments}
 Thanks.
