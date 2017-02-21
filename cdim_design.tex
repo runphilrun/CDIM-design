@@ -11,6 +11,8 @@
 %\documentclass[draft]{ws-jai}
 \documentclass{ws-jai}
 \usepackage[flushleft]{threeparttable}
+\usepackage{siunitx}
+\hyphenpenalty=10000
 \bibliographystyle{ws-jai}
 \begin{document}
 
@@ -49,8 +51,20 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu\\
 \section{Introduction}
 \label{S:introduction}
 % Discuss the relevance to NASA, including the science objectives of the mission and how the mission satisfies a Probe class mission.
+% http://sites.nationalacademies.org/cs/groups/bpasite/documents/webpage/bpa_064932.pdf
+Observing the behavior and characteristics of the earliest stars and galaxies is fundamental to understanding the physics that to their formation and evolution. Breakthrough discoveries in understanding the physics of the epoch of reionization are anticipated in the 2020--2030 decade thanks to WFIRST and JWST\@. However, JWST's capability will be limited to only several cosmological deep fields.
+Although WFIRST will be capable of wide area surveys, its spectroscopy is limited to \SI{2}{\micro\meter} and thus limits the selection of galaxies it is able to observe. Neither JWST nor WFIRST provide a complete understanding of the epoch of reionization, specifically in terms of answering the questions of when and how the cosmic dawn came to be. This area of research is a prime candidate for a Probe class mission optimized to study reionization.
 
-% Describe the scope of the paper, including how the design of the spacecraft is driven by the science objectives.
+% What is a "Probe class" mission?
+Probe class missions occupy a role on a larger scale than Discovery missions, such as Kepler and Dawn, but not as vast as Flagship missions such as JWST~\cite{probeclasswp}. Probe class missions are intended to be PI-led scientific investigations rather than general observatories and have a firm \$1B cap.
+
+% How is the design of the spacecraft is driven by the science objectives?
+\emph{Straight from Asantha's paper:} \\
+Cosmic Dawn Intensity Mapper (CDIM) is 1.5m-class infrared telescope capable of three-dimensional spectro-imaging observations over the wavelength range of 0.75 to \SI{7.5}{\micro\meter}, at a spectral resolving power \si{\Delta\lambda\per\lambda} of 500.
+This will be achieved with linear variable filters (LVFs) sitting on top of a focal plane of thirty-six \SI{2048}{px\squared} detectors. The field-of-view (FoV) of CDIM will be \SI{10}{\deg\squared} instantaneously. The survey strategy using spacecraft operations following a shift and stare mode will result in 1360 independent narrow-band spectral images of the sky on a given location.
+Currently prioritized science programs, taking over three-years of a five-year mission, will be accomplished with a two-tiered wedding-cake survey with the shallowest spanning close to \SI{300}{\deg\squared} and the deepest tier of about \SI{25}{\deg\squared}.
+The remaining two-years could be used for additional survey programs (the wide tier can be expanded to \SI{1000}{\deg\squared}) or for use by the astronomical community through a General Observing (GO) campaign.\\
+\emph{END ASANTHA}
 
 \textbf{FIGURE} Summarize the requirements of a spacecraft that should make these observations, including the spectral and spatial characteristics, sensitivity, and logistics (\textit{i.e.} location, lifetime).
 
