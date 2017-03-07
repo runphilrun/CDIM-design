@@ -12,6 +12,7 @@
 \documentclass{ws-jai}
 \usepackage[flushleft]{threeparttable}
 \usepackage{siunitx}
+\usepackage{booktabs}
 \hyphenpenalty=2000
 \bibliographystyle{ws-jai}
 \begin{document}
@@ -80,23 +81,27 @@ Surveys could span from \SI{25}{\deg\squared} up to \SI{1000}{\deg\squared} over
 
 With these instrument requirements, CDIM is optimized to search for the first cosmic sources of dust and evidence of the very earliest stellar populations, bridging the gaps in JWST and WFIRST cosmic dawn surveys and exceeding them in capability.
 
+CDIM is notionally a \SI{1.5}{\meter} aperture telescope, passively cooled to \SI{45}{\kelvin}, with a $6\times6$ detector array that utilizes linear variable filters (LVFs) and actively cooled to \SI{35}{\kelvin}~\cite{cooray2016cdim2page}.
+Key technical characteristics of CDIM are summarized in~\autoref{table:techreqs}.
+
 % FIGURE: Summarize the requirements of a spacecraft that should make these observations, including the spectral and spatial characteristics, sensitivity, and logistics (\textit{i.e.} location, lifetime).
 \begin{table}[ht]
 \centering
 \caption{CDIM Instrument Technical Requirements}
 \bigskip
-  \begin{tabular}{l|r}
-    \hline
+  \begin{tabular}{lr}
+    \toprule
     \textbf{Parameter} & \textbf{Requirement} \\
-    \hline
+    \midrule
     Wavelength range                                & 0.75 to \SI{7.5}{\micro\meter} \\
-    Spatial resolution at \SI{5}{\micro\meter}      & \theta_{pix} \textless \SI{2}{\arcsecond} \\
+    Spatial resolution at \SI{5}{\micro\meter}      & \theta_{pix} \textless{} \SI{2}{\arcsecond} \\
     Photometric sensitivity at \SI{5}{\micro\meter} & 27 AB mag \\
     Spectral line sensitivity & \si{4\times10^{-18}} ergs s^{-1} \si{\centi\meter^{-2}} \\
-    Spectral resolving power & \si{\Delta\lambda\per\lambda} \textgreater 300 \\
-    Surface brightness sensitivity & ? \\
-    \hline
+    Spectral resolving power & \si{\Delta\lambda\per\lambda} \textgreater{} 300 \\
+    Surface brightness sensitivity & (?) \\
+    \bottomrule
   \end{tabular}
+\label{table:techreqs}
 \end{table}
 
 % FIGURE: Interdependency chart?
@@ -108,11 +113,11 @@ Based on spectral resolution and FoV, need between 1m-1.5m. Based on cost estima
 
 \section{Detector}
 \label{S:detector}
-Recall requirements of spatial resolution, wavelength range, and sensitivity. Technical requirement of temperature. Explain detector type and pixel size that fulfils these.
+% Recall requirements of spatial resolution, wavelength range, and sensitivity. Technical requirement of temperature. Explain detector type and pixel size that fulfils these.
 
-Multiple detectors are satisfactory, range in TRL, but all are pretty far in development and have been demonstrated in NEOCam, SPHEREx, and JWST\@.
-
-Using H2RG, need this many which results in this power draw.
+% Multiple detectors are satisfactory, range in TRL, but all are pretty far in development and have been demonstrated in NEOCam, SPHEREx, and JWST\@.
+%
+% Using H2RG, need this many which results in this power draw.
 
 \section{Thermal Regulation}
 \label{S:tempregulation}
