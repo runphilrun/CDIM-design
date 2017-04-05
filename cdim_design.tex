@@ -110,9 +110,9 @@ CDIM is notionally a \SI{1.5}{\meter} aperture telescope, passively cooled to \S
 \section{Mirror}
 \label{S:mirror}
 % Recall requirements such as FoV, spectral resolution. Technical requirement of temperature.
-Preliminary explorations indicate that a \SI{1.5}{\meter} primary mirror cooled to \SI{45}{\kelvin} is required to meet CDIM's spectro-imaging requirements~\cite{cooray2016cdim2page}.
-Such a mirror would be be fabricated from aluminum with a gold-deposition surface finish.
-``Back-of-the-napkin'' calculations estimate the mirror's mass to be around \SI{50}{\kilo\gram}.
+Preliminary explorations indicate that a \SI{1.5}{\meter} off-axis primary mirror cooled to \SI{45}{\kelvin} is required to meet CDIM's spectro-imaging requirements~\cite{cooray2016cdim2page}.
+Such a mirror would be light-weighted with a honeycomb core and a gold-deposition surface coating.
+``Back-of-the-envelope'' calculations estimate the mirror's mass to be around \SI{200}{\kilo\gram}.
 
 \section{Detector}
 \label{S:detector}
@@ -126,16 +126,12 @@ Using H2RG, need this many which results in this power draw.
 \label{S:tempregulation}
 General approach to cooling with passive and active. Explain tradeoffs between passive and active.
 
-\subsection{Passive Cooling}
-\label{sS:vgrooves}
 Explain generally how v-groove radiators work.
 Used on planck and jwst.
 Desired final temp based on material, setup and location.
 Area based on general size of telescope.
 May need to be deployable, depending on required area.
 
-\subsection{Active Cooling}
-\label{sS:cryocooler}
 Detectors use active cooling to bring temp down to \SI{35}{\kelvin}.
 Explain why active needed to manage thermals of detectors.
 Target temperature and estimated heat dissipation.
@@ -144,12 +140,6 @@ Describe types of cryocoolers and the high-level traits/tradeoffs between them. 
 Explain the architecture for implementing this type of cooler, including power draw and mass.
 Active cooling will be achieved by a pulse-tube or stirling cycle mechanical cryocooler.
 Typical input power to a \SI{5}{\watt} cryocooler is around \SI{70}{\watt} at close to \SI{10}{\kilo\gram}.
-
-\section{Spacecraft Bus}
-\label{S:bus}
-The spacecraft/vehicle/bus houses all non-instrumentation systems including the cryocooler, ADCS, and power modules.
-It would have approximately some dimensions and be made of standard materials.
-The bus will also include hard points for integration with the launch vehicle.
 
 \subsection{Attitude Determination and Control}
 \label{sS:adcs}
@@ -179,6 +169,12 @@ Based on a rough power budget and the spacecraft's position at L2, the array mus
 The dark side of the array acts as a radiator to contribute to the thermal regulation of the spacecraft bus.
 
 Battery banks will store energy.
+
+\section{Structure}
+\label{S:bus}
+The spacecraft/vehicle/bus houses all non-instrumentation systems including the cryocooler, ADCS, and power modules.
+It would have approximately some dimensions and be made of standard materials.
+The bus will also include hard points for integration with the launch vehicle.
 
 \section{Mission Profile}
 \label{S:mission}
