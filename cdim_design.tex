@@ -56,7 +56,7 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu
   \caption{An artistic rendition of the Cosmic Dawn Intensity Mapper stationed at Sun-Earth L$_2$.}
 \label{fig:cover}
 \end{figure}
-% \twocolumn
+\twocolumn
 \section{Introduction}
 \label{sec:introduction}
 % Discuss the relevance to NASA, including the science objectives of the mission and how the mission satisfies a Probe class mission.
@@ -84,9 +84,10 @@ With these instrument requirements, CDIM is optimized to search for the first co
 
 CDIM is notionally a \SI{1.5}{\meter} aperture telescope, passively cooled to \SI{45}{\kelvin}, with a $6\times6$ detector array that utilizes linear variable filters (LVFs) and actively cooled to \SI{35}{\kelvin}~\cite{cooray2016cdim2page}.
 
-\begin{wstable}
+\begin{table*}
   \caption{Critical design requirements for the CDIM spacecraft following the format suggested by~\citeauthor{smad2015}}
-  \begin{tabular*}{\textwidth}{@{}llll@{}} \toprule
+  \small\centering
+  \begin{tabular}{@{}llll@{}} \toprule
     Spacecraft Design Driver & Impact & Target \\ \midrule
     Cost & Quality of parts & less than \$\SI{1}{B} \\
     Mass & Launch vehicle & less than \SI{1000}{\kilo\gram} \\
@@ -96,9 +97,9 @@ CDIM is notionally a \SI{1.5}{\meter} aperture telescope, passively cooled to \S
     Lifetime & Redundancy, RCS propellant & \SI{5}{years} \\
     Orbit & Solar array, thermal management, launch vehicle, telemetry & Sun-Earth L$_2$ \\
     \bottomrule
-  \end{tabular*}
+  \end{tabular}
 \label{tab:critical-params}
-\end{wstable}
+\end{table*}
 \section{Optical Telescope Array}
 \label{sec:ota}
 % \label{sec:mirror}
@@ -172,37 +173,36 @@ Since SRP is constant, after some time the inertial attitude control will become
 Desaturation is managed by engaging station-keeping thrusters for short periods of time.
 
 \section{Flight Computer}
-
+% CDIM is capable of autonomous operation and system diagnostics.
 
 \section{Telemetry}
 \label{sec:telemetry}
 Typically for high-Earth and deep-space missions, the X-Band Space Science frequency band is used for uplink and downlink between the spacecraft and Ground Stations.
 Thus, high-gain antennas are best suited for both links~\cite{smad2015}.
-\begin{wstable}
+\begin{wstable}[htp]
   \caption{For redundancy, CDIM is outfitted with multiple communication modes. Typical data transfer rates are outlined for each mode~\cite{smad2015}.
 \label{tab:telemetry}}
   \begin{tabular}{@{}lll@{}} \toprule
     Mode & Uplink & Downlink \\ \midrule
     Emergency & \SI{7.8}{bps} & $5$ to $10$\si{bps} \\
     Engineering data & $15.6$ to $2000$\si{kbps} & Up to \SI{10}{bps} \\
-    Science data & $15.6$ to $2000$\si{kbps} & \SI{10}{Mbps} or more
+    Science data & $15.6$ to $2000$\si{kbps} & \SI{10}{Mbps} or more\\\bottomrule
   \end{tabular}
 \end{wstable}
+% The CDIM telemetry system, including antenna and power converter, are roughly \SI{2}{kg}
 
 \section{Power}
 \label{sec:power}
 All power generation will come from an array of photovoltaic cells facing the sun.
 In order to survey the entire sky, the cells must be able to adjust to account for different incident angles to the sun.
-The array must deploy after the launch portion of the mission.
+The array must deploy after the launch and orbital insertion phases of the mission.
 
-Based on a rough power budget and the spacecraft's position at L2, the array must be a bunch of square meters in area to sustain operation.
+Based on a rough power budget and the spacecraft's position at L2, the array must be $x$\si{\meter\squared} in area to sustain operation.
 The dark side of the array acts as a radiator to contribute to the thermal regulation of the spacecraft bus.
-
-Battery banks will store energy.
 
 \section{Structure}
 \label{sec:structure}
-The spacecraft/vehicle/bus houses all non-instrumentation systems including the cryocooler, ADCS, and power modules.
+The spacecraft bus houses all non-instrumentation systems including the cryocooler, ADCS, and power modules.
 It would have approximately some dimensions and be made of standard materials.
 The bus will also include hard points for integration with the launch vehicle.
 
