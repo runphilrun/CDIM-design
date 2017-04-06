@@ -25,7 +25,7 @@
 
 \title{Cosmic Dawn Intensity Mapper: \\Spacecraft and Mission Design for a Probe-Class Space Telescope}
 
-\author{Philip Linden$^{1}$, Michael Zemcov$^{2}$}
+\author{Philip Linden$^{1,\dagger}$, Michael Zemcov$^{2}$}
 
 \address{
 $^{1}$Department of Mechanical Engineering, Kate Gleason College of Engineering, Rochester
@@ -36,7 +36,7 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu
 
 \maketitle
 
-\corres{$^{1}$Corresponding author.}
+\corres{$^{\dagger}$Corresponding author.}
 
 \begin{history}
 \received{(to be inserted by publisher)};
@@ -210,8 +210,22 @@ The bus will also include hard points for integration with the launch vehicle.
 \label{sec:mission-profile}
 \subsection{Launch Vehicle}
 \label{subsec:launch}
-The spacecraft will be integrated to a launch vehicle such as an Ariane V (which will deliver JWST) or Ares V (9400kg capacity to L2) and delivered to L2.
-Launch vehicle selection is limited by spacecraft mass and size.
+
+\begin{wstable}
+  \caption{Available launch vehicles and their capabilities to send payloads to  L$_2$~\cite{rioux2016,spacelaunchreport}.
+\label{tab:launch-vehicles}}
+  \begin{tabular}{@{}lclr@{}} \toprule
+    Vehicle & Payload to L$_2$ & Fairing size & Cost \\ \midrule
+    Falcon 9 v1.1 & \SI{2900}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \$$62$\si{M}\\ \midrule
+    Atlas V 551 & \SI{6100}{\kilo\gram} & $4.2\times10.0$ \si{\meter} & \$$153$\si{M}\\
+    & & $5.1\times11.0$ \si{\meter} & \\ \midrule
+    Ariane V & \SI{6600}{\kilo\gram} & $5.4\times12.7$ \si{\meter} & \$$165$\si{M}\\
+    & & $5.4\times13.8$ \si{\meter} & \\
+    & & $5.4\times17.0$ \si{\meter} & \$$220$\si{M}\\ \midrule
+    Delta IV Heavy & \SI{9800}{\kilo\gram} & $5.0\times14.3$ \si{\meter} & \$$375$\si{M}\\
+    & & $5.0\times19.1$ \si{\meter} & \\ \bottomrule
+  \end{tabular}
+\end{wstable}
 
 \subsection{Operations}
 \subsection{End of Life}
