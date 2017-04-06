@@ -56,7 +56,7 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu\\
 \end{figure}
 
 \section{Introduction}
-\label{S:introduction}
+\label{sec:introduction}
 % Discuss the relevance to NASA, including the science objectives of the mission and how the mission satisfies a Probe class mission.
 % http://sites.nationalacademies.org/cs/groups/bpasite/documents/webpage/bpa_064932.pdf
 Observing the behavior and characteristics of the earliest stars and galaxies is fundamental to understanding the physics that led to their formation and evolution.
@@ -83,41 +83,44 @@ With these instrument requirements, CDIM is optimized to search for the first co
 CDIM is notionally a \SI{1.5}{\meter} aperture telescope, passively cooled to \SI{45}{\kelvin}, with a $6\times6$ detector array that utilizes linear variable filters (LVFs) and actively cooled to \SI{35}{\kelvin}~\cite{cooray2016cdim2page}.
 
 \section{Mirror}
-\label{S:mirror}
+\label{sec:mirror}
 % Recall requirements such as FoV, spectral resolution. Technical requirement of temperature.
 Preliminary explorations indicate that a \SI{1.5}{\meter} off-axis primary mirror cooled to \SI{45}{\kelvin} is required to meet CDIM's spectro-imaging  requirements~\cite{cooray2016cdim2page}.
-Such a mirror would be light-weighted with a honeycomb core and a gold-deposition surface coating.
-``Back-of-the-envelope'' calculations estimate the mirror's mass to be around \SI{200}{\kilo\gram}.
+The primary mirror is notionally assumed to be constructed from light-weighted Corning (ultra-low expansion) silica-titania glass with a honeycomb core and a gold-deposition surface coating.
+``Back-of-the-envelope'' calculations estimate the primary mirror's mass to be roughly \SI{200}{\kilo\gram}.
 
 \section{Detector}
-\label{S:detector}
-Recall requirements of spatial resolution, wavelength range, and sensitivity. Technical requirement of temperature. Explain detector type and pixel size that fulfils these.
+\label{sec:detector}
+Multiple detectors satisfy CDIM's spatial resolution, wavelength range, and sensitivity requirements.
+These detectors range in TRL, but all are sufficiently developed to be considered for the 2020 Decadal and have been demonstrated on missions such as NEOCam, SPHEREx, and JWST\@.
 
-Multiple detectors are satisfactory, range in TRL, but all are pretty far in development and have been demonstrated in NEOCam, SPHEREx, and JWST\@.
-
-Using H2RG, need this many which results in this power draw.
+Teledyne H2RG-18 HyViSI detectors offer a $2048\times2048$ pixel array format at a pixel pitch of \SI{18}{\micro\meter}~\cite{teledyneH2RG}.
+CDIM will utilize a $6\times6$ H2RG array.
+Each detector nominally dissipates \SI{<4}{\milli\watt}, for a total power dissipation of less than \SI{150}{\milli\watt}.
 
 \section{Thermal Regulation}
-\label{S:tempregulation}
-General approach to cooling with passive and active. Explain tradeoffs between passive and active.
-
-Explain generally how v-groove radiators work.
-Used on planck and jwst.
-Desired final temp based on material, setup and location.
-Area based on general size of telescope.
-May need to be deployable, depending on required area.
-
-Detectors use active cooling to bring temp down to \SI{35}{\kelvin}.
-Explain why active needed to manage thermals of detectors.
-Target temperature and estimated heat dissipation.
-
-Describe types of cryocoolers and the high-level traits/tradeoffs between them. Choose one in particular, but leave wiggle room for others to be chosen.
-Explain the architecture for implementing this type of cooler, including power draw and mass.
-Active cooling will be achieved by a pulse-tube or stirling cycle mechanical cryocooler.
-Typical input power to a \SI{5}{\watt} cryocooler is around \SI{70}{\watt} at close to \SI{10}{\kilo\gram}.
+\label{sec:thermal}
+% General approach to cooling with passive and active. Explain tradeoffs between passive and active.
+%
+% Explain generally how v-groove radiators work.
+% Used on planck and jwst.
+% Desired final temp based on material, setup and location.
+% Area based on general size of telescope.
+% May need to be deployable, depending on required area.
+%
+% Detectors use active cooling to bring temp down to \SI{35}{\kelvin}.
+% Explain why active needed to manage thermals of detectors.
+% Target temperature and estimated heat dissipation.
+%
+% Describe types of cryocoolers and the high-level traits/tradeoffs between them. Choose one in particular, but leave wiggle room for others to be chosen.
+% Explain the architecture for implementing this type of cooler, including power draw and mass.
+% Active cooling will be achieved by a pulse-tube or stirling cycle mechanical cryocooler.
+% Typical input power to a \SI{1}{\watt} cryocooler is around \SI{70}{\watt} at close to \SI{10}{\kilo\gram}.
+%
+% The array is actively cooled to \SI{35}{\kelvin} to reduce thermal noise.
 
 \subsection{Attitude Determination and Control}
-\label{sS:adcs}
+\label{subsec:adcs}
 Recall attitude control requirements for science objectives.
 System architecture requires the spacecraft to first understand its orientation and then act to align itself with a given area of the sky.
 
@@ -130,12 +133,12 @@ The system will ideally be inertial only, but larger systems like JWST need a co
 Attitude determination and control systems account for a percentage of the total power draw of the system.
 
 \subsection{Telemetry}
-\label{sS:telemetry}
+\label{subsec:telemetry}
 The spacecraft must receive commands from ground stations at Earth and transmit telemetry and data from L2.
 Since the desired data transfer rate is what it is, this type of telemetry system is required.
 
 \subsection{Power}
-\label{sS:power}
+\label{subsec:power}
 All power generation will come from an array of photovoltaic cells facing the sun.
 In order to survey the entire sky, the cells must be able to adjust to account for different incident angles to the sun.
 The array must deploy after the launch portion of the mission.
@@ -146,18 +149,18 @@ The dark side of the array acts as a radiator to contribute to the thermal regul
 Battery banks will store energy.
 
 \section{Structure}
-\label{S:bus}
+\label{sec:structure}
 The spacecraft/vehicle/bus houses all non-instrumentation systems including the cryocooler, ADCS, and power modules.
 It would have approximately some dimensions and be made of standard materials.
 The bus will also include hard points for integration with the launch vehicle.
 
 \section{Launch Vehicle}
-\label{sS:launch}
+\label{subsec:launch}
 The spacecraft will be integrated to a launch vehicle such as an Ariane V (which will deliver JWST) or Ares V (9400kg capacity to L2) and delivered to L2.
 Launch vehicle selection is limited by spacecraft mass and size.
 
 \section{Cost Estimations}
-\label{S:cost}
+\label{sec:cost}
 % The overall cost of a space telescope may be broken down into a set of drivers whose influence may be correlated with historical data.
 % All conclusions based on statistical analysis are only as good as their databases, and fiscal data, such as what is required for proper analysis, is scarce.
 % Estimations are made with engineering judgement based on available data. Multiple models will be used to develop a reasonable cost model for CDIM.\@
@@ -263,7 +266,7 @@ Launch vehicle selection is limited by spacecraft mass and size.
 % My recommendation is to develop a conservative design around a 1.3m (\$42M) maximum diameter OTA, and allow the remaining funds in a \$850M preliminary budget to be spent on science investigations, instruments, and spacecraft components such as a thermal regulation system.
 
 \section{Conclusion}
-\label{S:conclusion}
+\label{sec:conclusion}
 Summarize points made above. Notable points include mirror diameter, detector, power budget, mass budget, total cost, and the fact that technologies are already significantly developed.
 
 \textbf{FIGURE} Render of spacecraft with bus?
