@@ -8,12 +8,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
 
-%\documentclass[draft]{ws-jai}
+% \documentclass[draft]{ws-jai}
 \documentclass{ws-jai}
+\usepackage[flushleft]{threeparttable}
 \usepackage{siunitx}
-\usepackage{booktabs}
 \usepackage[T1]{fontenc}
-% \usepackage[pdftex,breaklinks,pdfauthor={Philip Linden},pdfcreator={Philip Linden},pdftitle={CDIM Spacecraft and Mission Design}]{hyperref}
+\usepackage[pdftex,breaklinks,pdfauthor={Philip Linden},pdfcreator={Philip Linden},pdftitle={CDIM Spacecraft and Mission Design}]{hyperref}
+\usepackage{booktabs}
 \hyphenpenalty=2000
 \bibliographystyle{ws-jai}
 \begin{document}
@@ -24,18 +25,18 @@
 
 \title{Cosmic Dawn Intensity Mapper: \\Spacecraft and Mission Design for a Probe-Class Space Telescope}
 
-\author{Philip Linden$^{1,\dagger}$, Michael Zemcov$^{2}$}
+\author{Philip Linden$^{1}$, Michael Zemcov$^{2}$}
 
 \address{
-$^1$Department of Mechanical Engineering, Kate Gleason College of Engineering, Rochester
+$^{1}$Department of Mechanical Engineering, Kate Gleason College of Engineering, Rochester
 Institute of Technology, Rochester, NY 14623, USA, pjl7651@rit.edu\\
-$^2$Center for Detectors, School of Physics and Astronomy, Rochester
-Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu\\
+$^{2}$Center for Detectors, School of Physics and Astronomy, Rochester
+Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu
 }
 
 \maketitle
 
-\corres{$^\dagger$Corresponding author.}
+\corres{$^{1}$Corresponding author.}
 
 \begin{history}
 \received{(to be inserted by publisher)};
@@ -44,7 +45,7 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu\\
 \end{history}
 
 \begin{abstract}
-  Cosmic Dawn Intensity Mapper (CDIM) is a Probe-class near-IR space telescope with the scientific goal of conducting large spectro-imaging surveys over a five-year period in the NASA 2020 Decadal.
+  Cosmic Dawn Intensity Mapper (CDIM) is a Probe-class near-IR space telescope with the scientific goal of conducting large spectro-imaging surveys over a five-year period in the 2020 Decadal.
   A high-level system architecture was designed to identify key features and technologies aboard the CDIM spacecraft in preparation for more detailed studies such as a Team-X session at NASA Jet Propulsion Laboratory.
 \end{abstract}
 
@@ -55,7 +56,7 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu\\
   \caption{An artistic rendition of the Cosmic Dawn Intensity Mapper stationed at Sun-Earth L$_2$.}
 \label{fig:cover}
 \end{figure}
-\twocolumn
+% \twocolumn
 \section{Introduction}
 \label{sec:introduction}
 % Discuss the relevance to NASA, including the science objectives of the mission and how the mission satisfies a Probe class mission.
@@ -77,19 +78,29 @@ Such missions are intended to be PI-led scientific investigations rather than ge
 Cosmic Dawn Intensity Mapper (CDIM) is a Probe class infrared telescope capable of three-dimensional spectro-imaging observations over the wavelength range of 0.75 to \SI{7.5}{\micro\meter}, at a spectral resolving power \si{\Delta\lambda\per\lambda} of 500.
 CDIM has a \SI{10}{\deg\squared} instantaneous field of view (FoV) utilizing linear variable filters (LVFs) atop a focal plane of thirty-six $2048\times2048$ detectors.
 The survey strategy using spacecraft operations following a shift and stare mode will result in 1360 independent narrow-band spectral images of the sky on a given location.
-Surveys could span from \SI{25}{\deg\squared} up to \SI{1000}{\deg\squared} over a five year lifetime in an orbit about Lagrange point L$_{2}$\@.
+Surveys could span from \SI{25}{\deg\squared} up to \SI{1000}{\deg\squared} over a five year lifetime in an orbit about Sun-Earth Lagrange point L$_{2}$\@.
 
 With these instrument requirements, CDIM is optimized to search for the first cosmic sources of dust and evidence of the very earliest stellar populations, bridging the gaps in JWST and WFIRST cosmic dawn surveys and exceeding them in capability.
 
 CDIM is notionally a \SI{1.5}{\meter} aperture telescope, passively cooled to \SI{45}{\kelvin}, with a $6\times6$ detector array that utilizes linear variable filters (LVFs) and actively cooled to \SI{35}{\kelvin}~\cite{cooray2016cdim2page}.
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{figs/cdim_annotated-cartoon}
-  \caption{CDIM consists of a passively cooled \SI{1.5}{\meter} aperture OTA, actively cooled focal plane, and off-the-shelf spacecraft components where applicable.}
-\label{fig:cdim-annotated}
-\end{figure}
-
+\begin{wstable}
+  \caption{Critical design requirements for the CDIM spacecraft following the format suggested by~\citeauthor{smad2015}}
+  \begin{tabular*}{\textwidth}{@{}llll@{}} \toprule
+    Spacecraft Design Driver & Impact & Target \\ \midrule
+    Cost & Quality of parts & less than \$\SI{1}{B} \\
+    Mass & Launch vehicle & less than \SI{1000}{\kilo\gram} \\
+    Temperature (OTA) & Cryocooler, radiator & \SI{45}{\kelvin} \\
+    Temperature (Detector) & Cryocooler, radiator & \SI{35}{\kelvin} \\
+    Pointing Requirements & Attitude control sys & \SI{0.5}{arcsec} \\
+    Lifetime & Redundancy, RCS propellant & \SI{5}{years} \\
+    Orbit & Solar array, thermal management, launch vehicle, telemetry & Sun-Earth L$_2$ \\
+    \bottomrule
+  \end{tabular*}
+\label{tab:critical-params}
+\end{wstable}
 \section{Optical Telescope Array}
+\label{sec:ota}
 % \label{sec:mirror}
 % Recall requirements such as FoV, spectral resolution. Technical requirement of temperature.
 Preliminary explorations indicate that a \SI{1.5}{\meter} aperture off-axis primary mirror cooled to \SI{45}{\kelvin} is required to meet CDIM's spectro-imaging  requirements~\cite{cooray2016cdim2page}.
@@ -116,7 +127,7 @@ By using passive radiators in tandem with an active cryocooler, the static OTA h
 
 The OTA is cooled to \SI{45}{\kelvin} passively to reduce background photon load in the near-IR.\@
 Passive thermal regulation is maintained using a V-groove radiator, which bounces radiative heat into the \SI{3}{\kelvin} background of space.
-V-groove radiators have been demonstrated in passive cryogenic radiators up to \SI{4}{\kelvin} with Planck and JWST.\@
+V-groove radiators have been demonstrated in passive cryogenic radiators up to \SI{4}{\kelvin} with Planck, SPIRIT, and Spitzer (warm mission).\@
 In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point L$_2$, a $x$-stage V-groove radiator with an area of $x$ \si{\meter\squared} is required.
 
 The CDIM detector array is actively cooled to \SI{35}{\kelvin} to reduce thermal noise.
@@ -129,38 +140,57 @@ This cryocooler is \SI{18.6}{\kilo\gram} and requires \SI{88}{\watt} of input po
 % Desired final temp based on material, setup and location.
 % Area based on general size of telescope.
 % May need to be deployable, depending on required area.
-%
+
 % Detectors use active cooling to bring temp down to \SI{35}{\kelvin}.
 % Explain why active needed to manage thermals of detectors.
-% Target temperature and estimated heat dissipation.
-%
+
 % Describe types of cryocoolers and the high-level traits/tradeoffs between them. Choose one in particular, but leave wiggle room for others to be chosen.
 % Explain the architecture for implementing this type of cooler, including power draw and mass.
 % Active cooling will be achieved by a pulse-tube or stirling cycle mechanical cryocooler.
-% Typical input power to a \SI{1}{\watt} cryocooler is around \SI{70}{\watt} at close to \SI{10}{\kilo\gram}.
-%
-% The
 
-\subsection{Attitude Determination and Control}
-\label{subsec:adcs}
-Recall attitude control requirements for science objectives.
-System architecture requires the spacecraft to first understand its orientation and then act to align itself with a given area of the sky.
+\section{Attitude Determination and Control}
+\label{sec:adcs}
+% Recall attitude control requirements for science objectives.
+To conduct a survey, the spacecraft must first understand its orientation and then act to align itself with a given area of the sky.
+Redundant systems of varying levels of fidelity are included to allow CDIM to operate in different power states.
+Low-fidelity attitude determination sensors such as sun sensors are cheap, accurate to less than one degree, and lightweight.
+% Explain the star tracker among other attitude control systems. Select a class of star tracker.
 
-Explain the star tracker among other attitude control systems.
-Select a class of star tracker.
+High-fidelity attitude determination is conducted by star tracking cameras.
+Star trackers identify constellations in their field of view to determine the spacecraft's heading to within 1 arcsecond.
 
-Briefly explain inertial and propulsive attitude control and the limitations of each.
-The system will ideally be inertial only, but larger systems like JWST need a combination of both.
 
-Attitude determination and control systems account for a percentage of the total power draw of the system.
+% Briefly explain inertial and propulsive attitude control and the limitations of each.
+In a heliocentric orbit, the primary disturbance to the spacecraft's heading is solar radiation pressure (SRP).
+At L$_2$, solar radiation pressure presents itself as a constant torque on the spacecraft on the order of $10^{-5}$\si{\newton\meter}.
 
-\subsection{Telemetry}
-\label{subsec:telemetry}
-The spacecraft must receive commands from ground stations at Earth and transmit telemetry and data from L2.
-Since the desired data transfer rate is what it is, this type of telemetry system is required.
+Cold-gas or Hydrazine thrusters will be used for orbit station-keeping as well as momentum management.
+A desired heading is maintained by the spacecraft using a 3-axis zero-momentum inertial system, whereby the error in heading due to SRP is cancelled out by spinning up or slowing down reaction wheels.
+Reaction wheel systems are capable of torques ranging from $.01$ to $1$\si{\newton\meter} and store $0.4$ to $3000$\si{\newton\meter\second} of practical momentum~\cite{smad2015}.
+Power consumption varies with reaction wheel speed, with a maximum estimate of roughly \SI{100}{\watt}.
+Since SRP is constant, after some time the inertial attitude control will become saturated.
+Desaturation is managed by engaging station-keeping thrusters for short periods of time.
 
-\subsection{Power}
-\label{subsec:power}
+\section{Flight Computer}
+
+
+\section{Telemetry}
+\label{sec:telemetry}
+Typically for high-Earth and deep-space missions, the X-Band Space Science frequency band is used for uplink and downlink between the spacecraft and Ground Stations.
+Thus, high-gain antennas are best suited for both links~\cite{smad2015}.
+\begin{wstable}
+  \caption{For redundancy, CDIM is outfitted with multiple communication modes. Typical data transfer rates are outlined for each mode~\cite{smad2015}.
+\label{tab:telemetry}}
+  \begin{tabular}{@{}lll@{}} \toprule
+    Mode & Uplink & Downlink \\ \midrule
+    Emergency & \SI{7.8}{bps} & $5$ to $10$\si{bps} \\
+    Engineering data & $15.6$ to $2000$\si{kbps} & Up to \SI{10}{bps} \\
+    Science data & $15.6$ to $2000$\si{kbps} & \SI{10}{Mbps} or more
+  \end{tabular}
+\end{wstable}
+
+\section{Power}
+\label{sec:power}
 All power generation will come from an array of photovoltaic cells facing the sun.
 In order to survey the entire sky, the cells must be able to adjust to account for different incident angles to the sun.
 The array must deploy after the launch portion of the mission.
@@ -177,6 +207,7 @@ It would have approximately some dimensions and be made of standard materials.
 The bus will also include hard points for integration with the launch vehicle.
 
 \section{Mission Profile}
+\label{sec:mission-profile}
 \subsection{Launch Vehicle}
 \label{subsec:launch}
 The spacecraft will be integrated to a launch vehicle such as an Ariane V (which will deliver JWST) or Ares V (9400kg capacity to L2) and delivered to L2.
@@ -294,7 +325,11 @@ Launch vehicle selection is limited by spacecraft mass and size.
 \section{Conclusion}
 \label{sec:conclusion}
 % Summarize points made above. Notable points include mirror diameter, detector, power budget, mass budget, total cost, and the fact that technologies are already significantly developed.
-
+% \begin{figure}
+%   \includegraphics[width=\linewidth]{figs/cdim_annotated-cartoon}
+%   \caption{CDIM consists of a passively cooled \SI{1.5}{\meter} aperture OTA, actively cooled focal plane, and off-the-shelf spacecraft components where applicable.}
+% \label{fig:cdim-annotated}
+% \end{figure}
 \section*{Acknowledgments}
 Thanks.
 
