@@ -13,6 +13,7 @@
 \usepackage{siunitx}
 \usepackage{booktabs}
 \usepackage[T1]{fontenc}
+% \usepackage[pdftex,breaklinks,pdfauthor={Philip Linden},pdfcreator={Philip Linden},pdftitle={CDIM Spacecraft and Mission Design}]{hyperref}
 \hyphenpenalty=2000
 \bibliographystyle{ws-jai}
 \begin{document}
@@ -47,14 +48,14 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu\\
   A high-level system architecture was designed to identify key features and technologies aboard the CDIM spacecraft in preparation for more detailed studies such as a Team-X session at NASA Jet Propulsion Laboratory.
 \end{abstract}
 
-\keywords{Spacecraft, telescope, system, cryogenic, infrared, design.}
+\keywords{spacecraft, telescope, system, cryogenic, infrared, design.}
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figs/cdim_cover-render.jpg}
   \caption{An artistic rendition of the Cosmic Dawn Intensity Mapper stationed at Sun-Earth L$_2$.}
 \label{fig:cover}
 \end{figure}
-
+\twocolumn
 \section{Introduction}
 \label{sec:introduction}
 % Discuss the relevance to NASA, including the science objectives of the mission and how the mission satisfies a Probe class mission.
@@ -82,26 +83,47 @@ With these instrument requirements, CDIM is optimized to search for the first co
 
 CDIM is notionally a \SI{1.5}{\meter} aperture telescope, passively cooled to \SI{45}{\kelvin}, with a $6\times6$ detector array that utilizes linear variable filters (LVFs) and actively cooled to \SI{35}{\kelvin}~\cite{cooray2016cdim2page}.
 
-\section{Mirror}
-\label{sec:mirror}
+\begin{figure}
+  \includegraphics[width=\linewidth]{figs/cdim_annotated-cartoon}
+  \caption{CDIM consists of a passively cooled \SI{1.5}{\meter} aperture OTA, actively cooled focal plane, and off-the-shelf spacecraft components where applicable.}
+\label{fig:cdim-annotated}
+\end{figure}
+
+\section{Optical Telescope Array}
+% \label{sec:mirror}
 % Recall requirements such as FoV, spectral resolution. Technical requirement of temperature.
-Preliminary explorations indicate that a \SI{1.5}{\meter} off-axis primary mirror cooled to \SI{45}{\kelvin} is required to meet CDIM's spectro-imaging  requirements~\cite{cooray2016cdim2page}.
+Preliminary explorations indicate that a \SI{1.5}{\meter} aperture off-axis primary mirror cooled to \SI{45}{\kelvin} is required to meet CDIM's spectro-imaging  requirements~\cite{cooray2016cdim2page}.
 The primary mirror is notionally assumed to be constructed from light-weighted Corning (ultra-low expansion) silica-titania glass with a honeycomb core and a gold-deposition surface coating.
 ``Back-of-the-envelope'' calculations estimate the primary mirror's mass to be roughly \SI{200}{\kilo\gram}.
 
-\section{Detector}
-\label{sec:detector}
+% \section{Detector}
+% \label{sec:detector}
 Multiple detectors satisfy CDIM's spatial resolution, wavelength range, and sensitivity requirements.
 These detectors range in TRL, but all are sufficiently developed to be considered for the 2020 Decadal and have been demonstrated on missions such as NEOCam, SPHEREx, and JWST\@.
 
 Teledyne H2RG-18 HyViSI detectors offer a $2048\times2048$ pixel array format at a pixel pitch of \SI{18}{\micro\meter}~\cite{teledyneH2RG}.
 CDIM will utilize a $6\times6$ H2RG array.
-Each detector nominally dissipates \SI{<4}{\milli\watt}, for a total power dissipation of less than \SI{150}{\milli\watt}.
+Each detector nominally dissipates less than \SI{4}{\milli\watt}, for a total power dissipation of less than \SI{150}{\milli\watt} for the array.
+
+CDIM optics, instruments, and focal plane will be housed in a light-tight box.
+The optical telescope assembly (OTA) as a whole is estimated to have a mass of $x$ \si{\kilo\gram}.
 
 \section{Thermal Regulation}
 \label{sec:thermal}
 % General approach to cooling with passive and active. Explain tradeoffs between passive and active.
-%
+CDIM employs both passive and active thermal regulation systems.
+By using passive radiators in tandem with an active cryocooler, the static OTA heat load can be dissipated by the lightweight radiator and a smaller cryocooler may be used to only cool the detector array rather than the whole OTA mass plus focal plane assembly.
+
+The OTA is cooled to \SI{45}{\kelvin} passively to reduce background photon load in the near-IR.\@
+Passive thermal regulation is maintained using a V-groove radiator, which bounces radiative heat into the \SI{3}{\kelvin} background of space.
+V-groove radiators have been demonstrated in passive cryogenic radiators up to \SI{4}{\kelvin} with Planck and JWST.\@
+In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point L$_2$, a $x$-stage V-groove radiator with an area of $x$ \si{\meter\squared} is required.
+
+The CDIM detector array is actively cooled to \SI{35}{\kelvin} to reduce thermal noise.
+Stirling-cycle mechanical refrigerators are low-vibration, high-reliability, and lightweight active cryocooling systems that have significant heritage in space applications.
+One candidate system is Raytheon's PSC 1-stage Stirling cryocooler, capable of cooling a \SI{1.2}{\watt} parasitic heat load to \SI{35}{\kelvin}.
+This cryocooler is \SI{18.6}{\kilo\gram} and requires \SI{88}{\watt} of input power~\cite{tchandbook2003}.
+
 % Explain generally how v-groove radiators work.
 % Used on planck and jwst.
 % Desired final temp based on material, setup and location.
@@ -117,7 +139,7 @@ Each detector nominally dissipates \SI{<4}{\milli\watt}, for a total power dissi
 % Active cooling will be achieved by a pulse-tube or stirling cycle mechanical cryocooler.
 % Typical input power to a \SI{1}{\watt} cryocooler is around \SI{70}{\watt} at close to \SI{10}{\kilo\gram}.
 %
-% The array is actively cooled to \SI{35}{\kelvin} to reduce thermal noise.
+% The
 
 \subsection{Attitude Determination and Control}
 \label{subsec:adcs}
@@ -154,12 +176,16 @@ The spacecraft/vehicle/bus houses all non-instrumentation systems including the 
 It would have approximately some dimensions and be made of standard materials.
 The bus will also include hard points for integration with the launch vehicle.
 
-\section{Launch Vehicle}
+\section{Mission Profile}
+\subsection{Launch Vehicle}
 \label{subsec:launch}
 The spacecraft will be integrated to a launch vehicle such as an Ariane V (which will deliver JWST) or Ares V (9400kg capacity to L2) and delivered to L2.
 Launch vehicle selection is limited by spacecraft mass and size.
 
-\section{Cost Estimations}
+\subsection{Operations}
+\subsection{End of Life}
+
+\section{Budgets \& Costs}
 \label{sec:cost}
 % The overall cost of a space telescope may be broken down into a set of drivers whose influence may be correlated with historical data.
 % All conclusions based on statistical analysis are only as good as their databases, and fiscal data, such as what is required for proper analysis, is scarce.
@@ -267,9 +293,7 @@ Launch vehicle selection is limited by spacecraft mass and size.
 
 \section{Conclusion}
 \label{sec:conclusion}
-Summarize points made above. Notable points include mirror diameter, detector, power budget, mass budget, total cost, and the fact that technologies are already significantly developed.
-
-\textbf{FIGURE} Render of spacecraft with bus?
+% Summarize points made above. Notable points include mirror diameter, detector, power budget, mass budget, total cost, and the fact that technologies are already significantly developed.
 
 \section*{Acknowledgments}
 Thanks.
