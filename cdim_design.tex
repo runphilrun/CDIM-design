@@ -15,8 +15,10 @@
 \usepackage[T1]{fontenc}
 \usepackage[pdftex,breaklinks,pdfauthor={Philip Linden},pdfcreator={Philip Linden},pdftitle={CDIM Spacecraft and Mission Design}]{hyperref}
 \usepackage{booktabs}
+\usepackage{color}
 \hyphenpenalty=2000
 \bibliographystyle{ws-jai}
+\newenvironment{note}{\color{red}}{}
 \begin{document}
 
 \catchline{}{}{}{}{} % Publisher's Area please ignore
@@ -62,10 +64,10 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu
 % Discuss the relevance to NASA, including the science objectives of the mission and how the mission satisfies a Probe class mission.
 % http://sites.nationalacademies.org/cs/groups/bpasite/documents/webpage/bpa_064932.pdf
 Observing the behavior and characteristics of the earliest stars and galaxies is fundamental to understanding the physics that led to their formation and evolution.
-Breakthrough discoveries in understanding the physics of the epoch of reionization are anticipated in the 2020--2030 decade thanks to WFIRST and JWST\@.
-However, JWST's capability will be limited to only several cosmological deep fields.
+Breakthrough discoveries in understanding the physics of the epoch of reionization are anticipated in the 2020--2030 decade thanks to the Wide Field Infrared Survey Telescope (WFIRST) and James Webb Space Telescope (JWST).
+However, JWST's capability will be limited to {\color{red}only several} cosmological deep fields.
 Although WFIRST will be capable of wide area surveys, its spectroscopy is limited to \SI{2}{\micro\meter} and thus limits the selection of galaxies it is able to observe.
-Neither JWST nor WFIRST provide a complete understanding of the epoch of reionization, specifically in terms of answering the questions of when and how the cosmic dawn came to be.
+Neither JWST nor WFIRST provide a complete understanding of the epoch of reionization, specifically in terms of answering the questions of when and how the universe came to be.
 This area of research is a prime candidate for a Probe class mission optimized to study reionization.
 
 % CDIM fills a gap in the 2020 Decadal between two other not so famous telescopes in the 2030 range after JWST and WFIRST and Hubble
@@ -75,14 +77,12 @@ Probe class missions occupy a role on a larger scale than Discovery missions, su
 Such missions are intended to be PI-led scientific investigations rather than general observatories, and have a firm \$1B cap.
 
 % % How is the design of the spacecraft is driven by the science objectives?
-Cosmic Dawn Intensity Mapper (CDIM) is a Probe class infrared telescope capable of three-dimensional spectro-imaging observations over the wavelength range of 0.75 to \SI{7.5}{\micro\meter}, at a spectral resolving power \si{\Delta\lambda\per\lambda} of 500.
+Cosmic Dawn Intensity Mapper (CDIM) is a concept for a Probe class \SI{1.5}{\meter} aperture telescope, passively cooled to \SI{45}{\kelvin}, with a $6\times6$ detector array that utilizes linear variable filters (LVFs) and actively cooled to \SI{35}{\kelvin}~\cite{cooray2016cdim2page}, capable of three-dimensional spectro-imaging observations over the wavelength range of 0.75 to \SI{7.5}{\micro\meter}, at a spectral resolving power \si{\Delta\lambda\per\lambda} of 500.
 CDIM has a \SI{10}{\deg\squared} instantaneous field of view (FoV) utilizing linear variable filters (LVFs) atop a focal plane of thirty-six $2048\times2048$ detectors.
 The survey strategy using spacecraft operations following a shift and stare mode will result in 1360 independent narrow-band spectral images of the sky on a given location.
 Surveys could span from \SI{25}{\deg\squared} up to \SI{1000}{\deg\squared} over a five year lifetime in an orbit about Sun-Earth Lagrange point L$_{2}$\@.
 
-With these instrument requirements, CDIM is optimized to search for the first cosmic sources of dust and evidence of the very earliest stellar populations, bridging the gaps in JWST and WFIRST cosmic dawn surveys and exceeding them in capability.
-
-CDIM is notionally a \SI{1.5}{\meter} aperture telescope, passively cooled to \SI{45}{\kelvin}, with a $6\times6$ detector array that utilizes linear variable filters (LVFs) and actively cooled to \SI{35}{\kelvin}~\cite{cooray2016cdim2page}.
+With these instrument requirements, CDIM is optimized to search for the first cosmic sources of dust and evidence of the very earliest stellar populations, bridging the gaps in the JWST and WFIRST cosmic dawn surveys and exceeding them in capability.
 
 \begin{table*}
   \caption{Critical design requirements for the CDIM spacecraft following the format suggested by~\citeauthor{smad2015}}
@@ -93,14 +93,15 @@ CDIM is notionally a \SI{1.5}{\meter} aperture telescope, passively cooled to \S
     Mass & Launch vehicle & less than \SI{1000}{\kilo\gram} \\
     Temperature (OTA) & Cryocooler, radiator & \SI{45}{\kelvin} \\
     Temperature (Detector) & Cryocooler, radiator & \SI{35}{\kelvin} \\
-    Pointing Requirements & Attitude control sys & \SI{0.5}{arcsec} \\
+    Pointing Requirements & Attitude control sys & less than \SI{0.5}{arcsec} \\
     Lifetime & Redundancy, RCS propellant & \SI{5}{years} \\
     Orbit & Solar array, thermal management, launch vehicle, telemetry & Sun-Earth L$_2$ \\
     \bottomrule
   \end{tabular}
 \label{tab:critical-params}
 \end{table*}
-\section{Optical Telescope Array}
+
+\section{Optical Telescope Assembly}
 \label{sec:ota}
 % \label{sec:mirror}
 % Recall requirements such as FoV, spectral resolution. Technical requirement of temperature.
@@ -111,14 +112,14 @@ The primary mirror is notionally assumed to be constructed from light-weighted C
 % \section{Detector}
 % \label{sec:detector}
 Multiple detectors satisfy CDIM's spatial resolution, wavelength range, and sensitivity requirements.
-These detectors range in TRL, but all are sufficiently developed to be considered for the 2020 Decadal and have been demonstrated on missions such as NEOCam, SPHEREx, and JWST\@.
+These detectors range in TRL, but all are sufficiently developed to be considered for the 2020 Decadal and will be demonstrated on missions such as NEOCam, SPHEREx, and JWST\@.
 
 Teledyne H2RG-18 HyViSI detectors offer a $2048\times2048$ pixel array format at a pixel pitch of \SI{18}{\micro\meter}~\cite{teledyneH2RG}.
 CDIM will utilize a $6\times6$ H2RG array.
 Each detector nominally dissipates less than \SI{4}{\milli\watt}, for a total power dissipation of less than \SI{150}{\milli\watt} for the array.
 
 CDIM optics, instruments, and focal plane will be housed in a light-tight box.
-The optical telescope assembly (OTA) as a whole is estimated to have a mass of $x$ \si{\kilo\gram}.
+The optical telescope assembly (OTA) as a whole is estimated to have a {\color{red}mass of $x$ \si{\kilo\gram}}.
 
 \section{Thermal Regulation}
 \label{sec:thermal}
@@ -129,7 +130,7 @@ By using passive radiators in tandem with an active cryocooler, the static OTA h
 The OTA is cooled to \SI{45}{\kelvin} passively to reduce background photon load in the near-IR.\@
 Passive thermal regulation is maintained using a V-groove radiator, which bounces radiative heat into the \SI{3}{\kelvin} background of space.
 V-groove radiators have been demonstrated in passive cryogenic radiators up to \SI{4}{\kelvin} with Planck, SPIRIT, and Spitzer (warm mission).\@
-In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point L$_2$, a $x$-stage V-groove radiator with an area of $x$ \si{\meter\squared} is required.
+In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point L$_2$, a {\color{red}$x$-stage} V-groove radiator with an {\color{red}area of $x$ \si{\meter\squared}} is required.
 
 The CDIM detector array is actively cooled to \SI{35}{\kelvin} to reduce thermal noise.
 Stirling-cycle mechanical refrigerators are low-vibration, high-reliability, and lightweight active cryocooling systems that have significant heritage in space applications.
@@ -165,7 +166,7 @@ Star trackers identify constellations in their field of view to determine the sp
 In a heliocentric orbit, the primary disturbance to the spacecraft's heading is solar radiation pressure (SRP).
 At L$_2$, solar radiation pressure presents itself as a constant torque on the spacecraft on the order of $10^{-5}$\si{\newton\meter}.
 
-Cold-gas or Hydrazine thrusters will be used for orbit station-keeping as well as momentum management.
+Cold-gas or hydrazine thrusters will be used for orbit station-keeping as well as momentum management.
 A desired heading is maintained by the spacecraft using a 3-axis zero-momentum inertial system, whereby the error in heading due to SRP is cancelled out by spinning up or slowing down reaction wheels.
 Reaction wheel systems are capable of torques ranging from $.01$ to $1$\si{\newton\meter} and store $0.4$ to $3000$\si{\newton\meter\second} of practical momentum~\cite{smad2015}.
 Power consumption varies with reaction wheel speed, with a maximum estimate of roughly \SI{100}{\watt}.
@@ -179,14 +180,19 @@ Desaturation is managed by engaging station-keeping thrusters for short periods 
 \label{sec:telemetry}
 Typically for high-Earth and deep-space missions, the X-Band Space Science frequency band is used for uplink and downlink between the spacecraft and Ground Stations.
 Thus, high-gain antennas are best suited for both links~\cite{smad2015}.
+
+A survey conducted by CDIM will generate \SI{168.39}{Gb} of data per day employing on-board data processing akin to the Spectro Photometer for the History of the Universe, Epoch of Reionization, and Ices Explorer (SPHEREx).
+With a compression ratio of $2.5:1$, CDIM will downlink a total of \SI{63.7}{Gb/day}.
+
 \begin{wstable}[htp]
-  \caption{For redundancy, CDIM is outfitted with multiple communication modes. Typical data transfer rates are outlined for each mode~\cite{smad2015}.
+  \caption{For redundancy, CDIM is outfitted with multiple communication modes. Downlink transfer rates reflect estitmates based on the target of \SI{63.7}{Gb/day}. Typical data transfer rates are outlined for uplinks~\cite{smad2015}.
 \label{tab:telemetry}}
   \begin{tabular}{@{}lll@{}} \toprule
     Mode & Uplink & Downlink \\ \midrule
     Emergency & \SI{7.8}{bps} & $5$ to $10$\si{bps} \\
     Engineering data & $15.6$ to $2000$\si{kbps} & Up to \SI{10}{bps} \\
-    Science data & $15.6$ to $2000$\si{kbps} & \SI{10}{Mbps} or more\\\bottomrule
+    Science data & $15.6$ to $2000$\si{kbps} & \SI{0.74}{Mbps} (continuous) or \\
+    & & \SI{17.7}{Mbps} (1 hour per day)\\\bottomrule
   \end{tabular}
 \end{wstable}
 % The CDIM telemetry system, including antenna and power converter, are roughly \SI{2}{kg}
