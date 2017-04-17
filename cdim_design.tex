@@ -18,7 +18,7 @@
 \usepackage{color}
 \hyphenpenalty=2000
 \bibliographystyle{ws-jai}
-\newenvironment{note}{\color{red}}{}
+\newenvironment{notes}{\color{red}}{}
 \begin{document}
 
 \catchline{}{}{}{}{} % Publisher's Area please ignore
@@ -54,11 +54,13 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu
 \keywords{spacecraft, telescope, system, cryogenic, infrared, design.}
 
 \begin{figure}
-  \includegraphics[width=\linewidth]{figs/cdim_cover-render.jpg}
+  \centering
+  \includegraphics[width=.8\linewidth]{figs/cdim_cover-render.jpg}
   \caption{An artistic rendition of the Cosmic Dawn Intensity Mapper stationed at Sun-Earth L$_2$.}
 \label{fig:cover}
 \end{figure}
 \twocolumn
+
 \section{Introduction}
 \label{sec:introduction}
 % Discuss the relevance to NASA, including the science objectives of the mission and how the mission satisfies a Probe class mission.
@@ -175,23 +177,32 @@ Desaturation is managed by engaging station-keeping thrusters for short periods 
 
 \section{Flight Computer}
 % CDIM is capable of autonomous operation and system diagnostics.
+\begin{notes}
+  CDIM is capable of autonomous operation and system diagnostics.
+  Nominal operation includes maintaining a heading during imaging, capturing images, and downlinking data to Earth.
+  Images will be processed as demonstrated by the Spectro Photometer for the History of the Universe, Epoch of Reionization, and Ices Explorer (SPHEREx).
+\end{notes}
 
 \section{Telemetry}
 \label{sec:telemetry}
 Typically for high-Earth and deep-space missions, the X-Band Space Science frequency band is used for uplink and downlink between the spacecraft and Ground Stations.
 Thus, high-gain antennas are best suited for both links~\cite{smad2015}.
 
-A survey conducted by CDIM will generate \SI{168.39}{Gb} of data per day employing on-board data processing akin to the Spectro Photometer for the History of the Universe, Epoch of Reionization, and Ices Explorer (SPHEREx).
-With a compression ratio of $2.5:1$, CDIM will downlink a total of \SI{63.7}{Gb/day}.
+A survey conducted by CDIM will generate \SI{168.39}{Gb} of data per day employing on-board data processing akin to SPHEREx.
+With a compression ratio of $2.5$:$1$, CDIM will downlink a total of \SI{63.7}{Gb/day} during a survey.
+Transmission rates are dependentt on the total time available for CDIM to send data to a ground station.
+For example, the spacecraft could transmit continuously at a very low transfer rate, or send larger volumes of data once per day over 1 hour at the expense of a higher transfer rate.
+
+Uplinks will follow standard protocols and not require transmitting large volumes or particularly fast transfer rates.
 
 \begin{wstable}[htp]
   \caption{For redundancy, CDIM is outfitted with multiple communication modes. Downlink transfer rates reflect estitmates based on the target of \SI{63.7}{Gb/day}. Typical data transfer rates are outlined for uplinks~\cite{smad2015}.
 \label{tab:telemetry}}
   \begin{tabular}{@{}lll@{}} \toprule
     Mode & Uplink & Downlink \\ \midrule
-    Emergency & \SI{7.8}{bps} & $5$ to $10$\si{bps} \\
-    Engineering data & $15.6$ to $2000$\si{kbps} & Up to \SI{10}{bps} \\
-    Science data & $15.6$ to $2000$\si{kbps} & \SI{0.74}{Mbps} (continuous) or \\
+    Emergency & \SI{7.8}{bps} & $5$--$10$\si{bps} \\
+    Engineering data & $15.6$--$2000$\si{kbps} & Up to \SI{10}{bps} \\
+    Science data & $15.6$--$2000$\si{kbps} & \SI{0.74}{Mbps} (continuous) or \\
     & & \SI{17.7}{Mbps} (1 hour per day)\\\bottomrule
   \end{tabular}
 \end{wstable}
@@ -203,26 +214,30 @@ All power generation will come from an array of photovoltaic cells facing the su
 In order to survey the entire sky, the cells must be able to adjust to account for different incident angles to the sun.
 The array must deploy after the launch and orbital insertion phases of the mission.
 
-Based on a rough power budget and the spacecraft's position at L2, the array must be $x$\si{\meter\squared} in area to sustain operation.
+Based on a rough power budget and the spacecraft's position at L2, {\color{red}the array must be $x$\si{\meter\squared}} in area to sustain operation.
 The dark side of the array acts as a radiator to contribute to the thermal regulation of the spacecraft bus.
 
 \section{Structure}
 \label{sec:structure}
 The spacecraft bus houses all non-instrumentation systems including the cryocooler, ADCS, and power modules.
+\begin{notes}
 It would have approximately some dimensions and be made of standard materials.
 The bus will also include hard points for integration with the launch vehicle.
+\end{notes}
 
 \section{Mission Profile}
 \label{sec:mission-profile}
 \subsection{Launch Vehicle}
 \label{subsec:launch}
+CDIM is comofortably within the mass and spatial limits of currently available and development launch vehicles capable of delivering payloads to Sun-Earth Lagrange Point L$_2$.
 
 \begin{wstable}
-  \caption{Available launch vehicles and their capabilities to send payloads to  L$_2$~\cite{rioux2016,spacelaunchreport}.
+  \caption{Available launch vehicle configurations and their capabilities to send payloads to  L$_2$~\cite{rioux2016,spacelaunchreport}.
 \label{tab:launch-vehicles}}
   \begin{tabular}{@{}lclr@{}} \toprule
     Vehicle & Payload to L$_2$ & Fairing size & Cost \\ \midrule
-    Falcon 9 v1.1 & \SI{2900}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \$$62$\si{M}\\ \midrule
+    Falcon 9 v1.1 & \SI{2900}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \$$90$\si{M}\\ \midrule
+    Falcon Heavy\tnote{*} & \SI{14000}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \$$62$\si{M}\\ \midrule
     Atlas V 551 & \SI{6100}{\kilo\gram} & $4.2\times10.0$ \si{\meter} & \$$153$\si{M}\\
     & & $5.1\times11.0$ \si{\meter} & \\ \midrule
     Ariane V & \SI{6600}{\kilo\gram} & $5.4\times12.7$ \si{\meter} & \$$165$\si{M}\\
@@ -231,117 +246,121 @@ The bus will also include hard points for integration with the launch vehicle.
     Delta IV Heavy & \SI{9800}{\kilo\gram} & $5.0\times14.3$ \si{\meter} & \$$375$\si{M}\\
     & & $5.0\times19.1$ \si{\meter} & \\ \bottomrule
   \end{tabular}
+  \begin{tablenotes}
+  \item[*] Values are representative of currently available specifications of designs in development.
+  \end{tablenotes}
 \end{wstable}
 
 \subsection{Operations}
 \subsection{End of Life}
 
-\section{Budgets \& Costs}
+\section{Cost Estimates}
 \label{sec:cost}
-% The overall cost of a space telescope may be broken down into a set of drivers whose influence may be correlated with historical data.
-% All conclusions based on statistical analysis are only as good as their databases, and fiscal data, such as what is required for proper analysis, is scarce.
-% Estimations are made with engineering judgement based on available data. Multiple models will be used to develop a reasonable cost model for CDIM.\@
-%
-% H. Philip Stahl presents a statistical approach to estimating OTA cost based on correlations with data on flown space telescope missions [1].
-% CDIM's projected costs may be obtained from Stahl's findings with engineering judgment, knowing that the data is drawn from a relatively small sample set.
-%
-% \subsection{Relative Influences on Total Cost}
-% Two leaders in optical telescope design, Pierre Bely and H. Philip Stahl, developed cost breakdowns for a typical space telescope.
-% Bely's slightly older model is shown in Figure 1 [2] and Stahl's model is outlined in Figure 2 [1].
-% Discrepancies may be attributed to differing source data sets (among other things) but in general the two agree with one another.
-%
-% Neither Stahl nor Bely's cost models, upon which this report heavily relies, includes NASA labor or overhead [2, pp. 073006--2].
-% Thus, an additional factor of 0.5 shall be included in the Total Cost to account for NASA overhead and labor, where:
-%
-% \begin{equation}
-%   	$Total Cost$=$Mission Cost$ (1+$Factor$)
-% \end{equation}
-%
-% Given a baseline estimate of \$850M total mission cost, Table 1 summarizes a range of target costs may be estimated from Bely and Stahl in Figure 1 and Figure 2, adjusted to account for labor and overhead.
-%
-% \begin{figure}
-%   \caption{BELY'S TYPICAL TELESCOPE COST BREAKDOWN IN PERCENT OF MISSION COST (2002) [2]
-% \label{fig:bely-cost}
-% }
-% \end{figure}
-%
-% \begin{figure}
-%   \caption{STAHL'S TYPICAL SPACE TELESCOPE COST BREAKDOWN IN PERCENT OF MISSION COST (2011) [1]
-% \label{fig:stahl-mission-cost}
-% }
-% \end{figure}
-%
-% \begin{table}
-%   \caption{FIRST ORDER COST ESTIMATION BASED ON \$850M TOTAL MISSION COST, INCLUDING OVERHEAD
-% \label{tab:first-order-cost-estimate}
-% }
-% \end{table}
-%
-% Applying this logic we may develop an estimate for CDIM that includes significant factors on budget like the Science Team and Ground Support.
-% A possible cost breakdown is presented in Figure 3 and Table 2.
-%
-% \begin{figure}
-%   \caption{PROPOSED COST BREAKDOWN FOR CDIM, NOT INCLUDING LABOR OR OVERHEAD
-% \label{fig:cost-no-overhead}
-% }
-% \end{figure}
-%
-% \begin{table}
-%   \caption{PROPOSED COST BREAKDOWN FOR CDIM BASED ON \$850M TOTAL MISSION COST
-% \label{tab:cost-from-total-mission}
-% }
-% \end{table}
-%
-% \subsection{OTA Cost Estimation}
-% Spitzer is a representative benchmark for CDIM since it is similar in cost, diameter, and operational wavelength, summarized in Table 3.
-% Additionally, Spitzer resides on the median curve in Stahl's cost model shown in Figure 4.
-%
-% \begin{figure}
-%   \caption{STAHL OTA COST VS DIAMETER CORRELATION (2011) [1]
-% \label{fig:cost-stahl-ota-cost-vs-diameter}
-% }
-% \end{figure}
-%
-% \begin{table}
-%   \caption{SPITZER VS CDIM WITH OTA COST ESTIMATES BASED ON STAHL MODEL
-% \label{tab:cost-spitzer-vs-CDIM}
-% }
-% \end{table}
-%
-% The Stahl Model for OTA Diameter vs. OTA Cost in Figure 4 estimates an OTA mirror aperture diameter of 1.3 meters costing around \$42M, which is comfortably within the OTA budget of \$62--85M from the Bely and Stahl Mission Cost Models in Table 1.
-%
-% Pushing the boundaries of these cost models, the median in Figure 4 places a 1.6 meter OTA aperture diameter (~\$62.6M) within range of the Bely budget of \$62.3M, or a 1.9 meter OTA aperture diameter (~\$84.3M) within the Stahl budget of \$85M.
-% These estimates are summarized in Table 4.
-%
-% \begin{table}
-%   \caption{OTA COST VERSUS DIAMETER BASED ON MEDIAN OF STAHL MODEL
-% \label{tab:cost-ota-vs-dia-CDIM}
-% }
-% \end{table}
-%
-% \subsection{Using OTA Cost to Determine Total Cost}
-% Choosing a 1.3m telescope at \$48.0M as the driving factor on cost, alternative Mission Cost and Total Cost estimates may be derived from Stahl and Bely models as shown in Table 5.
-% There is a significant (\$200M+) discrepancy between the Bely and Stahl cost models, but both estimations show that CDIM fits squarely within the range of a Probe class NASA mission.
-%
-% \begin{table}
-%   \caption{TOTAL COST ESTIMATED FOR 1.3M OTA
-% \label{tab:cost-tota-1.3m}
-% }
-% \end{table}
-%
-% Figure 5 shows other mission and total cost estimates generated by iterating on this process for other OTA diameters listed in Table 4.
-%
-% \begin{figure}
-%   \caption{TOTAL COST RELATION TO OTA DIAMETER UNDER EACH COST MODEL
-% \label{fig:cost-total-compare-models}
-% }
-% \end{figure}
-%
-% The Stahl OTA Diameter vs. OTA Cost model is based on a limited set of data and is not a perfect correlation, and does not account for influences that other parameters like operating temperature have on Mission Cost.
-% It does show a reasonable correlation with historical data, however, and may be used for preliminary design phases for missions such as CDIM.\@
-%
-% My recommendation is to develop a conservative design around a 1.3m (\$42M) maximum diameter OTA, and allow the remaining funds in a \$850M preliminary budget to be spent on science investigations, instruments, and spacecraft components such as a thermal regulation system.
+\begin{notes}
+The overall cost of a space telescope may be broken down into a set of drivers whose influence may be correlated with historical data.
+All conclusions based on statistical analysis are only as good as their databases, and fiscal data, such as what is required for proper analysis, is scarce.
+Estimations are made with engineering judgement based on available data. Multiple models will be used to develop a reasonable cost model for CDIM.\@
 
+H. Philip Stahl presents a statistical approach to estimating OTA cost based on correlations with data on flown space telescope missions [1].
+CDIM's projected costs may be obtained from Stahl's findings with engineering judgment, knowing that the data is drawn from a relatively small sample set.
+
+\subsection{Relative Influences on Total Cost}
+Two leaders in optical telescope design, Pierre Bely and H. Philip Stahl, developed cost breakdowns for a typical space telescope.
+Bely's slightly older model is shown in Figure 1 [2] and Stahl's model is outlined in Figure 2 [1].
+Discrepancies may be attributed to differing source data sets (among other things) but in general the two agree with one another.
+
+Neither Stahl nor Bely's cost models, upon which this report heavily relies, includes NASA labor or overhead [2, pp. 073006--2].
+Thus, an additional factor of 0.5 shall be included in the Total Cost to account for NASA overhead and labor, where:
+
+\begin{equation}
+  	\text{Total Cost}=\text{Mission Cost} (1+\text{Factor})
+\end{equation}
+
+Given a baseline estimate of \$850M total mission cost, Table 1 summarizes a range of target costs may be estimated from Bely and Stahl in Figure 1 and Figure 2, adjusted to account for labor and overhead.
+
+\begin{figure}
+  \caption{BELY'S TYPICAL TELESCOPE COST BREAKDOWN IN PERCENT OF MISSION COST (2002) [2]
+\label{fig:bely-cost}
+}
+\end{figure}
+
+\begin{figure}
+  \caption{STAHL'S TYPICAL SPACE TELESCOPE COST BREAKDOWN IN PERCENT OF MISSION COST (2011) [1]
+\label{fig:stahl-mission-cost}
+}
+\end{figure}
+
+\begin{table}
+  \caption{FIRST ORDER COST ESTIMATION BASED ON \$850M TOTAL MISSION COST, INCLUDING OVERHEAD
+\label{tab:first-order-cost-estimate}
+}
+\end{table}
+
+Applying this logic we may develop an estimate for CDIM that includes significant factors on budget like the Science Team and Ground Support.
+A possible cost breakdown is presented in Figure 3 and Table 2.
+
+\begin{figure}
+  \caption{PROPOSED COST BREAKDOWN FOR CDIM, NOT INCLUDING LABOR OR OVERHEAD
+\label{fig:cost-no-overhead}
+}
+\end{figure}
+
+\begin{table}
+  \caption{PROPOSED COST BREAKDOWN FOR CDIM BASED ON \$850M TOTAL MISSION COST
+\label{tab:cost-from-total-mission}
+}
+\end{table}
+
+\subsection{OTA Cost Estimation}
+Spitzer is a representative benchmark for CDIM since it is similar in cost, diameter, and operational wavelength, summarized in Table 3.
+Additionally, Spitzer resides on the median curve in Stahl's cost model shown in Figure 4.
+
+\begin{figure}
+  \caption{STAHL OTA COST VS DIAMETER CORRELATION (2011) [1]
+\label{fig:cost-stahl-ota-cost-vs-diameter}
+}
+\end{figure}
+
+\begin{table}
+  \caption{SPITZER VS CDIM WITH OTA COST ESTIMATES BASED ON STAHL MODEL
+\label{tab:cost-spitzer-vs-CDIM}
+}
+\end{table}
+
+The Stahl Model for OTA Diameter vs. OTA Cost in Figure 4 estimates an OTA mirror aperture diameter of 1.3 meters costing around \$42M, which is comfortably within the OTA budget of \$62--85M from the Bely and Stahl Mission Cost Models in Table 1.
+
+Pushing the boundaries of these cost models, the median in Figure 4 places a 1.6 meter OTA aperture diameter (~\$62.6M) within range of the Bely budget of \$62.3M, or a 1.9 meter OTA aperture diameter (~\$84.3M) within the Stahl budget of \$85M.
+These estimates are summarized in Table 4.
+
+\begin{table}
+  \caption{OTA COST VERSUS DIAMETER BASED ON MEDIAN OF STAHL MODEL
+\label{tab:cost-ota-vs-dia-CDIM}
+}
+\end{table}
+
+\subsection{Using OTA Cost to Determine Total Cost}
+Choosing a 1.3m telescope at \$48.0M as the driving factor on cost, alternative Mission Cost and Total Cost estimates may be derived from Stahl and Bely models as shown in Table 5.
+There is a significant (\$200M+) discrepancy between the Bely and Stahl cost models, but both estimations show that CDIM fits squarely within the range of a Probe class NASA mission.
+
+\begin{table}
+  \caption{TOTAL COST ESTIMATED FOR 1.3M OTA
+\label{tab:cost-tota-1.3m}
+}
+\end{table}
+
+Figure 5 shows other mission and total cost estimates generated by iterating on this process for other OTA diameters listed in Table 4.
+
+\begin{figure}
+  \caption{TOTAL COST RELATION TO OTA DIAMETER UNDER EACH COST MODEL
+\label{fig:cost-total-compare-models}
+}
+\end{figure}
+
+The Stahl OTA Diameter vs. OTA Cost model is based on a limited set of data and is not a perfect correlation, and does not account for influences that other parameters like operating temperature have on Mission Cost.
+It does show a reasonable correlation with historical data, however, and may be used for preliminary design phases for missions such as CDIM.\@
+
+My recommendation is to develop a conservative design around a 1.3m (\$42M) maximum diameter OTA, and allow the remaining funds in a \$850M preliminary budget to be spent on science investigations, instruments, and spacecraft components such as a thermal regulation system.
+\end{notes}
 \section{Conclusion}
 \label{sec:conclusion}
 % Summarize points made above. Notable points include mirror diameter, detector, power budget, mass budget, total cost, and the fact that technologies are already significantly developed.
