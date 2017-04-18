@@ -53,13 +53,13 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu
 
 \keywords{spacecraft, telescope, system, cryogenic, infrared, design.}
 
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=.8\linewidth]{figs/cdim_cover-render.jpg}
-%   \caption{An artistic rendition of the Cosmic Dawn Intensity Mapper stationed at Sun-Earth L$_2$.}
-% \label{fig:cover}
-% \end{figure}
-% \twocolumn
+\begin{figure}
+  \centering
+  \includegraphics[width=.8\linewidth]{figs/cdim_cover-render.jpg}
+  \caption{An artistic rendition of the Cosmic Dawn Intensity Mapper stationed at Sun-Earth L$_2$.}
+\label{fig:cover}
+\end{figure}
+\twocolumn
 
 \section{Introduction}
 \label{sec:introduction}
@@ -109,7 +109,7 @@ With these instrument requirements, CDIM is optimized to search for the first co
 % Recall requirements such as FoV, spectral resolution. Technical requirement of temperature.
 Preliminary explorations indicate that a \SI{1.5}{\meter} aperture off-axis primary mirror cooled to \SI{45}{\kelvin} is required to meet CDIM's spectro-imaging  requirements~\cite{cooray2016cdim2page}.
 The primary mirror is notionally assumed to be constructed from light-weighted Corning (ultra-low expansion) silica-titania glass with a honeycomb core and a gold-deposition surface coating.
-``Back-of-the-envelope'' calculations estimate the primary mirror's mass to be roughly \SI{200}{\kilo\gram}.
+``Back-of-the-envelope'' calculations estimate the primary mirror's mass to be in the neighborhood of \SI{200}{\kilo\gram}.
 
 % \section{Detector}
 % \label{sec:detector}
@@ -126,11 +126,11 @@ The optical telescope assembly (OTA) as a whole is estimated to have a {\color{r
 \section{Thermal Regulation}
 \label{sec:thermal}
 % General approach to cooling with passive and active. Explain tradeoffs between passive and active.
-CDIM employs both passive and active thermal regulation systems.
+CDIM will employ both passive and active thermal regulation systems.
 By using passive radiators in tandem with an active cryocooler, the static OTA heat load can be dissipated by the lightweight radiator and a smaller cryocooler may be used to only cool the detector array rather than the whole OTA mass plus focal plane assembly.
 
 The OTA is cooled to \SI{45}{\kelvin} passively to reduce background photon load in the near-IR.\@
-Passive thermal regulation is maintained using a V-groove radiator, which bounces radiative heat into the \SI{3}{\kelvin} background of space.
+Passive thermal regulation is maintained using a V-groove radiator, which bounces radiative heat into the \SI{3}{\kelvin} background of space~\cite{bard_1987}.
 V-groove radiators have been demonstrated in passive cryogenic radiators up to \SI{4}{\kelvin} with Planck, SPIRIT, and Spitzer (warm mission).\@
 In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point L$_2$, a {\color{red}$x$-stage} V-groove radiator with an {\color{red}area of $x$ \si{\meter\squared}} is required.
 
@@ -180,7 +180,7 @@ Desaturation is managed by engaging station-keeping thrusters for short periods 
 \begin{notes}
   CDIM is capable of autonomous operation and system diagnostics.
   Nominal operation includes maintaining a heading during imaging, capturing images, and downlinking data to Earth.
-  Images will be processed as demonstrated by the Spectro Photometer for the History of the Universe, Epoch of Reionization, and Ices Explorer (SPHEREx).
+  Images will be processed on-board CDIM using an algorithm demonstrated by the Spectro Photometer for the History of the Universe, Epoch of Reionization, and Ices Explorer (SPHEREx).
 \end{notes}
 
 \section{Telemetry}
@@ -188,9 +188,9 @@ Desaturation is managed by engaging station-keeping thrusters for short periods 
 Typically for high-Earth and deep-space missions, the X-Band Space Science frequency band is used for uplink and downlink between the spacecraft and Ground Stations.
 Thus, high-gain antennas are best suited for both links~\cite{smad2015}.
 
-A survey conducted by CDIM will generate \SI{168.39}{Gb} of data per day employing on-board data processing akin to SPHEREx.
+A survey conducted by CDIM will generate \SI{168.39}{Gb} of data per day employing on-board data processing akin to SPHEREx~\cite{spherexTelemetry2016}.
 With a compression ratio of $2.5$:$1$, CDIM will downlink a total of \SI{63.7}{Gb/day} during a survey.
-Transmission rates are dependentt on the total time available for CDIM to send data to a ground station.
+Transmission rates are dependent on the total time available for CDIM to send data to a ground station.
 For example, the spacecraft could transmit continuously at a very low transfer rate, or send larger volumes of data once per day over 1 hour at the expense of a higher transfer rate.
 
 Uplinks will follow standard protocols and not require transmitting large volumes or particularly fast transfer rates.
@@ -206,7 +206,7 @@ Uplinks will follow standard protocols and not require transmitting large volume
     & & \SI{17.7}{Mbps} (1 hour per day)\\\bottomrule
   \end{tabular}
 \end{wstable}
-% The CDIM telemetry system, including antenna and power converter, are roughly \SI{2}{kg}
+The CDIM telemetry system, including antenna and power converter, are roughly \SI{2}{kg}.
 
 \section{Power}
 \label{sec:power}
@@ -214,22 +214,22 @@ All power generation will come from an array of photovoltaic cells facing the su
 In order to survey the entire sky, the cells must be able to adjust to account for different incident angles to the sun.
 The array must deploy after the launch and orbital insertion phases of the mission.
 
-Based on a rough power budget and the spacecraft's position at L2, {\color{red}the array must be $x$\si{\meter\squared}} in area to sustain operation.
+Based on a rough power budget and the spacecraft's position at L$_2$, {\color{red}the array must be $x$\si{\meter\squared}} in area to sustain operation.
 The dark side of the array acts as a radiator to contribute to the thermal regulation of the spacecraft bus.
 
 \section{Structure}
 \label{sec:structure}
-The spacecraft bus houses all non-instrumentation systems including the cryocooler, ADCS, and power modules.
-\begin{notes}
-It would have approximately some dimensions and be made of standard materials.
+The spacecraft bus houses all non-instrumentation systems including the cryocooler, ADCS, telemetry, processing, and power modules.
 The bus will also include hard points for integration with the launch vehicle.
-\end{notes}
+The CDIM spacecraft bus will not feature novel technology, and will leverage high technology-readiness-level (TRL) or off-the-shelf components.
 
-\section{Mission Profile}
-\label{sec:mission-profile}
-\subsection{Launch Vehicle}
+% \section{Mission Profile}
+% \label{sec:mission-profile}
+\section{Launch Vehicle}
 \label{subsec:launch}
-CDIM is comofortably within the mass and spatial limits of currently available and development launch vehicles capable of delivering payloads to Sun-Earth Lagrange Point L$_2$.
+CDIM will be comfortably within the mass and spatial limits of both currently available and development launch vehicles capable of delivering payloads to Sun-Earth Lagrange Point L$_2$.
+{\color{red}Launch vehicles currently in development are more than capable of delivering CDIM to L$_2$, and industry trends indicate that heavy and super-heavy vehicles will continue to come online by the time CDIM launches.}
+Due to the rigorous launch environment, CDIM solar panels and passive radiators will not be deployed until CDIM is delivered to orbit by its launch vehicle.
 
 \begin{wstable}
   \caption{Available launch vehicle configurations and their capabilities to send payloads to  L$_2$~\cite{rioux2016,spacelaunchreport}.
@@ -247,61 +247,51 @@ CDIM is comofortably within the mass and spatial limits of currently available a
     & & $5.0\times19.1$ \si{\meter} & \\ \bottomrule
   \end{tabular}
   \begin{tablenotes}
-  \item[*] Costs and specifications are representative of launch vehicles that are currently available or in development.
+  \item[*] Costs and capacities are representative of design specifications for launch vehicles that are currently in development.
   \end{tablenotes}
 \end{wstable}
+%
+% \subsection{Operations}
+% \subsection{End of Life}
 
-\subsection{Operations}
-\subsection{End of Life}
-
-\section{Cost Estimates}
+\section{Cost Estimation}
 \label{sec:cost}
 The overall cost of a space telescope may be broken down into a set of drivers whose influence is correlated with historical data.
 All conclusions based on statistical analysis are only as good as their databases.
 Fiscal data, such as what is required for proper analysis, is scarce.
-Estimations are made with engineering judgement based on available data. Multiple models are used to develop a reasonable cost model for CDIM.\@
+Estimations are made with engineering judgement based on available data.
+Multiple methods are used to develop a reasonable cost model for CDIM.\@
 
-To estimate the cost of the CDIM mission, estimations are separated into drivers of the \emph{mission cost}, which includes hardware, development, ground support, integration, testing, science, and management.
+To estimate the cost of the CDIM mission, costs are separated into drivers of the \emph{mission cost}, which includes hardware, development, ground support, integration, testing, science, and management.
 Existing generalized parametric cost estimation approaches identify key cost drivers for mission cost~\cite{stahl2013,bely2011}, but do not take labor or overhead costs into account.
 Overhead and labor costs are included in a more robust model for \emph{total cost}, where:
 
 \begin{equation}
-  	\text{Total Cost}=\text{Mission Cost} (1+\text{Factor}),\quad\text{Factor}=0.5\
+  	\text{Total Cost}=(1.5)\text{Mission Cost}
 \label{eq:total-cost}
 \end{equation}
 
-\begin{figure}
-  \centering
-
-\end{figure}
-
 \citeauthor{stahl2013} present a statistical approach to estimating OTA cost based on correlations with data on flown space telescope missions.
 CDIM's projected costs may be obtained from these findings with engineering judgement, knowing that the data is drawn from a relatively small sample set.
+Thus, an OTA aperture diameter of \SI{1.5}{\meter} yields a median OTA cost of \$58.2M.
+Since OTA cost is found, estimates for other cost drivers may be obtained from relative cost values.
 
 \begin{figure}
-  \centering
     \centering
-    \includegraphics[width=.4\linewidth]{figs/cost-breakdown-pie.png}
-    \caption{CDIM estimated cost breakdown in percent of mission cost.
-\label{fig:cost-breakdown}
-}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=.6\linewidth]{figs/ota_cost-diameter_stahl2010.png}
-    \caption{Optical Telescope Assembly vs.\ cost correlation (\citeauthor{stahl2013}, \citeyear{stahl2013}).
+    \includegraphics[width=\linewidth]{figs/ota_cost-diameter_stahl2010.png}
+    \caption{Optical Telescope Assembly vs.\ cost correlation~\cite{stahl2013}. Given a target OTA aperture diameter of \SI{1.5}{\meter} for CDIM, a reasonable estimate of OTA cost is obtained from the median cost trendline.
 \label{fig:cost-stahl-ota-cost-vs-diameter}
 }
 \end{figure}
 
-\begin{notes}
-The Stahl Model for OTA Diameter vs. OTA Cost in Figure 4 estimates a \SI{1.5}{\meter} OTA mirror aperture diameter costing \$58.2M, which is comfortably within the OTA budget of \$62--85M from the Bely and Stahl Mission Cost Models in Table 1.
-
-Choosing a \SI{1.5}{\meter} telescope at \$58.2M as the driving factor on cost, alternative mission cost and total cost estimates may be derived from Stahl and Bely models as shown in Table 5.
-There is a significant (\$200M+) discrepancy between the Bely and Stahl cost models, but both estimations show that CDIM fits squarely within the range of a Probe class NASA mission.
-The Stahl OTA Diameter vs. OTA Cost model is based on a limited set of data and is not a perfect correlation, and does not account for influences that other parameters like operating temperature have on Mission Cost.
-It does show a reasonable correlation with historical data, however, and may be used for preliminary design phases for missions such as CDIM.\@
-\end{notes}
+\begin{figure}
+  \centering
+    \centering
+    \includegraphics[width=\linewidth]{figs/cost-breakdown-pie.png}
+    \caption{CDIM estimated cost breakdown in percent of mission cost.
+\label{fig:cost-breakdown}
+}
+\end{figure}
 \begin{wstable}
   \centering
   \begin{tabular}{@{}lcr@{}}\toprule
@@ -319,18 +309,22 @@ It does show a reasonable correlation with historical data, however, and may be 
     Labor \& Overhead &   & \$228.2M \\
     Total Cost &          & \$684.7M \\ \bottomrule
   \end{tabular}
-  \caption{CDIM total cost breakdown by driver, accounting for labor and overhead.
+  \caption{CDIM total cost breakdown by driver.
 \label{tab:total-cost}
 }
 \end{wstable}
 
 \begin{figure}
   \centering
-  \includegraphics[width=.6\linewidth]{figs/total-cost-vs-diameter.png}
+  \includegraphics[width=\linewidth]{figs/total-cost-vs-diameter.png}
   \caption{CDIM total cost relation to OTA aperture diameter under various cost models. The model described here is robust and presents a conservative estimate compared to similar models by \citeauthor{bely2011} and \citeauthor{stahl2013}, after a total cost approximation is applied following \autoref{eq:total-cost}.
 \label{fig:cost-total-compare-models}
 }
 \end{figure}
+
+The most robust model for the CDIM mission predicts its total cost to be \$684.7M, and even the more conservative model predicts CDIM costing to fall under \$800M.
+The CDIM mission has significant margin under the \$1B cap for Probe-class missions.
+
 
 \section{Conclusion}
 \label{sec:conclusion}
