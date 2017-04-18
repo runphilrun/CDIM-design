@@ -247,7 +247,7 @@ CDIM is comofortably within the mass and spatial limits of currently available a
     & & $5.0\times19.1$ \si{\meter} & \\ \bottomrule
   \end{tabular}
   \begin{tablenotes}
-  \item[*] Values are representative of currently available specifications of designs in development.
+  \item[*] Costs and specifications are representative of launch vehicles that are currently available or in development.
   \end{tablenotes}
 \end{wstable}
 
@@ -256,111 +256,73 @@ CDIM is comofortably within the mass and spatial limits of currently available a
 
 \section{Cost Estimates}
 \label{sec:cost}
-\begin{notes}
-The overall cost of a space telescope may be broken down into a set of drivers whose influence may be correlated with historical data.
-All conclusions based on statistical analysis are only as good as their databases, and fiscal data, such as what is required for proper analysis, is scarce.
-Estimations are made with engineering judgement based on available data. Multiple models will be used to develop a reasonable cost model for CDIM.\@
+The overall cost of a space telescope may be broken down into a set of drivers whose influence is correlated with historical data.
+All conclusions based on statistical analysis are only as good as their databases.
+Fiscal data, such as what is required for proper analysis, is scarce.
+Estimations are made with engineering judgement based on available data. Multiple models are used to develop a reasonable cost model for CDIM.\@
 
-H. Philip Stahl presents a statistical approach to estimating OTA cost based on correlations with data on flown space telescope missions [1].
-CDIM's projected costs may be obtained from Stahl's findings with engineering judgment, knowing that the data is drawn from a relatively small sample set.
-
-\subsection{Relative Influences on Total Cost}
-Two leaders in optical telescope design, Pierre Bely and H. Philip Stahl, developed cost breakdowns for a typical space telescope.
-Bely's slightly older model is shown in Figure 1 [2] and Stahl's model is outlined in Figure 2 [1].
-Discrepancies may be attributed to differing source data sets (among other things) but in general the two agree with one another.
-
-Neither Stahl nor Bely's cost models, upon which this report heavily relies, includes NASA labor or overhead [2, pp. 073006--2].
-Thus, an additional factor of 0.5 shall be included in the Total Cost to account for NASA overhead and labor, where:
+To estimate the cost of the CDIM mission, estimations are separated into drivers of the \emph{mission cost}, which includes hardware, development, ground support, integration, testing, science, and management.
+Existing generalized parametric cost estimation approaches identify key cost drivers for mission cost~\cite{stahl2013,bely2011}, but do not take labor or overhead costs into account.
+Overhead and labor costs are included in a more robust model for \emph{total cost}, where:
 
 \begin{equation}
-  	\text{Total Cost}=\text{Mission Cost} (1+\text{Factor})
+  	\text{Total Cost}=\text{Mission Cost} (1+\text{Factor}),\quad\text{Factor}=0.5\
+\label{eq:total-cost}
 \end{equation}
 
-Given a baseline estimate of \$850M total mission cost, Table 1 summarizes a range of target costs may be estimated from Bely and Stahl in Figure 1 and Figure 2, adjusted to account for labor and overhead.
-
 \begin{figure}
-  \caption{BELY'S TYPICAL TELESCOPE COST BREAKDOWN IN PERCENT OF MISSION COST (2002) [2]
-\label{fig:bely-cost}
-}
+  \centering
+
 \end{figure}
 
-\begin{figure}
-  \caption{STAHL'S TYPICAL SPACE TELESCOPE COST BREAKDOWN IN PERCENT OF MISSION COST (2011) [1]
-\label{fig:stahl-mission-cost}
-}
-\end{figure}
-
-\begin{table}
-  \caption{FIRST ORDER COST ESTIMATION BASED ON \$850M TOTAL MISSION COST, INCLUDING OVERHEAD
-\label{tab:first-order-cost-estimate}
-}
-\end{table}
-
-Applying this logic we may develop an estimate for CDIM that includes significant factors on budget like the Science Team and Ground Support.
-A possible cost breakdown is presented in Figure 3 and Table 2.
+\citeauthor{stahl2013} present a statistical approach to estimating OTA cost based on correlations with data on flown space telescope missions.
+CDIM's projected costs may be obtained from these findings with engineering judgement, knowing that the data is drawn from a relatively small sample set.
 
 \begin{figure}
-  \caption{PROPOSED COST BREAKDOWN FOR CDIM, NOT INCLUDING LABOR OR OVERHEAD
-\label{fig:cost-no-overhead}
+  \centering
+  \begin{minipage}{.5\linewidth}
+    \centering
+    \includegraphics[width=.7\linewidth]{figs/cost-breakdown-pie.png}
+    \caption{CDIM estimated cost breakdown in percent of mission cost.
+\label{fig:cost-breakdown}
 }
-\end{figure}
-
-\begin{table}
-  \caption{PROPOSED COST BREAKDOWN FOR CDIM BASED ON \$850M TOTAL MISSION COST
-\label{tab:cost-from-total-mission}
-}
-\end{table}
-
-\subsection{OTA Cost Estimation}
-Spitzer is a representative benchmark for CDIM since it is similar in cost, diameter, and operational wavelength, summarized in Table 3.
-Additionally, Spitzer resides on the median curve in Stahl's cost model shown in Figure 4.
-
-\begin{figure}
-  \caption{STAHL OTA COST VS DIAMETER CORRELATION (2011) [1]
+  \end{minipage}%
+  \begin{minipage}{.5\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figs/ota_cost-diameter_stahl2010.png}
+    \caption{Optical Telescope Assembly vs.\ cost correlation (\citeauthor{stahl2013}, \citeyear{stahl2013}).
 \label{fig:cost-stahl-ota-cost-vs-diameter}
 }
+  \end{minipage}
 \end{figure}
 
-\begin{table}
-  \caption{SPITZER VS CDIM WITH OTA COST ESTIMATES BASED ON STAHL MODEL
-\label{tab:cost-spitzer-vs-CDIM}
-}
-\end{table}
+\begin{notes}
+The Stahl Model for OTA Diameter vs. OTA Cost in Figure 4 estimates a \SI{1.5}{\meter} OTA mirror aperture diameter costing \$58.2M, which is comfortably within the OTA budget of \$62--85M from the Bely and Stahl Mission Cost Models in Table 1.
 
-The Stahl Model for OTA Diameter vs. OTA Cost in Figure 4 estimates an OTA mirror aperture diameter of 1.3 meters costing around \$42M, which is comfortably within the OTA budget of \$62--85M from the Bely and Stahl Mission Cost Models in Table 1.
-
-Pushing the boundaries of these cost models, the median in Figure 4 places a 1.6 meter OTA aperture diameter (~\$62.6M) within range of the Bely budget of \$62.3M, or a 1.9 meter OTA aperture diameter (~\$84.3M) within the Stahl budget of \$85M.
-These estimates are summarized in Table 4.
-
-\begin{table}
-  \caption{OTA COST VERSUS DIAMETER BASED ON MEDIAN OF STAHL MODEL
-\label{tab:cost-ota-vs-dia-CDIM}
-}
-\end{table}
-
-\subsection{Using OTA Cost to Determine Total Cost}
-Choosing a 1.3m telescope at \$48.0M as the driving factor on cost, alternative Mission Cost and Total Cost estimates may be derived from Stahl and Bely models as shown in Table 5.
+Choosing a \SI{1.5}{\meter} telescope at \$58.2M as the driving factor on cost, alternative mission cost and total cost estimates may be derived from Stahl and Bely models as shown in Table 5.
 There is a significant (\$200M+) discrepancy between the Bely and Stahl cost models, but both estimations show that CDIM fits squarely within the range of a Probe class NASA mission.
-
-\begin{table}
-  \caption{TOTAL COST ESTIMATED FOR 1.3M OTA
-\label{tab:cost-tota-1.3m}
+The Stahl OTA Diameter vs. OTA Cost model is based on a limited set of data and is not a perfect correlation, and does not account for influences that other parameters like operating temperature have on Mission Cost.
+It does show a reasonable correlation with historical data, however, and may be used for preliminary design phases for missions such as CDIM.\@
+\end{notes}
+\begin{wstable}
+  \centering
+  \caption{CDIM total cost breakdown by driver, accounting for labor and overhead.
+\label{tab:total-cost}
+  \begin{tabular}{@{}lrl@{}}\toprule
+    Driver & \% Mission Cost & Est. Cost \\ \midrule
+    OTA & \SI{13}{\percent} & \$58.2M \\
+  \end{tabular}
 }
-\end{table}
-
-Figure 5 shows other mission and total cost estimates generated by iterating on this process for other OTA diameters listed in Table 4.
+\end{wstable}
 
 \begin{figure}
-  \caption{TOTAL COST RELATION TO OTA DIAMETER UNDER EACH COST MODEL
+  \centering
+  \includegraphics[width=.6\linewidth]{figs/total-cost-vs-diameter.png}
+  \caption{CDIM total cost relation to OTA aperture diameter under various cost models. The model described here is robust and presents a conservative estimate compared to similar models by \citeauthor{bely2011} and \citeauthor{stahl2013}, after a total cost approximation is applied following \autoref{eq:total-cost}.
 \label{fig:cost-total-compare-models}
 }
 \end{figure}
 
-The Stahl OTA Diameter vs. OTA Cost model is based on a limited set of data and is not a perfect correlation, and does not account for influences that other parameters like operating temperature have on Mission Cost.
-It does show a reasonable correlation with historical data, however, and may be used for preliminary design phases for missions such as CDIM.\@
-
-My recommendation is to develop a conservative design around a 1.3m (\$42M) maximum diameter OTA, and allow the remaining funds in a \$850M preliminary budget to be spent on science investigations, instruments, and spacecraft components such as a thermal regulation system.
-\end{notes}
 \section{Conclusion}
 \label{sec:conclusion}
 % Summarize points made above. Notable points include mirror diameter, detector, power budget, mass budget, total cost, and the fact that technologies are already significantly developed.
