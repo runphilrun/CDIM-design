@@ -21,6 +21,8 @@
 \newenvironment{notes}{\color{red}}{}
 \begin{document}
 
+\newcommand{\Ltwo}{L$_2$}
+
 \catchline{}{}{}{}{} % Publisher's Area please ignore
 
 \markboth{P.~Linden \textit{et al.}}{CDIM:\@ Probe Class Space Telescope Design}
@@ -56,7 +58,7 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu
 \begin{figure}
   \centering
   \includegraphics[width=.8\linewidth]{figs/cdim_cover-render.jpg}
-  \caption{An artistic rendition of the Cosmic Dawn Intensity Mapper stationed at Sun-Earth L$_2$.}
+  \caption{An artistic rendition of the Cosmic Dawn Intensity Mapper stationed at Sun-Earth \Ltwo.}
 \label{fig:cover}
 \end{figure}
 \twocolumn
@@ -97,7 +99,7 @@ With these instrument requirements, CDIM is optimized to search for the first co
     Temperature (Detector) & Cryocooler, radiator & \SI{35}{\kelvin} \\
     Pointing Requirements & Attitude control sys & less than \SI{0.5}{arcsec} \\
     Lifetime & Redundancy, RCS propellant & \SI{5}{years} \\
-    Orbit & Solar array, thermal management, launch vehicle, telemetry & Sun-Earth L$_2$ \\
+    Orbit & Solar array, thermal management, launch vehicle, telemetry & Sun-Earth \Ltwo{} \\
     \bottomrule
   \end{tabular}
 \label{tab:critical-params}
@@ -114,7 +116,7 @@ The primary mirror is notionally assumed to be constructed from light-weighted C
 % \section{Detector}
 % \label{sec:detector}
 Multiple detectors satisfy CDIM's spatial resolution, wavelength range, and sensitivity requirements.
-These detectors range in TRL, but all are sufficiently developed to be considered for the 2020 Decadal and will be demonstrated on missions such as NEOCam, SPHEREx, and JWST\@.
+These detectors range in TRL, but all are sufficiently developed to be considered for the 2020 Decadal and will be demonstrated on missions such as NEOCam, SPHEREx, and JWST\@. {\color{red}Citation needed.}
 
 Teledyne H2RG-18 HyViSI detectors offer a $2048\times2048$ pixel array format at a pixel pitch of \SI{18}{\micro\meter}~\cite{teledyneH2RG}.
 CDIM will utilize a $6\times6$ H2RG array.
@@ -127,12 +129,18 @@ The optical telescope assembly (OTA) as a whole is estimated to have a {\color{r
 \label{sec:thermal}
 % General approach to cooling with passive and active. Explain tradeoffs between passive and active.
 CDIM will employ both passive and active thermal regulation systems.
-By using passive radiators in tandem with an active cryocooler, the static OTA heat load can be dissipated by the lightweight radiator and a smaller cryocooler may be used to only cool the detector array rather than the whole OTA mass plus focal plane assembly.
+By using passive radiators in tandem with an active cryocooler, the static OTA heat load can be dissipated by the lightweight radiator and a smaller cryocooler may be used to only cool the detector array rather than the whole OTA mass plus focal plane assembly (FPA).
+A hybrid passive-active cryocooling scheme divides the heat dissipation loads among passive and active heat sources.
+Solar radiation warms the spacecraft on orbit and is a passive, constant heat source.
+The FPA dissipates heat during operation, so it is considered an active heat source.
+Passive cooling is used to cool the OTA and FPA from solar radiation, while active cooling regulates heat dissipated by active detectors.
 
-The OTA is cooled to \SI{45}{\kelvin} passively to reduce background photon load in the near-IR.\@
-Passive thermal regulation is maintained using a V-groove radiator, which bounces radiative heat into the \SI{3}{\kelvin} background of space~\cite{bard_1987}.
+The OTA is cooled to \SI{45}{\kelvin} to reduce background photon load in the near-IR.\@
+Passive thermal regulation is maintained using a multi-stage V-groove radiator, which bounces radiative heat into the \SI{3}{\kelvin} background of space~\cite{bard_1987}.
 V-groove radiators have been demonstrated in passive cryogenic radiators up to \SI{4}{\kelvin} with Planck, SPIRIT, and Spitzer (warm mission).\@
-In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point L$_2$, a {\color{red}$x$-stage} V-groove radiator with an {\color{red}area of $x$ \si{\meter\squared}} is required.
+Like Planck, the active coolers are also pre-cooled to less than \SI{50}{\kelvin} this way. {\color{red}Citation needed: \href{http://planck.caltech.edu/spacecraft.html}{Plank CalTech Site}.}
+In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point \Ltwo, a {\color{red}$x$-stage} V-groove radiator with an {\color{red}area of $x$ \si{\meter\squared}} is required.
+{\color{red}Since CDIM may be at various angles of incidence to solar radiation as it surveys the sky, the V-groove radiator fins will extend outward, more like SPHEREx than Planck}.
 
 The CDIM detector array is actively cooled to \SI{35}{\kelvin} to reduce thermal noise.
 Stirling-cycle mechanical refrigerators are low-vibration, high-reliability, and lightweight active cryocooling systems that have significant heritage in space applications.
@@ -160,13 +168,13 @@ Redundant systems of varying levels of fidelity are included to allow CDIM to op
 Low-fidelity attitude determination sensors such as sun sensors are cheap, accurate to less than one degree, and lightweight.
 % Explain the star tracker among other attitude control systems. Select a class of star tracker.
 
-High-fidelity attitude determination is conducted by star tracking cameras.
+High-fidelity attitude determination is conducted by off-the-shelf star tracking cameras.
 Star trackers identify constellations in their field of view to determine the spacecraft's heading to within 1 arcsecond.
-
+{\color{red}Identify candidate star trackers.}
 
 % Briefly explain inertial and propulsive attitude control and the limitations of each.
 In a heliocentric orbit, the primary disturbance to the spacecraft's heading is solar radiation pressure (SRP).
-At L$_2$, solar radiation pressure presents itself as a constant torque on the spacecraft on the order of $10^{-5}$\si{\newton\meter}.
+At \Ltwo, solar radiation pressure presents itself as a constant torque on the spacecraft on the order of $10^{-5}$\si{\newton\meter}.
 
 Cold-gas or hydrazine thrusters will be used for orbit station-keeping as well as momentum management.
 A desired heading is maintained by the spacecraft using a 3-axis zero-momentum inertial system, whereby the error in heading due to SRP is cancelled out by spinning up or slowing down reaction wheels.
@@ -174,6 +182,7 @@ Reaction wheel systems are capable of torques ranging from $.01$ to $1$\si{\newt
 Power consumption varies with reaction wheel speed, with a maximum estimate of roughly \SI{100}{\watt}.
 Since SRP is constant, after some time the inertial attitude control will become saturated.
 Desaturation is managed by engaging station-keeping thrusters for short periods of time.
+Additionally, these thrusters will be used to maintain an orbit at \Ltwo{} as it is an inherently unstable orbit.
 
 \section{Flight Computer}
 % CDIM is capable of autonomous operation and system diagnostics.
@@ -206,36 +215,37 @@ Uplinks will follow standard protocols and not require transmitting large volume
     & & \SI{17.7}{Mbps} (1 hour per day)\\\bottomrule
   \end{tabular}
 \end{wstable}
+{\color{red}Identify candidate telemetry systems.}
 The CDIM telemetry system, including antenna and power converter, are roughly \SI{2}{kg}.
 
 \section{Power}
 \label{sec:power}
 All power generation will come from an array of photovoltaic cells facing the sun.
 In order to survey the entire sky, the cells must be able to adjust to account for different incident angles to the sun.
-The array must deploy after the launch and orbital insertion phases of the mission.
+The array will deploy after the launch and orbital insertion phases of the mission.
 
-Based on a rough power budget and the spacecraft's position at L$_2$, {\color{red}the array must be $x$\si{\meter\squared}} in area to sustain operation.
+Based on a rough power budget and the spacecraft's position at \Ltwo, {\color{red}the array must be $x$\si{\meter\squared}} in area to sustain operation.
 The dark side of the array acts as a radiator to contribute to the thermal regulation of the spacecraft bus.
 
 \section{Structure}
 \label{sec:structure}
 The spacecraft bus houses all non-instrumentation systems including the cryocooler, ADCS, telemetry, processing, and power modules.
 The bus will also include hard points for integration with the launch vehicle.
-The CDIM spacecraft bus will not feature novel technology, and will leverage high technology-readiness-level (TRL) or off-the-shelf components.
+The CDIM spacecraft bus will not feature novel technology. Rather it will leverage high technology-readiness-level (TRL) or off-the-shelf components.
 
 % \section{Mission Profile}
 % \label{sec:mission-profile}
 \section{Launch Vehicle}
 \label{subsec:launch}
-CDIM will be comfortably within the mass and spatial limits of both currently available and development launch vehicles capable of delivering payloads to Sun-Earth Lagrange Point L$_2$.
-{\color{red}Launch vehicles currently in development are more than capable of delivering CDIM to L$_2$, and industry trends indicate that heavy and super-heavy vehicles will continue to come online by the time CDIM launches.}
+CDIM will be comfortably within the mass and spatial limits of both currently available and development launch vehicles capable of delivering payloads to Sun-Earth Lagrange Point \Ltwo.
+{\color{red}Launch vehicles currently in development are more than capable of delivering CDIM to \Ltwo, and industry trends indicate that heavy and super-heavy vehicles will continue to come online by the time CDIM launches.}
 Due to the rigorous launch environment, CDIM solar panels and passive radiators will not be deployed until CDIM is delivered to orbit by its launch vehicle.
 
 \begin{wstable}
-  \caption{Available launch vehicle configurations and their capabilities to send payloads to  L$_2$~\cite{rioux2016,spacelaunchreport}.
+  \caption{Available launch vehicle configurations and their capabilities to send payloads to  \Ltwo~\cite{rioux2016,spacelaunchreport}.
 \label{tab:launch-vehicles}}
   \begin{tabular}{@{}lclr@{}} \toprule
-    Vehicle & Payload to L$_2$ & Fairing size & Cost \\ \midrule
+    Vehicle & Payload to \Ltwo{} & Fairing size & Cost \\ \midrule
     Falcon 9 v1.1 & \SI{2900}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \$$90$\si{M}\\ \midrule
     Falcon Heavy\tnote{*} & \SI{14000}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \$$62$\si{M}\\ \midrule
     Atlas V 551 & \SI{6100}{\kilo\gram} & $4.2\times10.0$ \si{\meter} & \$$153$\si{M}\\
@@ -260,7 +270,6 @@ The overall cost of a space telescope may be broken down into a set of drivers w
 All conclusions based on statistical analysis are only as good as their databases.
 Fiscal data, such as what is required for proper analysis, is scarce.
 Estimations are made with engineering judgement based on available data.
-Multiple methods are used to develop a reasonable cost model for CDIM.\@
 
 To estimate the cost of the CDIM mission, costs are separated into drivers of the \emph{mission cost}, which includes hardware, development, ground support, integration, testing, science, and management.
 Existing generalized parametric cost estimation approaches identify key cost drivers for mission cost~\cite{stahl2013,bely2011}, but do not take labor or overhead costs into account.
