@@ -11,6 +11,7 @@
 % \documentclass[draft]{ws-jai}
 \documentclass{ws-jai}
 \usepackage[flushleft]{threeparttable}
+\usepackage{multirow}
 \usepackage{siunitx}
 \usepackage[T1]{fontenc}
 \usepackage[pdftex,breaklinks,pdfauthor={Philip Linden},pdfcreator={Philip Linden},pdftitle={CDIM Spacecraft and Mission Design}]{hyperref}
@@ -61,7 +62,7 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu
   \caption{An artistic rendition of the Cosmic Dawn Intensity Mapper stationed at Sun-Earth \Ltwo.}
 \label{fig:cover}
 \end{figure}
-\twocolumn
+% \twocolumn
 
 \section{Introduction}
 \label{sec:introduction}
@@ -113,14 +114,18 @@ Preliminary explorations indicate that a \SI{1.5}{\meter} aperture off-axis prim
 The primary mirror is notionally assumed to be constructed from light-weighted Corning (ultra-low expansion) silica-titania glass with a honeycomb core and a gold-deposition surface coating.
 ``Back-of-the-envelope'' calculations estimate the primary mirror's mass to be in the neighborhood of \SI{200}{\kilo\gram}.
 
-% \section{Detector}
-% \label{sec:detector}
-Multiple detectors satisfy CDIM's spatial resolution, wavelength range, and sensitivity requirements.
+\subsection{Detectors}
+\label{subSec:detector}
+Complementary metal-oxide-semiconductor (CMOS) detectors meet CDIM design goals of operating at cryogenic temperatures, low in cost, and of course, sensitive in near-IR.\@
+Several different off-the-shelf CMOS detectors satisfy CDIM's spatial resolution, wavelength range, and sensitivity requirements.
 These detectors range in TRL, but all are sufficiently developed to be considered for the 2020 Decadal and will be demonstrated on missions such as NEOCam, SPHEREx, and JWST\@. {\color{red}Citation needed.}
 
 Teledyne H2RG-18 HyViSI detectors offer a $2048\times2048$ pixel array format at a pixel pitch of \SI{18}{\micro\meter}~\cite{teledyneH2RG}.
 CDIM will utilize a $6\times6$ H2RG array.
 Each detector nominally dissipates less than \SI{4}{\milli\watt}, for a total power dissipation of less than \SI{150}{\milli\watt} for the array.
+
+Linear-variable filters (LVFs) will be placed just before the detectors to provide spectral dispersion for spectrometry.
+LVFs are simple, space-qualified solutions to permit spectral data cubes between $0.75--7.5$\si{\micro\meter} that are commercially available and significantly lower in cost than more complex systems. {\color{red}Citation needed.}
 
 CDIM optics, instruments, and focal plane will be housed in a light-tight box.
 The optical telescope assembly (OTA) as a whole is estimated to have a {\color{red}mass of $x$ \si{\kilo\gram}}.
@@ -220,6 +225,7 @@ The CDIM telemetry system, including antenna and power converter, are roughly \S
 
 \section{Power}
 \label{sec:power}
+Since CDIM will be located at \Ltwo, it is exposed to constant and significant solar flux.
 All power generation will come from an array of photovoltaic cells facing the sun.
 In order to survey the entire sky, the cells must be able to adjust to account for different incident angles to the sun.
 The array will deploy after the launch and orbital insertion phases of the mission.
@@ -287,7 +293,7 @@ Since OTA cost is found, estimates for other cost drivers may be obtained from r
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{figs/ota_cost-diameter_stahl2010.png}
+    \includegraphics[width=.6\linewidth]{figs/ota_cost-diameter_stahl2010.png}
     \caption{Optical Telescope Assembly vs.\ cost correlation~\cite{stahl2013}. Given a target OTA aperture diameter of \SI{1.5}{\meter} for CDIM, a reasonable estimate of OTA cost is obtained from the median cost trendline.
 \label{fig:cost-stahl-ota-cost-vs-diameter}
 }
@@ -296,27 +302,28 @@ Since OTA cost is found, estimates for other cost drivers may be obtained from r
 \begin{figure}
   \centering
     \centering
-    \includegraphics[width=\linewidth]{figs/cost-breakdown-pie.png}
+    \includegraphics[width=.6\linewidth]{figs/cost-breakdown-pie.png}
     \caption{CDIM estimated cost breakdown in percent of mission cost.
 \label{fig:cost-breakdown}
 }
 \end{figure}
 \begin{wstable}
   \centering
-  \begin{tabular}{@{}lcr@{}}\toprule
-    Driver                & \% Mission Cost & Est. Cost \\ \midrule
-    OTA                   & \SI{13}{\percent} & \$58.2M \\
-    Spacecraft            & \SI{20}{\percent} & \$91.3M \\
-    Instruments           & \SI{15}{\percent} & \$69.8M \\
-    Ground Support        & \SI{5}{\percent}  & \$22.8M \\
-    Integration \& Testing & \SI{7}{\percent} & \$31.0M \\
-    Systems Engineering   & \SI{4}{\percent}  & \$19.4M \\
-    Management            & \SI{4}{\percent}  & \$19.4M \\
-    R\&D                  & \SI{21}{\percent} & \$97.0M \\
-    Science Team          & \SI{10}{\percent} & \$45.6M \\ \midrule
-    Mission Cost &        & \$456.5M \\
-    Labor \& Overhead &   & \$228.2M \\
-    Total Cost &          & \$684.7M \\ \bottomrule
+  \begin{tabular}{@{}lrrr@{}}\toprule
+                          &                   & \multicolumn{2}{c}{Est. Cost} \\
+    Driver                & \% Mission Cost   & \SI{1.3}{\meter} & \SI{1.5}{\meter} \\ \midrule
+    OTA                   & \SI{13}{\percent} & \$48.0M & \$58.2M \\
+    Spacecraft            & \SI{20}{\percent} & \$76.8M & \$91.3M \\
+    Instruments           & \SI{15}{\percent} & \$57.6M & \$69.8M \\
+    Ground Support        & \SI{5}{\percent}  & \$18.8M & \$22.8M \\
+    Integration \& Testing & \SI{7}{\percent} & \$25.6M & \$31.0M \\
+    Systems Engineering   & \SI{4}{\percent}  & \$16.0M & \$19.4M \\
+    Management            & \SI{4}{\percent}  & \$16.0M & \$19.4M \\
+    R\&D                  & \SI{21}{\percent} & \$80.0M & \$97.0M \\
+    Science Team          & \SI{10}{\percent} & \$37.6M & \$45.6M \\ \midrule
+    Mission Cost          &                   & \$188.2M & \$456.5M \\
+    Labor \& Overhead     &                   & \$376.5M & \$228.2M \\
+    Total Cost            &                   & \$564.7M & \$684.7M \\ \bottomrule
   \end{tabular}
   \caption{CDIM total cost breakdown by driver.
 \label{tab:total-cost}
@@ -325,7 +332,7 @@ Since OTA cost is found, estimates for other cost drivers may be obtained from r
 
 \begin{figure}
   \centering
-  \includegraphics[width=\linewidth]{figs/total-cost-vs-diameter.png}
+  \includegraphics[width=.6\linewidth]{figs/total-cost-vs-diameter.png}
   \caption{CDIM total cost relation to OTA aperture diameter under various cost models. The model described here is robust and presents a conservative estimate compared to similar models by \citeauthor{bely2011} and \citeauthor{stahl2013}, after a total cost approximation is applied following \autoref{eq:total-cost}.
 \label{fig:cost-total-compare-models}
 }
@@ -338,11 +345,11 @@ The CDIM mission has significant margin under the \$1B cap for Probe-class missi
 \section{Conclusion}
 \label{sec:conclusion}
 % Summarize points made above. Notable points include mirror diameter, detector, power budget, mass budget, total cost, and the fact that technologies are already significantly developed.
-% \begin{figure}
-%   \includegraphics[width=\linewidth]{figs/cdim_annotated-cartoon}
-%   \caption{CDIM consists of a passively cooled \SI{1.5}{\meter} aperture OTA, actively cooled focal plane, and off-the-shelf spacecraft components where applicable.}
-% \label{fig:cdim-annotated}
-% \end{figure}
+\begin{figure}
+  \includegraphics[width=\linewidth]{figs/cdim_annotated-cartoon}
+  \caption{CDIM consists of a passively cooled \SI{1.5}{\meter} aperture OTA, actively cooled focal plane, and off-the-shelf spacecraft components where applicable.}
+\label{fig:cdim-annotated}
+\end{figure}
 \section*{Acknowledgments}
 Thanks.
 
