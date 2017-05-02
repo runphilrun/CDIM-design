@@ -22,7 +22,7 @@
 \begin{document}
 
 \newcommand{\Ltwo}{L$_2$}
-\newcommand{\red}[1]{\red{ #1}}
+\newcommand{\red}[1]{{\color{red} #1}}
 
 \catchline{}{}{}{}{} % Publisher's Area please ignore
 
@@ -78,11 +78,11 @@ This area of research is a prime candidate for a Probe-class mission optimized t
 % CDIM fills a gap in the 2020 Decadal between two other not so famous telescopes in the 2030 range after JWST and WFIRST and Hubble
 
 % What is a "Probe-class" mission?
-Probe-class missions occupy a role on a larger scale than Discovery missions, such as Kepler and Dawn \red{[REF]}, but not as large as Flagship missions such as JWST~\cite{probeclasswp}.
+Probe-class missions occupy a role on a larger scale than Discovery missions, such as Kepler and Dawn, but not as large as Flagship missions such as JWST~\cite{probeclasswp}.
 Such missions are intended to be PI-led scientific investigations rather than general observatories, and have a firm \$1B cap \red{[REF]}.
 
 % % How is the design of the spacecraft is driven by the science objectives?
-The Cosmic Dawn Intensity Mapper (CDIM) is a concept for a Probe-class \SI{1.5}{\meter} aperture telescope, passively cooled to \SI{45}{\kelvin}, with an actively cooled $6\times6$ detector array that utilizes linear variable filters (LVFs)~\cite{cooray2016cdim2page} capable of three-dimensional spectro-imaging observations over the wavelength range of 0.75 to \SI{7.5}{\micro\meter} at a spectral resolving power R$=$\si{\Delta\lambda\per\lambda} of 500.
+The Cosmic Dawn Intensity Mapper (CDIM) is a concept for a Probe-class \SI{1.5}{\meter} aperture telescope, passively cooled to \SI{45}{\kelvin}, with an actively cooled $6\times6$ detector array that utilizes linear variable filters (LVFs)~\cite{cooray2016cdim2page} capable of three-dimensional spectro-imaging observations over the wavelength range of 0.75 to \SI{7.5}{\micro\meter} at a spectral resolving power R$=500$.
 CDIM has a \SI{10}{\deg\squared} instantaneous field of view (FoV) atop a focal plane of thirty-six $2048\times2048$ detectors.
 The survey strategy using spacecraft operations following a shift and stare mode will result in 1360 independent narrow-band spectral images of the sky on a given location.
 Surveys could span from \SI{25}{\deg\squared} up to \SI{1000}{\deg\squared} over a five year lifetime in an orbit about Sun-Earth Lagrange point L$_{2}$\@.
@@ -121,20 +121,21 @@ Several different off-the-shelf CMOS detectors satisfy CDIM's spatial resolution
 These detectors range in TRL, but all are sufficiently developed to be considered for the 2020 Decadal and will be demonstrated on missions such as NEOCam, SPHEREx, and JWST\@. \red{Citation needed.}
 
 Teledyne H2RG-18 HyViSI detectors offer a $2048\times2048$ pixel array format at a pixel pitch of \SI{18}{\micro\meter}~\cite{teledyneH2RG}.
-CDIM will utilize a $6\times6$ H2RG array.
+CDIM will utilize 36 detectors in a close-packed, $6\times6$ mosaic focal plane assembly (FPA).
 Each detector nominally dissipates less than \SI{4}{\milli\watt}, for a total power dissipation of less than \SI{150}{\milli\watt} for the full array.
 
 Linear-variable filters (LVFs) will be placed just above the detectors to provide spectral dispersion for spectrometry.
 LVFs are simple, space-qualified solutions to permit spectral data cubes between $0.75$--$7.5$\si{\micro\meter} that are commercially available and significantly lower in cost than more complex systems. \red{Citation needed.}
 
-CDIM optics, instruments, and focal plane will be housed in a light-tight box.
+CDIM optics, instruments, and focal plane will be housed in a light-tight box \red{to minimize signal contamination such that light reflected or emitted from objects other than the observation targets do not interfere with measurements and observations}.
+The light-tight box is constructed
 The optical telescope assembly (OTA) as a whole is estimated to have a \red{mass of $x$ \si{\kilo\gram}}.
 
 \section{Thermal Regulation}
 \label{sec:thermal}
 % General approach to cooling with passive and active. Explain tradeoffs between passive and active.
 CDIM will employ both passive and active thermal regulation systems.
-By using passive radiators in tandem with an active cryocooler, the static OTA heat load can be dissipated by the lightweight radiator and a smaller cryocooler may be used to only cool the detector array rather than the whole OTA mass plus focal plane assembly (FPA).
+By using passive radiators in tandem with an active cryocooler, the static OTA heat load can be dissipated by the lightweight radiator and a smaller cryocooler may be used to only cool the detector array rather than the whole OTA mass plus FPA.\@
 A hybrid passive-active cryocooling scheme divides the heat dissipation loads among passive and active heat sources.
 Solar radiation warms the spacecraft on orbit and is a passive, constant heat source.
 The FPA dissipates heat during operation, so it is considered an active heat source.
