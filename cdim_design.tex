@@ -50,7 +50,7 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu
 \end{history}
 
 \begin{abstract}
-  Cosmic Dawn Intensity Mapper (CDIM) is a Probe-class near-IR space telescope with the scientific goal of conducting large spectro-imaging surveys over a five-year period in the 2020 Decadal.
+  Cosmic Dawn Intensity Mapper (CDIM) is a Probe-class near-IR space telescope with the scientific goal of conducting large spectro-imaging surveys over a five-year mission in the next decade.
   A high-level system architecture was designed to identify key features and technologies aboard the CDIM spacecraft in preparation for more detailed studies such as a Team-X session at NASA Jet Propulsion Laboratory.
 \end{abstract}
 
@@ -85,7 +85,7 @@ Such missions are intended to be PI-led scientific investigations rather than ge
 The Cosmic Dawn Intensity Mapper (CDIM) is a concept for a Probe-class \SI{1.5}{\meter} aperture telescope, passively cooled to \SI{45}{\kelvin}, with an actively cooled $6\times6$ detector array that utilizes linear variable filters (LVFs)~\cite{cooray2016cdim2page} capable of three-dimensional spectro-imaging observations over the wavelength range of 0.75 to \SI{7.5}{\micro\meter} at a spectral resolving power R$=500$.
 CDIM has a \SI{10}{\deg\squared} instantaneous field of view (FoV) atop a focal plane of thirty-six $2048\times2048$ detectors.
 The survey strategy using spacecraft operations following a shift and stare mode will result in 1360 independent narrow-band spectral images of the sky on a given location.
-Surveys could span from \SI{25}{\deg\squared} up to \SI{1000}{\deg\squared} over a five year lifetime in an orbit about Sun-Earth Lagrange point L$_{2}$\@.
+Surveys are planned to span from \SI{25}{\deg\squared} up to \SI{1000}{\deg\squared} over a five year lifetime in an orbit about Sun-Earth Lagrange point L$_{2}$\@.
 
 CDIM is optimized to search for the first cosmic sources of dust and evidence of the very earliest stellar populations, bridging the gaps in the JWST and WFIRST cosmic dawn surveys and exceeding them in capability.
 
@@ -94,11 +94,11 @@ CDIM is optimized to search for the first cosmic sources of dust and evidence of
   \small\centering
   \begin{tabular}{@{}llll@{}} \toprule
     Spacecraft Design Driver & Impact & Target \\ \midrule
-    Cost & Quality of parts & less than \$\SI{1}{B} \\
+    Cost & Science capability, instrument architecture & less than \$\SI{1}{B} \\
     Mass & Launch vehicle & less than \SI{1000}{\kilo\gram} \\
-    Temperature (OTA) & Cryocooler, radiator & \SI{45}{\kelvin} \\
-    Temperature (Detector) & Cryocooler, radiator & \SI{35}{\kelvin} \\
-    Pointing Requirements & Attitude control sys & less than \SI{0.5}{arcsec} \\
+    Temperature (OTA) & Passive radiator & \SI{45}{\kelvin} \\
+    Temperature (Detector) & Cryocooler & \SI{35}{\kelvin} \\
+    Pointing Requirements & Attitude control system & less than \SI{0.5}{arcsec} \\
     Lifetime & Redundancy, RCS propellant & \SI{5}{years} \\
     Orbit & Solar array, thermal management, launch vehicle, telemetry & Sun-Earth \Ltwo{} \\
     \bottomrule
@@ -112,17 +112,17 @@ CDIM is optimized to search for the first cosmic sources of dust and evidence of
 % Recall requirements such as FoV, spectral resolution. Technical requirement of temperature.
 Preliminary explorations indicate that a $1.3$--$1.5$\si{\meter} aperture off-axis primary mirror cooled to \SI{45}{\kelvin} is required to meet CDIM's spectro-imaging  requirements~\cite{cooray2016cdim2page}.
 The primary mirror is notionally assumed to be constructed from light-weighted Corning (ultra-low expansion) silica-titania glass with a honeycomb core and a gold-deposition surface coating.
-Initial calculations estimate the primary mirror's mass to be in the neighborhood of \SI{200}{\kilo\gram}.
+For this type of mirror, the estimated mass is in the neighborhood of \SI{200}{\kilo\gram}.
 
 % \subsection{Detectors}
 % \label{subSec:detector}
 \red{HgCdTe-on-silicon} infrared detectors meet CDIM design goals of operating at cryogenic temperatures, low in cost, and, of course, sensitive in near-IR.\@
 Several different off-the-shelf CMOS detectors satisfy CDIM's spatial resolution, wavelength range, and sensitivity requirements.
-These detectors range in TRL, but all are sufficiently developed to be considered for the 2020 Decadal and will be demonstrated on missions such as NEOCam, SPHEREx, and JWST\@. \red{Citation needed.}
+These detectors range in technology-readiness-level (TRL), but all are sufficiently developed to be considered for the 2020 Decadal and will be demonstrated on missions such as NEOCam, SPHEREx, and JWST\@. \red{Citation needed.}
 
 Teledyne H2RG-18 HyViSI detectors offer a $2048\times2048$ pixel array format at a pixel pitch of \SI{18}{\micro\meter}~\cite{teledyneH2RG}.
 CDIM will utilize 36 detectors in a close-packed, $6\times6$ mosaic focal plane assembly (FPA).
-Each detector nominally dissipates less than \SI{4}{\milli\watt}, for a total power dissipation of less than \SI{150}{\milli\watt} for the full array.
+Each detector \red{nominally} dissipates less than \SI{4}{\milli\watt}, for a total power dissipation of less than \SI{150}{\milli\watt} for the full array.
 
 Linear-variable filters (LVFs) will be placed just above the detectors to provide spectral dispersion for spectrometry.
 LVFs are simple, space-qualified solutions to permit spectral data cubes between $0.75$--$7.5$\si{\micro\meter} that are commercially available and significantly lower in cost than more complex systems. \red{Citation needed.}
@@ -131,14 +131,14 @@ CDIM optics, instruments, and focal plane will be housed in a light-tight box \r
 \red{The light-tight box is constructed of gold-plated aluminum.}
 The optical telescope assembly (OTA) as a whole is estimated to have a \red{mass of $x$ \si{\kilo\gram}}.
 
-\section{Thermal Regulation}
+\section{Thermal Design}
 \label{sec:thermal}
 % General approach to cooling with passive and active. Explain tradeoffs between passive and active.
 CDIM will employ both passive and active thermal regulation systems.
 By using passive radiators in tandem with an active cryocooler, the static OTA heat load can be dissipated by the lightweight radiator and a smaller cryocooler may be used to only cool the detector array rather than the whole OTA mass plus FPA.\@
-A hybrid passive-active cryocooling scheme divides the heat dissipation loads among passive and active heat sources.
+\red{A hybrid passive-active cryocooling scheme divides the heat dissipation loads among passive and active heat sources.
 Solar radiation warms the spacecraft on orbit and is a passive, constant heat source.
-The FPA dissipates heat during operation, so it is considered an active heat source.
+The FPA dissipates heat during operation, so it is considered an active heat source.}
 Passive cooling is used to cool the OTA and FPA from solar radiation, while active cooling regulates heat dissipated by active detectors.
 
 The OTA is cooled to \SI{45}{\kelvin} to reduce background photon load in the near-IR.\@
@@ -148,7 +148,7 @@ Like Planck, the active coolers are also pre-cooled to less than \SI{50}{\kelvin
 In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point \Ltwo, a \red{$x$-stage} V-groove radiator with an \red{area of $x$ \si{\meter\squared}} is required.
 \red{Since CDIM may be at various angles of incidence to solar radiation as it surveys the sky, the V-groove radiator fins will extend outward, more like SPHEREx than Planck}.
 
-The CDIM detector array is actively cooled to \SI{35}{\kelvin} to reduce thermal noise.
+CDIM's thermal requirement to have the detector array actively cooled to \SI{35}{\kelvin} in order to reduce thermal noise can be met by a commercially available mechanical cryocooler.
 Stirling-cycle mechanical refrigerators are low-vibration, high-reliability, and lightweight active cryocooling systems that have significant heritage in space applications.
 One candidate system is Raytheon's PSC 1-stage Stirling cryocooler, capable of cooling a \SI{1.2}{\watt} parasitic heat load to \SI{35}{\kelvin}.
 This cryocooler is \SI{18.6}{\kilo\gram} and requires \SI{88}{\watt} of input power~\cite{tchandbook2003}.
@@ -180,7 +180,7 @@ Star trackers identify constellations in their field of view to determine the sp
 
 % Briefly explain inertial and propulsive attitude control and the limitations of each.
 In a heliocentric orbit, the primary disturbance to the spacecraft's heading is solar radiation pressure (SRP).
-At \Ltwo, solar radiation pressure presents itself as a constant torque on the spacecraft on the order of $10^{-5}$\si{\newton\meter}.
+\red{At \Ltwo, solar radiation pressure presents itself as a constant torque on the spacecraft on the order of $10^{-5}$\si{\newton\meter}.}
 
 Cold-gas or hydrazine thrusters will be used for orbit station-keeping as well as momentum management.
 A desired heading is maintained by the spacecraft using a 3-axis zero-momentum inertial system, whereby the error in heading due to SRP is cancelled out by spinning up or slowing down reaction wheels.
@@ -195,7 +195,7 @@ Additionally, these thrusters will be used to maintain an orbit at \Ltwo{} as it
 \red{
   CDIM is capable of autonomous operation and system diagnostics.
   Nominal operation includes maintaining an attitude during imaging, capturing images, and downlinking data to Earth.
-  Images will be processed on-board CDIM using an algorithm demonstrated by the Spectro Photometer for the History of the Universe, Epoch of Reionization, and Ices Explorer (SPHEREx).
+  Images will be processed on-board CDIM using an algorithm demonstrated by SPHEREx.
 }
 
 \section{Telemetry}
@@ -203,7 +203,7 @@ Additionally, these thrusters will be used to maintain an orbit at \Ltwo{} as it
 Typically for high-Earth and deep-space missions, the X-Band Space Science frequency band is used for uplink and downlink between the spacecraft and Ground Stations.
 Thus, high-gain antennas are best suited for both links~\cite{smad2015}.
 
-A survey conducted by CDIM will generate \SI{168.39}{Gb} of data per day employing on-board data processing akin to SPHEREx~\cite{spherexTelemetry2016}.
+A survey conducted by CDIM will generate \red{\SI{168.39}{Gb}} of data per day employing on-board data processing akin to SPHEREx~\cite{spherexTelemetry2016}.
 With a compression ratio of $2.5$:$1$, CDIM will downlink a total of \SI{63.7}{Gb/day} during a survey.
 Transmission rates are dependent on the total time available for CDIM to send data to a ground station.
 For example, the spacecraft could transmit continuously at a very low transfer rate, or send larger volumes of data once per day over 1 hour at the expense of a higher transfer rate.
@@ -229,7 +229,7 @@ The CDIM telemetry system, including antenna and power converter, are roughly \S
 \label{sec:power}
 Since CDIM will be located at \Ltwo, it is exposed to constant and significant solar flux.
 All power generation will come from an array of photovoltaic cells facing the sun.
-In order to survey the entire sky, the cells must be able to adjust to account for different incident angles to the sun.
+\red{In order to survey the entire sky, the cells must be able to adjust to account for different incident angles to the sun.}
 The array will deploy after the launch and orbital insertion phases of the mission.
 
 Based on a rough power budget and the spacecraft's position at \Ltwo, \red{the array must be $x$\si{\meter\squared}} in area to sustain operation.
@@ -241,23 +241,24 @@ The dark side of the array acts as a radiator to contribute to the thermal regul
 \label{sec:structure}
 The spacecraft bus houses all non-instrumentation systems including the cryocooler, ADCS, telemetry, processing, and power modules.
 The bus will also include hard points for integration with the launch vehicle.
-The CDIM spacecraft bus will not feature novel technology. Rather it will leverage high technology-readiness-level (TRL) or off-the-shelf components.
+\red{The CDIM spacecraft bus will not feature novel technology.} Rather it will leverage high TRL or off-the-shelf components.
 
 % \section{Mission Profile}
 % \label{sec:mission-profile}
 \section{Launch Vehicle}
 \label{subsec:launch}
 CDIM will be comfortably within the mass and spatial limits of both currently available and development launch vehicles capable of delivering payloads to Sun-Earth Lagrange Point \Ltwo.
-\red{Launch vehicles currently in development are more than capable of delivering CDIM to \Ltwo, and industry trends indicate that heavy and super-heavy vehicles will continue to come online by the time CDIM launches.}
-Due to the rigorous launch environment, CDIM solar panels and passive radiators will not be deployed until CDIM is delivered to orbit by its launch vehicle.
+Future launch vehicles will be more than capable of delivering CDIM to \Ltwo, and industry trends indicate that heavy and super-heavy vehicles will continue to come online by the time CDIM launches.
+
+Due to the rigorous launch environment, CDIM solar panels and passive radiators will not be deployed until CDIM is delivered to a transfer orbit en route to \Ltwo.
 
 \begin{wstable}
   \caption{Available launch vehicle configurations and their capabilities to send payloads to  \Ltwo~\cite{rioux2016,spacelaunchreport}.
 \label{tab:launch-vehicles}}
   \begin{tabular}{@{}lclr@{}} \toprule
     Vehicle & Payload to \Ltwo{} & Fairing size & Cost \\ \midrule
-    Falcon 9 v1.1 & \SI{2900}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \$$62$\si{M}\\ \midrule
-    Falcon Heavy\tnote{*} & \SI{14000}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \$$90$\si{M}\\ \midrule
+    Falcon 9 v1.1 & \SI{2900}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \red{\$$62$\si{M}}\\ \midrule
+    Falcon Heavy\tnote{*} & \SI{14000}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \red{\$$90$\si{M}}\\ \midrule
     Atlas V 551 & \SI{6100}{\kilo\gram} & $4.2\times10.0$ \si{\meter} & \$$153$\si{M}\\
     & & $5.1\times11.0$ \si{\meter} & \\ \midrule
     Ariane V & \SI{6600}{\kilo\gram} & $5.4\times12.7$ \si{\meter} & \$$165$\si{M}\\
