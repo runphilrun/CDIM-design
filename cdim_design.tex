@@ -87,9 +87,9 @@ CDIM has a \SI{10}{\deg\squared} instantaneous field of view (FoV) atop a focal 
 The survey strategy using spacecraft operations following a shift and stare mode will result in 1360 independent narrow-band spectral images of the sky on a given location.
 Surveys are planned to span from \SI{25}{\deg\squared} up to \SI{1000}{\deg\squared} over a five year lifetime in an orbit about Sun-Earth Lagrange point L$_{2}$\@.
 
-CDIM is optimized to search for the first cosmic sources of dust and evidence of the very earliest stellar populations, bridging the gaps in the JWST and WFIRST cosmic dawn surveys and exceeding them in capability.
+CDIM is optimized to search for the first cosmic sources of dust and evidence of the very earliest stellar populations, bridging the gaps in the JWST and WFIRST cosmic dawn surveys and exceeding them in capability. Critical design requirements are summarized in~\autoref{tab:critical-params}.
 
-\begin{table*}
+\begin{table*}[h]
   \caption{Critical design requirements for the CDIM spacecraft following the format suggested by~\citeauthor{smad2015}}
   \small\centering
   \begin{tabular}{@{}llll@{}} \toprule
@@ -122,7 +122,7 @@ These detectors range in technology-readiness-level (TRL), but all are sufficien
 
 Teledyne H2RG-18 HyViSI detectors offer a $2048\times2048$ pixel array format at a pixel pitch of \SI{18}{\micro\meter}~\cite{teledyneH2RG}.
 CDIM will utilize 36 detectors in a close-packed, $6\times6$ mosaic focal plane assembly (FPA).
-Each detector \red{nominally} dissipates less than \SI{4}{\milli\watt}, for a total power dissipation of less than \SI{150}{\milli\watt} for the full array.
+In the expected normal operating mode, each detector dissipates less than \SI{4}{\milli\watt}, for a total power dissipation of less than \SI{150}{\milli\watt} for the full array.
 
 Linear-variable filters (LVFs) will be placed just above the detectors to provide spectral dispersion for spectrometry.
 LVFs are simple, space-qualified solutions to permit spectral data cubes between $0.75$--$7.5$\si{\micro\meter} that are commercially available and significantly lower in cost than more complex systems. \red{Citation needed.}
@@ -136,9 +136,6 @@ The optical telescope assembly (OTA) as a whole is estimated to have a \red{mass
 % General approach to cooling with passive and active. Explain tradeoffs between passive and active.
 CDIM will employ both passive and active thermal regulation systems.
 By using passive radiators in tandem with an active cryocooler, the static OTA heat load can be dissipated by the lightweight radiator and a smaller cryocooler may be used to only cool the detector array rather than the whole OTA mass plus FPA.\@
-\red{A hybrid passive-active cryocooling scheme divides the heat dissipation loads among passive and active heat sources.
-Solar radiation warms the spacecraft on orbit and is a passive, constant heat source.
-The FPA dissipates heat during operation, so it is considered an active heat source.}
 Passive cooling is used to cool the OTA and FPA from solar radiation, while active cooling regulates heat dissipated by active detectors.
 
 The OTA is cooled to \SI{45}{\kelvin} to reduce background photon load in the near-IR.\@
@@ -180,13 +177,13 @@ Star trackers identify constellations in their field of view to determine the sp
 
 % Briefly explain inertial and propulsive attitude control and the limitations of each.
 In a heliocentric orbit, the primary disturbance to the spacecraft's heading is solar radiation pressure (SRP).
-\red{At \Ltwo, solar radiation pressure presents itself as a constant torque on the spacecraft on the order of $10^{-5}$\si{\newton\meter}.}
+At \Ltwo, solar radiation pressure presents itself as torque on the spacecraft with a maximum on the order of $10^{-5}$\si{\newton\meter}.
 
 Cold-gas or hydrazine thrusters will be used for orbit station-keeping as well as momentum management.
 A desired heading is maintained by the spacecraft using a 3-axis zero-momentum inertial system, whereby the error in heading due to SRP is cancelled out by spinning up or slowing down reaction wheels.
 Reaction wheel systems are capable of torques ranging from $.01$ to $1$\si{\newton\meter} and store $0.4$ to $3000$\si{\newton\meter\second} of practical momentum~\cite{smad2015}.
 Power consumption varies with reaction wheel speed, with a maximum estimate of roughly \SI{100}{\watt}.
-Since SRP is constant, after some time the inertial attitude control will become saturated.
+After some time the inertial attitude control may become saturated.
 Desaturation is managed by engaging station-keeping thrusters for short periods of time.
 Additionally, these thrusters will be used to maintain an orbit at \Ltwo{} as it is an inherently unstable orbit.
 
@@ -229,10 +226,10 @@ The CDIM telemetry system, including antenna and power converter, are roughly \S
 \label{sec:power}
 Since CDIM will be located at \Ltwo, it is exposed to constant and significant solar flux.
 All power generation will come from an array of photovoltaic cells facing the sun.
-\red{In order to survey the entire sky, the cells must be able to adjust to account for different incident angles to the sun.}
+While the array may be fixed, the required area of the array is minimized if the cells are able to adjust to account for different incident angles to the sun.
 The array will deploy after the launch and orbital insertion phases of the mission.
 
-Based on a rough power budget and the spacecraft's position at \Ltwo, \red{the array must be $x$\si{\meter\squared}} in area to sustain operation.
+Based on a rough power budget and the spacecraft's position at \Ltwo, \red{the array must be min $x$--max $x$\si{\meter\squared}} in area to sustain operation.
 The dark side of the array acts as a radiator to contribute to the thermal regulation of the spacecraft bus.
 
 \red{Identify candidate systems.}
@@ -253,12 +250,12 @@ Future launch vehicles will be more than capable of delivering CDIM to \Ltwo, an
 Due to the rigorous launch environment, CDIM solar panels and passive radiators will not be deployed until CDIM is delivered to a transfer orbit en route to \Ltwo.
 
 \begin{wstable}
-  \caption{Available launch vehicle configurations and their capabilities to send payloads to  \Ltwo~\cite{rioux2016,spacelaunchreport}.
+  \caption{Available launch vehicle configurations and their capabilities to send NASA payloads to \Ltwo~\cite{rioux2016,spacelaunchreport}.
 \label{tab:launch-vehicles}}
   \begin{tabular}{@{}lclr@{}} \toprule
-    Vehicle & Payload to \Ltwo{} & Fairing size & Cost \\ \midrule
-    Falcon 9 v1.1 & \SI{2900}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \red{\$$62$\si{M}}\\ \midrule
-    Falcon Heavy\tnote{*} & \SI{14000}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \red{\$$90$\si{M}}\\ \midrule
+    Vehicle & Payload to \Ltwo{} & Fairing size & Cost\tnote{$\dagger$} \\ \midrule
+    Falcon 9 v1.1 & \SI{2900}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \red{\$$97$\si{M}}\\ \midrule
+    Falcon Heavy\tnote{*} & \SI{14000}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \red{\$$120$\si{M}}\\ \midrule
     Atlas V 551 & \SI{6100}{\kilo\gram} & $4.2\times10.0$ \si{\meter} & \$$153$\si{M}\\
     & & $5.1\times11.0$ \si{\meter} & \\ \midrule
     Ariane V & \SI{6600}{\kilo\gram} & $5.4\times12.7$ \si{\meter} & \$$165$\si{M}\\
@@ -268,7 +265,8 @@ Due to the rigorous launch environment, CDIM solar panels and passive radiators 
     & & $5.0\times19.1$ \si{\meter} & \\ \bottomrule
   \end{tabular}
   \begin{tablenotes}
-  \item[*] Costs and capacities are representative of design specifications for launch vehicles that are currently in development.
+    \item{$\dagger$} Launch costs may be higher due to NASA mandated oversight and testing.
+    \item[*] Costs and capacities are representative of design specifications for launch vehicles that are currently in development.
   \end{tablenotes}
 \end{wstable}
 %
@@ -277,7 +275,7 @@ Due to the rigorous launch environment, CDIM solar panels and passive radiators 
 
 \section{Cost Estimation}
 \label{sec:cost}
-The overall cost of a space telescope may be broken down into a set of drivers whose influence is correlated with historical data.
+The overall cost of a space telescope may be broken down on the subsystem level.
 All conclusions based on statistical analysis are only as good as their databases.
 Fiscal data, such as what is required for proper analysis, is scarce.
 Estimations are made with engineering judgement based on available data.
@@ -291,28 +289,11 @@ Overhead and labor costs are included in a more robust model for \emph{total cos
 \label{eq:total-cost}
 \end{equation}
 
-\citeauthor{stahl2013} present a statistical approach to estimating OTA cost based on correlations with data on flown space telescope missions.
+\citeauthor{stahl2013} present an approach to estimating OTA cost based on correlations with data on flown space telescope missions.
 CDIM's projected costs may be obtained from these findings with engineering judgement, knowing that the data is drawn from a relatively small sample set.
 Thus, an OTA aperture diameter of \SI{1.5}{\meter} yields a median OTA cost of \$58.2M.
 Since OTA cost is found, estimates for other cost drivers may be obtained from relative cost values.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=.6\linewidth]{figs/ota_cost-diameter_stahl2010.png}
-    \caption{Optical Telescope Assembly vs.\ cost correlation~\cite{stahl2013}. Given a target OTA aperture diameter of \SI{1.5}{\meter} for CDIM, a reasonable estimate of OTA cost is obtained from the median cost trendline.
-\label{fig:cost-stahl-ota-cost-vs-diameter}
-}
-\end{figure}
-
-\begin{figure}
-  \centering
-    \centering
-    \includegraphics[width=.6\linewidth]{figs/cost-breakdown-pie.png}
-    \caption{CDIM estimated cost breakdown in percent of mission cost.
-\label{fig:cost-breakdown}
-}
-\end{figure}
-\begin{wstable}
+\begin{wstable}[htp]
   \centering
   \begin{tabular}{@{}lrrr@{}}\toprule
                           &                   & \multicolumn{2}{c}{Est. Cost} \\
@@ -335,7 +316,24 @@ Since OTA cost is found, estimates for other cost drivers may be obtained from r
 }
 \end{wstable}
 
-\begin{figure}
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=.6\linewidth]{figs/ota_cost-diameter_stahl2010.png}
+    \caption{Optical Telescope Assembly vs.\ cost correlation~\cite{stahl2013}. Given a target OTA aperture diameter of \SI{1.5}{\meter} for CDIM, a reasonable estimate of OTA cost is obtained from the median cost trendline.
+\label{fig:cost-stahl-ota-cost-vs-diameter}
+}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+    \centering
+    \includegraphics[width=.6\linewidth]{figs/cost-breakdown-pie.png}
+    \caption{CDIM estimated cost breakdown in percent of mission cost.
+\label{fig:cost-breakdown}
+}
+\end{figure}
+
+\begin{figure}[htp]
   \centering
   \includegraphics[width=.6\linewidth]{figs/total-cost-vs-diameter.png}
   \caption{CDIM total cost relation to OTA aperture diameter under various cost models. The model described here is robust and presents a conservative estimate compared to similar models by \citeauthor{bely2011} and \citeauthor{stahl2013}, after a total cost approximation is applied following \autoref{eq:total-cost}.
@@ -346,13 +344,14 @@ Since OTA cost is found, estimates for other cost drivers may be obtained from r
 The most robust model for the CDIM mission predicts its total cost to be \$684.7M, and even the more conservative model predicts CDIM costing to fall under \$800M.
 The CDIM mission has significant margin under the \$1B cap for Probe-class missions.
 
+\clearpage
 
 \section{Conclusion}
 \label{sec:conclusion}
 % Summarize points made above. Notable points include mirror diameter, detector, power budget, mass budget, total cost, and the fact that technologies are already significantly developed.
-\begin{figure}
+\begin{figure}[htp]
   \includegraphics[width=\linewidth]{figs/cdim_annotated-cartoon}
-  \caption{CDIM consists of a passively cooled \SI{1.5}{\meter} aperture OTA, actively cooled focal plane, and off-the-shelf spacecraft components where applicable.}
+  \caption{CDIM consists of a passively cooled \SI{1.5}{\meter} aperture OTA, actively cooled focal plane, and off-the-shelf spacecraft components where applicable. \red{Add cutaway view.}}
 \label{fig:cdim-annotated}
 \end{figure}
 \section*{Acknowledgments}
