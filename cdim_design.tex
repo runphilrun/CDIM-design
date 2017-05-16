@@ -56,31 +56,31 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu
 
 \keywords{spacecraft, telescope, system, cryogenic, infrared, design.}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=.8\linewidth]{figs/cdim_cover-render.jpg}
-  \caption{An artistic rendition of the Cosmic Dawn Intensity Mapper stationed at Sun-Earth \Ltwo.}
-\label{fig:cover}
-\end{figure}
 % \twocolumn
 
 \section{Introduction}
 \label{sec:introduction}
 % Discuss the relevance to NASA, including the science objectives of the mission and how the mission satisfies a Probe-class mission.
 % http://sites.nationalacademies.org/cs/groups/bpasite/documents/webpage/bpa_064932.pdf
-Observing the behavior and characteristics of the earliest stars and galaxies is fundamental to understanding the physics that led to their formation and evolution.
-Breakthrough discoveries in understanding the physics of the epoch of reionization are anticipated in the 2020--2030 decade thanks to the Wide Field Infrared Survey Telescope (WFIRST)~\cite{wfirstFinal2012} and James Webb Space Telescope (JWST)~\cite{Gardner2006}.
-However, JWST's capability will be limited to several cosmological deep fields, \red{resulting in relatively large cosmic variance}.
-Although WFIRST will be capable of wide area surveys, its spectroscopy is limited to \SI{2}{\micro\meter}, limiting the selection of galaxies it is able to observe.
-Neither JWST nor WFIRST provide a complete understanding of the epoch of reionization, specifically in terms of answering the questions of when and how the universe came to be.
-This area of research is a prime candidate for a Probe-class mission optimized to study reionization.
+\red{Derive context for the case for CDIM from CDIM 2 page~\cite{cooray2016cdim2page}.}
+% Observing the behavior and characteristics of the earliest stars and galaxies is fundamental to understanding the physics that led to their formation and evolution.
+% Breakthrough discoveries in understanding the physics of the epoch of reionization are anticipated in the 2020--2030 decade thanks to the Wide Field Infrared Survey Telescope (WFIRST)~\cite{wfirstFinal2012} and James Webb Space Telescope (JWST)~\cite{Gardner2006}.
+% However, JWST's capability will be limited to several \SI{10}{arcmin\squared} cosmological deep fields, and although WFIRST will be capable of \SI{3400}{deg\squared} wide area surveys, its spectroscopy is limited to \SI{2}{\micro\meter}, limiting the selection of galaxies it is able to observe.
+% Neither JWST nor WFIRST provide a complete understanding of the epoch of reionization, specifically in terms of answering the questions of when and how the universe came to be.
+% This area of research is a prime candidate for a Probe-class mission optimized to study reionization.
 
 % CDIM fills a gap in the 2020 Decadal between two other not so famous telescopes in the 2030 range after JWST and WFIRST and Hubble
 
 % What is a "Probe-class" mission?
-Probe-class missions occupy a role on a larger scale than Discovery missions, such as Kepler and Dawn, but not as large as Flagship missions such as JWST~\cite{probeclasswp}.
-Such missions are intended to be PI-led scientific investigations rather than general observatories, and have a firm \$1B cap \red{[REF]}.
+Probe-class missions occupy a role on a larger scale than Discovery missions, such as Kepler and Dawn, but not as large as Flagship missions such as JWST.\@
+Such missions are intended to be PI-led scientific investigations rather than general observatories, and have a firm \$1B cap~\cite{probeclasswp}.
 
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.8\linewidth]{figs/cdim_cover-render.jpg}
+  \caption{An artistic rendition of the Cosmic Dawn Intensity Mapper stationed at Sun-Earth \Ltwo.}
+\label{fig:cover}
+\end{figure}
 % % How is the design of the spacecraft is driven by the science objectives?
 The Cosmic Dawn Intensity Mapper (CDIM) is a concept for a Probe-class \SI{1.5}{\meter} aperture telescope, passively cooled to \SI{45}{\kelvin}, with an actively cooled $6\times6$ detector array that utilizes linear variable filters (LVFs)~\cite{cooray2016cdim2page} capable of three-dimensional spectro-imaging observations over the wavelength range of 0.75 to \SI{7.5}{\micro\meter} at a spectral resolving power R$=500$.
 CDIM has a \SI{10}{\deg\squared} instantaneous field of view (FoV) atop a focal plane of thirty-six $2048\times2048$ detectors.
@@ -89,8 +89,8 @@ Surveys are planned to span from \SI{25}{\deg\squared} up to \SI{1000}{\deg\squa
 
 CDIM is optimized to search for the first cosmic sources of dust and evidence of the very earliest stellar populations, bridging the gaps in the JWST and WFIRST cosmic dawn surveys and exceeding them in capability. Critical design requirements are summarized in~\autoref{tab:critical-params}.
 
-\begin{table*}[h]
-  \caption{Critical design requirements for the CDIM spacecraft following the format suggested by~\citeauthor{smad2015}}
+\begin{table*}[!h]
+  \caption{Critical design requirements for the CDIM spacecraft.}
   \small\centering
   \begin{tabular}{@{}llll@{}} \toprule
     Spacecraft Design Driver & Impact & Target \\ \midrule
