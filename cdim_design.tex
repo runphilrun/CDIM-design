@@ -62,7 +62,7 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu
 \label{sec:introduction}
 % Discuss the relevance to NASA, including the science objectives of the mission and how the mission satisfies a Probe-class mission.
 % http://sites.nationalacademies.org/cs/groups/bpasite/documents/webpage/bpa_064932.pdf
-\red{Derive context for the case for CDIM from CDIM 2 page~\cite{cooray2016cdim2page}.}
+
 % Observing the behavior and characteristics of the earliest stars and galaxies is fundamental to understanding the physics that led to their formation and evolution.
 % Breakthrough discoveries in understanding the physics of the epoch of reionization are anticipated in the 2020--2030 decade thanks to the Wide Field Infrared Survey Telescope (WFIRST)~\cite{wfirstFinal2012} and James Webb Space Telescope (JWST)~\cite{Gardner2006}.
 % However, JWST's capability will be limited to several \SI{10}{arcmin\squared} cosmological deep fields, and although WFIRST will be capable of \SI{3400}{deg\squared} wide area surveys, its spectroscopy is limited to \SI{2}{\micro\meter}, limiting the selection of galaxies it is able to observe.
@@ -70,26 +70,31 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu
 % This area of research is a prime candidate for a Probe-class mission optimized to study reionization.
 
 % CDIM fills a gap in the 2020 Decadal between two other not so famous telescopes in the 2030 range after JWST and WFIRST and Hubble
-
-% What is a "Probe-class" mission?
-Probe-class missions occupy a role on a larger scale than Discovery missions, such as Kepler and Dawn, but not as large as Flagship missions such as JWST.\@
-Such missions are intended to be PI-led scientific investigations rather than general observatories, and have a firm \$1B cap~\cite{probeclasswp}.
-
-\begin{figure}[!h]
+\begin{figure}[!hb]
   \centering
-  \includegraphics[width=.8\linewidth]{figs/cdim_cover-render.jpg}
+  \includegraphics[width=.7\linewidth]{figs/cdim_cover-render.jpg}
   \caption{An artistic rendition of the Cosmic Dawn Intensity Mapper stationed at Sun-Earth \Ltwo.}
 \label{fig:cover}
 \end{figure}
-% % How is the design of the spacecraft is driven by the science objectives?
+
 The Cosmic Dawn Intensity Mapper (CDIM) is a concept for a Probe-class \SI{1.5}{\meter} aperture telescope, passively cooled to \SI{45}{\kelvin}, with an actively cooled $6\times6$ detector array that utilizes linear variable filters (LVFs)~\cite{cooray2016cdim2page} capable of three-dimensional spectro-imaging observations over the wavelength range of 0.75 to \SI{7.5}{\micro\meter} at a spectral resolving power R$=500$.
 CDIM has a \SI{10}{\deg\squared} instantaneous field of view (FoV) atop a focal plane of thirty-six $2048\times2048$ detectors.
 The survey strategy using spacecraft operations following a shift and stare mode will result in 1360 independent narrow-band spectral images of the sky on a given location.
 Surveys are planned to span from \SI{25}{\deg\squared} up to \SI{1000}{\deg\squared} over a five year lifetime in an orbit about Sun-Earth Lagrange point L$_{2}$\@.
 
-CDIM is optimized to search for the first cosmic sources of dust and evidence of the very earliest stellar populations, bridging the gaps in the JWST and WFIRST cosmic dawn surveys and exceeding them in capability. Critical design requirements are summarized in~\autoref{tab:critical-params}.
+Although Wide Field Infrared Survey Telescope (WFIRST) will be capable of \SI{3400}{deg\squared} wide area surveys, its spectroscopy is limited to \SI{2}{\micro\meter}, limiting the selection of galaxies it is able to observe~\cite{wfirstFinal2012}.
+While James Webb Space Telescope (JWST) is capable of targeted spectroscopy studies of galaxies present in reionization and surveys \SI{10}{armin\squared} for reionization galaxies~\cite{Gardner2006}, CDIM will make use of tomographic intensity mapping of spectral emission lines to study the aggregate statistical properties of the sources and their spatial distribution.
+The intensity of the Ly$\alpha$ and H$\alpha$ lines, combined with others, will also provide critical clues to the formation of metals in the universe~\cite{cooray2016cdim2page}.
 
-\begin{table*}[!h]
+% What is a "Probe-class" mission?
+Probe-class missions occupy a role on a larger scale than Discovery missions, such as Kepler and Dawn, but not as large as Flagship missions such as JWST.\@
+Such missions are intended to be PI-led scientific investigations rather than general observatories, and have a firm \$1B cap~\cite{probeclasswp}.
+Critical design requirements to achieve CDIM's science goals as a Probe-class mission are summarized in~\autoref{tab:critical-params}.
+% CDIM is optimized to search for the first cosmic sources of dust and evidence of the very earliest stellar populations, bridging the gaps in the JWST and WFIRST cosmic dawn surveys and exceeding them in capability.
+
+
+
+\begin{table*}
   \caption{Critical design requirements for the CDIM spacecraft.}
   \small\centering
   \begin{tabular}{@{}llll@{}} \toprule
@@ -140,6 +145,14 @@ Passive cooling is used to cool the OTA and FPA from solar radiation, while acti
 
 The OTA is cooled to \SI{45}{\kelvin} to reduce background photon load in the near-IR.\@
 Passive thermal regulation is maintained using a multi-stage V-groove radiator, which bounces radiative heat into the \SI{3}{\kelvin} background of space~\cite{bard_1987}.
+
+\begin{figure}[!hb]
+  \centering
+  \includegraphics[width=.5\linewidth]{figs/vgroove-concept.png}
+  \caption{Low emmissivity, high specular surface vanes arenested at a slight angle to reflect thermal radiation into space~\cite{rasbach1988}. \red{Replace this figure with a powerpoint graphic.}}
+\label{fig:v-groove}
+\end{figure}
+
 V-groove radiators have been demonstrated in passive cryogenic radiators up to \SI{4}{\kelvin} with Planck, SPIRIT, and Spitzer (warm mission).\@
 Like Planck, the active coolers are also pre-cooled to less than \SI{50}{\kelvin} this way. \red{Citation needed: Planck CalTech Paper.}
 In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point \Ltwo, a \red{$x$-stage} V-groove radiator with an \red{area of $x$ \si{\meter\squared}} is required.
@@ -318,7 +331,7 @@ Since OTA cost is found, estimates for other cost drivers may be obtained from r
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=.6\linewidth]{figs/ota_cost-diameter_stahl2010.png}
+    \includegraphics[width=.8\linewidth]{figs/ota_cost-diameter_stahl2010.png}
     \caption{Optical Telescope Assembly vs.\ cost correlation~\cite{stahl2013}. Given a target OTA aperture diameter of \SI{1.5}{\meter} for CDIM, a reasonable estimate of OTA cost is obtained from the median cost trendline.
 \label{fig:cost-stahl-ota-cost-vs-diameter}
 }
