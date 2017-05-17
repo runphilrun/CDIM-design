@@ -123,7 +123,14 @@ HgCdTe infrared detectors meet CDIM design goals of operating at cryogenic tempe
 Several different off-the-shelf CMOS detectors satisfy CDIM's spatial resolution, wavelength range, and sensitivity requirements.
 These detectors range in technology-readiness-level (TRL), but all are sufficiently developed to be considered for the 2020 Decadal and will be demonstrated on missions such as NEOCam, SPHEREx, and JWST~\cite{dore4872spherex,Gardner2006}.
 
-\red{Insert table of detectors}.
+\begin{table}[!hb]
+  \caption{\red{Insert table of detectors}.
+\label{tab:detectors}}
+  \begin{tabular}[lrr]
+
+  \end{tabular}
+\end{table}
+
 Teledyne H2RG-18 HyViSI detectors offer a $2048\times2048$ pixel array format at a pixel pitch of \SI{18}{\micro\meter}~\cite{teledyneH2RG}.
 CDIM will utilize 36 detectors in a close-packed, $6\times6$ mosaic focal plane assembly (FPA).
 In the expected normal operating mode, each detector dissipates less than \SI{4}{\milli\watt}, for a total power dissipation of less than \SI{150}{\milli\watt} for the full array.
@@ -153,7 +160,7 @@ Passive thermal regulation is maintained using a multi-stage V-groove radiator, 
 \end{figure}
 
 V-groove radiators have been demonstrated in passive cryogenic radiators up to \SI{4}{\kelvin} with Planck, SPIRIT, and Spitzer (warm mission).\@
-Like Planck, the active coolers are also pre-cooled to less than \SI{50}{\kelvin} this way. \red{Citation needed: Planck CalTech Paper.}
+Like Planck, the active coolers are also pre-cooled to less than \SI{50}{\kelvin} this way~\cite{doyle2009herschel}.
 In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point \Ltwo, a \red{$x$-stage} V-groove radiator with an \red{area of $x$ \si{\meter\squared}} is required.
 \red{Since CDIM may be at various angles of incidence to solar radiation as it surveys the sky, the V-groove radiator fins will extend outward, more like SPHEREx than Planck}.
 
@@ -250,7 +257,7 @@ The dark side of the array acts as a radiator to contribute to the thermal regul
 \label{sec:structure}
 The spacecraft bus houses all non-instrumentation systems including the cryocooler, ADCS, telemetry, processing, and power modules.
 The bus will also include hard points for integration with the launch vehicle.
-\red{The CDIM spacecraft bus will not feature novel technology.} Rather it will leverage high TRL or off-the-shelf components.
+CDIM will leverage high TRL or off-the-shelf components to reduce development costs.
 
 % \section{Mission Profile}
 % \label{sec:mission-profile}
