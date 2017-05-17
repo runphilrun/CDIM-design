@@ -119,15 +119,25 @@ For this type of mirror, the estimated mass is in the neighborhood of \SI{200}{\
 
 % \subsection{Detectors}
 % \label{subSec:detector}
+For near-IR observations, the primary mirror must be cooled to cryogenic temperatures.
+Rather than including a heating element and detectors that operate at warm temperatures, it is advantageous to use detectors that operate at cryogenic temperatures as well so as to minimize thermal radiation that could be detrimental to near-infrared (near-IR) observations.
+
+A $6\times6$ array of $2048\times2048$ pixel detectors is required cover a \SI{10}{deg\squared} focal plane with \SI{1}{arcsec} pixels.
 HgCdTe infrared detectors meet CDIM design goals of operating at cryogenic temperatures, low in cost, and, of course, sensitive in near-IR.\@
-Several different off-the-shelf CMOS detectors satisfy CDIM's spatial resolution, wavelength range, and sensitivity requirements.
-These detectors range in technology-readiness-level (TRL), but all are sufficiently developed to be considered for the 2020 Decadal and will be demonstrated on missions such as NEOCam, SPHEREx, and JWST~\cite{dore4872spherex,Gardner2006}.
+Several types of HgCdTe detectors satisfy CDIM's spatial resolution, wavelength range, and sensitivity requirements.
+These detectors range in technology-readiness-level (TRL), but all are sufficiently developed to be considered for the 2020~Decadal and will be demonstrated on missions such as NEOCam, SPHEREx, and JWST~\cite{dore4872spherex,Gardner2006}.
+Candidate detectors are listed in~\autoref{tab:detectors}.
 
-\begin{table}[!hb]
-  \caption{\red{Insert table of detectors}.
+\begin{table}[!h]
+  \centering
+  \caption{Candidate $2048\times2048$ pixel detectors for the CDIM FPA~\red{cite cdim proposal}.
 \label{tab:detectors}}
-  \begin{tabular}[lrr]
-
+  \begin{tabular}{@{}lccc@{}} \toprule
+            & TRL & Wavelength Range          & Heritage \\ \midrule
+    HyVisi  & 4   & 0.5--0.8\si{\micro\meter} & $1024\times1024$ (TRL 9) \\
+    H2RG-2.5& 8   & 0.9--2.5\si{\micro\meter} & $1024\times1024$ (TRL 9) \\
+    H2RG-5.0& 8   & 2.5--5.0\si{\micro\meter} & $1024\times1024$ (TRL 9) \\
+    H2RG-8.0& 4   & 5.0--10.0\si{\micro\meter} & $1024\times1024$ (TRL 6) \\ \bottomrule
   \end{tabular}
 \end{table}
 
@@ -168,6 +178,10 @@ CDIM's thermal requirement to have the detector array actively cooled to \SI{35}
 Stirling-cycle mechanical refrigerators are low-vibration, high-reliability, and lightweight active cryocooling systems that have significant heritage in space applications.
 One candidate system is Raytheon's PSC 1-stage Stirling cryocooler, capable of cooling a \SI{1.2}{\watt} parasitic heat load to \SI{35}{\kelvin}.
 This cryocooler is \SI{18.6}{\kilo\gram} and requires \SI{88}{\watt} of input power~\cite{tchandbook2003}.
+
+
+Electronics boards that control the FPA and other instrumentation are not cryocooled.
+These warm electronics housed in CDIM's spacecraft bus.
 
 % Explain generally how v-groove radiators work.
 % Used on planck and jwst.
@@ -225,10 +239,10 @@ Transmission rates are dependent on the total time available for CDIM to send da
 For example, the spacecraft could transmit continuously at a very low transfer rate, or send larger volumes of data once per day over 1 hour at the expense of a higher transfer rate.
 \red{Example calculation of data to downlink 1 day in 1 hr.}
 
-Uplinks will follow standard protocols and do not require transmitting large volumes or particularly fast transfer rates.
-
-\begin{wstable}[htp]
-  \caption{For redundancy, CDIM is outfitted with multiple communication modes. Downlink transfer rates reflect estitmates based on the target of \SI{63.7}{Gb/day}. Typical data transfer rates are outlined for uplinks~\cite{smad2015}.
+\begin{wstable}[htb]
+  \caption{For redundancy, CDIM is outfitted with multiple communication modes.
+  Downlink transfer rates reflect estitmates based on the target of \SI{63.7}{Gb/day}.
+  Typical data transfer rates are outlined for uplinks~\cite{smad2015}.
 \label{tab:telemetry}}
   \begin{tabular}{@{}lll@{}} \toprule
     Mode & Uplink & Downlink \\ \midrule
@@ -238,8 +252,9 @@ Uplinks will follow standard protocols and do not require transmitting large vol
     & & \SI{17.7}{Mbps} (1 hour per day)\\\bottomrule
   \end{tabular}
 \end{wstable}
-\red{Identify candidate telemetry systems.}
-The CDIM telemetry system, including antenna and power converter, are roughly \SI{2}{kg}.
+
+Uplinks will follow standard protocols and do not require transmitting large volumes or particularly fast transfer rates.
+The CDIM telemetry system, including antenna and power converter, are estimated to have a mass of \SI{2}{kg}.
 
 \section{Power}
 \label{sec:power}
