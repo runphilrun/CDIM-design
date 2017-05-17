@@ -92,8 +92,6 @@ Such missions are intended to be PI-led scientific investigations rather than ge
 Critical design requirements to achieve CDIM's science goals as a Probe-class mission are summarized in~\autoref{tab:critical-params}.
 % CDIM is optimized to search for the first cosmic sources of dust and evidence of the very earliest stellar populations, bridging the gaps in the JWST and WFIRST cosmic dawn surveys and exceeding them in capability.
 
-
-
 \begin{table*}
   \caption{Critical design requirements for the CDIM spacecraft.}
   \small\centering
@@ -121,7 +119,7 @@ For this type of mirror, the estimated mass is in the neighborhood of \SI{200}{\
 
 % \subsection{Detectors}
 % \label{subSec:detector}
-\red{HgCdTe-on-silicon} infrared detectors meet CDIM design goals of operating at cryogenic temperatures, low in cost, and, of course, sensitive in near-IR.\@
+HgCdTe infrared detectors meet CDIM design goals of operating at cryogenic temperatures, low in cost, and, of course, sensitive in near-IR.\@
 Several different off-the-shelf CMOS detectors satisfy CDIM's spatial resolution, wavelength range, and sensitivity requirements.
 These detectors range in technology-readiness-level (TRL), but all are sufficiently developed to be considered for the 2020 Decadal and will be demonstrated on missions such as NEOCam, SPHEREx, and JWST\@. \red{Citation needed.}
 
@@ -255,8 +253,30 @@ The bus will also include hard points for integration with the launch vehicle.
 
 % \section{Mission Profile}
 % \label{sec:mission-profile}
+\section{Orbit}
+\label{sec:orbit}
+CDIM will orbit around Sun-Earth Lagrange point \Ltwo{} since it allows the spacecraft to be oriented such that half of the celestial sphere is visible at all times, and the spacecraft may oppose the Sun, Earth, and Moon concurrently and at all times.
+This also leads to a very thermally stable environment.
+\Ltwo{} is near enough to Earth (roughly 1.5 million \si{\kilo\meter}) so that CDIM may communicate with ground stations without the Deep Space Network, and maintains near-constant communications geometry~\cite{canalias2004}.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.6\linewidth]{figs/orbits.png}
+  \caption{
+      \emph{Left:} Orthographic view of a quasi-periodic Lissajous orbit.
+      \emph{Right:} Orthographic view of a periodic halo orbit.~\cite{gordon1993orbit}
+\label{fig:orbits}
+  }
+\end{figure}
+
+Around \Ltwo, two types of orbit are considered: Lissajous and halo-type orbits.
+Lissajous orbits are quasi-periodic but may be smaller in radius than periodic halo orbits.
+Halo orbits are more costly to achieve in terms of delta-v, or energy to transfer into such trajectory.
+Station-keeping costs are not significantly different between the two orbits~\cite{gordon1993orbit}.
+As such, CDIM may enter a Lissajous orbit around \Ltwo{} similar to the orbits of JWST and Herschel missions.
+
 \section{Launch Vehicle}
-\label{subsec:launch}
+\label{sec:launch}
 CDIM will be comfortably within the mass and spatial limits of both currently available and development launch vehicles capable of delivering payloads to Sun-Earth Lagrange Point \Ltwo.
 Future launch vehicles will be more than capable of delivering CDIM to \Ltwo, and industry trends indicate that heavy and super-heavy vehicles will continue to come online by the time CDIM launches.
 
@@ -285,6 +305,8 @@ Due to the rigorous launch environment, CDIM solar panels and passive radiators 
 %
 % \subsection{Operations}
 % \subsection{End of Life}
+
+
 
 \section{Cost Estimation}
 \label{sec:cost}
