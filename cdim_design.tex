@@ -131,7 +131,7 @@ Candidate detectors are listed in~\autoref{tab:detectors}.
 
 \begin{table}[!h]
   \centering
-  \caption{Candidate $2048\times2048$ pixel detectors for the CDIM FPA~\red{cite cdim proposal}.
+  \caption{Candidate Teledyne $2048\times2048$ pixel detectors for the CDIM FPA~\red{cite cdim proposal}.
 \label{tab:detectors}}
   \begin{tabular}{@{}lccc@{}} \toprule
             & TRL & Wavelength Range          & Heritage \\ \midrule
@@ -240,11 +240,9 @@ Additionally, these thrusters will be used to maintain an orbit at \Ltwo{} as it
 
 \section{Flight Computer}
 % CDIM is capable of autonomous operation and system diagnostics.
-\red{
-  CDIM is capable of autonomous operation and system diagnostics.
-  Nominal operation includes maintaining an attitude during imaging, capturing images, and downlinking data to Earth.
-  Images will be processed on-board CDIM using an algorithm demonstrated by SPHEREx~\cite{spherexTelemetry2016}.
-}
+CDIM will be capable of autonomous operation and system diagnostics.
+Nominal operation includes maintaining a heading during imaging, slewing across the sky to conduct a survey, capturing images, and downlinking data to Earth.
+Images will be processed on-board CDIM using an algorithm demonstrated by SPHEREx~\cite{spherexTelemetry2016}.
 
 \section{Telemetry}
 \label{sec:telemetry}
@@ -386,20 +384,20 @@ Since OTA cost is found, estimates for other cost drivers may be obtained from r
 \begin{wstable}[htp]
   \centering
   \begin{tabular}{@{}lrrr@{}}\toprule
-                          &                   & \multicolumn{2}{c}{Est. Cost} \\
-    Driver                & \% Mission Cost   & \SI{1.3}{\meter} & \SI{1.5}{\meter} \\ \midrule
-    OTA                   & \SI{13}{\percent} & \$48.0M & \$58.2M \\
-    Spacecraft            & \SI{20}{\percent} & \$76.8M & \$91.3M \\
-    Instruments           & \SI{15}{\percent} & \$57.6M & \$69.8M \\
-    Ground Support        & \SI{5}{\percent}  & \$18.8M & \$22.8M \\
-    Integration \& Testing & \SI{7}{\percent} & \$25.6M & \$31.0M \\
-    Systems Engineering   & \SI{4}{\percent}  & \$16.0M & \$19.4M \\
-    Management            & \SI{4}{\percent}  & \$16.0M & \$19.4M \\
-    R\&D                  & \SI{21}{\percent} & \$80.0M & \$97.0M \\
-    Science Team          & \SI{10}{\percent} & \$37.6M & \$45.6M \\ \midrule
-    Mission Cost          &                   & \$188.2M & \$456.5M \\
-    Labor \& Overhead     &                   & \$376.5M & \$228.2M \\
-    Total Cost            &                   & \$564.7M & \$684.7M \\ \bottomrule
+                           & \multicolumn{2}{l}{\SI{1.3}{\meter}} & \multicolumn{2}{c}{\SI{1.5}{\meter}} \\
+    Driver                 & \% Mission Cost       & Est. Cost    &                       &              \\ \midrlue
+    OTA                    & \SI{13}{\percent}     & \$48.0M      & \SI{0}{\percent}      & \$58.2M      \\
+    Spacecraft             & \SI{20}{\percent}     & \$76.8M      & \SI{0}{\percent}      & \$91.3M      \\
+    Instruments            & \SI{15}{\percent}     & \$57.6M      & \SI{0}{\percent}      & \$69.8M      \\
+    Ground Support         & \SI{5}{\percent}      & \$18.8M      & \SI{0}{\percent}      & \$22.8M      \\
+    Integration \& Testing & \SI{7}{\percent}      & \$25.6M      & \SI{0}{\percent}      & \$31.0M      \\
+    Systems Engineering    & \SI{4}{\percent}      & \$16.0M      & \SI{0}{\percent}      & \$19.4M      \\
+    Management             & \SI{4}{\percent}      & \$16.0M      & \SI{0}{\percent}      & \$19.4M      \\
+    R\&D                   & \SI{21}{\percent}     & \$80.0M      & \SI{0}{\percent}      & \$97.0M      \\
+    Science Team           & \SI{10}{\percent}     & \$37.6M      & \SI{0}{\percent}      & \$45.6M      \\ \midrule
+    Mission Cost           &                       & \$188.2M     &                       & \$456.5M     \\
+    Labor \& Overhead      &                       & \$376.5M     &                       & \$228.2M     \\
+    Total Cost             &                       & \$564.7M     &                       & \$684.7M     \\ \bottomrule
   \end{tabular}
   \caption{CDIM total cost breakdown by driver. \red{Make total cost less dependent on OTA cost. Ground support and science costs shouldnt rise so much along with OTA cost. Maybe just show one diameter and hide the other graph.}
 \label{tab:total-cost}
