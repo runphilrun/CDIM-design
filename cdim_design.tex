@@ -90,6 +90,7 @@ The intensity of the Ly$\alpha$ and H$\alpha$ lines, combined with others, will 
 Probe-class missions occupy a role on a larger scale than Discovery missions, such as Kepler and Dawn, but not as large as Flagship missions such as JWST.\@
 Such missions are intended to be PI-led scientific investigations rather than general observatories, and have a firm \$1B cap~\cite{probeclasswp}.
 Critical design requirements to achieve CDIM's science goals as a Probe-class mission are summarized in~\autoref{tab:critical-params}.
+CDIM will leverage mature and flight-proven technology to reduce development costs.
 % CDIM is optimized to search for the first cosmic sources of dust and evidence of the very earliest stellar populations, bridging the gaps in the JWST and WFIRST cosmic dawn surveys and exceeding them in capability.
 
 \begin{table*}
@@ -182,7 +183,7 @@ Either type of cryocooler is suitible for CDIM, and both types have significant 
 One candidate system is Raytheon's PSC 1-stage Stirling cryocooler, capable of cooling a \SI{1.2}{\watt} parasitic heat load to \SI{35}{\kelvin}.
 This cryocooler is \SI{18.6}{\kilo\gram} and requires \SI{88}{\watt} of input power~\cite{gilmore2003spacecraft}.
 
-In this configuration, the most significant heat loads from the cooled section come from conduction through the OTA support structure.
+In this configuration, the most significant heat loads from the cooled section come from conduction through the OTA support structure, which isolates the cooled section from the warm spacecraft bus.
 Only the mirror and detectors need to be cooled to cryogenic temperatures.
 Electronics boards that control the FPA and instrumentation need not be cryocooled.
 These warm electronics are housed in CDIM's spacecraft bus with other spacecraft systems.
@@ -212,21 +213,24 @@ A notional map of heat transfer is shown in~\autoref{fig:heat-map}.
 
 \section{Attitude Determination and Control}
 \label{sec:adcs}
-% Recall attitude control requirements for science objectives.
-To conduct a survey, the spacecraft must first understand its orientation and then act to align itself with a given area of the sky.
-Redundant systems of varying levels of fidelity are included to allow CDIM to operate in different power states.
-Low-fidelity attitude determination sensors such as sun sensors are cheap, accurate to less than one degree, and lightweight.
-% Explain the star tracker among other attitude control systems. Select a class of star tracker.
+CDIM will be three-axis stabilized using an inertial reference unit and star-trackers.
+Star trackers identify constellations in their field of view to determine the spacecraft's heading to within 1--3 arcseconds.
+These systems are used to coarsely slew CDIM to a target.
 
-High-fidelity attitude determination is conducted by off-the-shelf star tracking cameras.
-Star trackers identify constellations in their field of view to determine the spacecraft's heading to within $0.25$ arcseconds.
-\red{Identify candidate star trackers.}
+Rather than using more accurate (and more expensive) inertial or star-tracking sensors, fine pointing guidance sensors may be included on the focal plane, as demonstrated by WFIRST~\cite{wfirstFinal2012}.
+These fine guidance sensors enable CDIM to meet its relative pointing control requiremend of \SI{2.5}{arcsec}.
+% Recall attitude control requirements for science objectives.
+% To conduct a survey, the spacecraft must first understand its orientation and then act to align itself with a given area of the sky.
+Redundant systems are included to allow CDIM to operate in different power states.
+Low-fidelity attitude determination sensors such as sun sensors are cheap, accurate to less than one degree, and lightweight.
+Sun sensors provide CDIM with a coarse safe-hold capability.
+% Explain the star tracker among other attitude control systems. Select a class of star tracker.
 
 % Briefly explain inertial and propulsive attitude control and the limitations of each.
 In a heliocentric orbit, the primary disturbance to the spacecraft's heading is solar radiation pressure (SRP).
-At \Ltwo, solar radiation pressure presents itself as torque on the spacecraft with a maximum on the order of $10^{-5}$\si{\newton\meter}.
+At \Ltwo, solar radiation pressure presents itself as torque on the spacecraft with a maximum load on the order of $10^{-5}$\si{\newton\meter}.
 
-Cold-gas or hydrazine thrusters will be used for orbit station-keeping as well as momentum management.
+Hydrazine monopropellant thrusters will be used for orbit station-keeping as well as momentum management.
 A desired heading is maintained by the spacecraft using a 3-axis zero-momentum inertial system, whereby the error in heading due to SRP is cancelled out by spinning up or slowing down reaction wheels.
 Reaction wheel systems are capable of torques ranging from $.01$ to $1$\si{\newton\meter} and store $0.4$ to $3000$\si{\newton\meter\second} of practical momentum~\cite{smad2015}.
 Power consumption varies with reaction wheel speed, with a maximum estimate of roughly \SI{100}{\watt}.
@@ -286,9 +290,21 @@ The dark side of the array acts as a radiator to contribute to the thermal regul
 \label{sec:structure}
 The mirror and detectors will be supported by low-moisture composites to provide adequate structure stiffness while minimizing mass and conductive heat loads to the cooled section.
 
-The spacecraft bus houses all non-instrumentation systems including the cryocooler, ADCS, telemetry, processing, and power modules.
-The bus will also include hard points for integration with the launch vehicle.
-CDIM will leverage high TRL or off-the-shelf components to reduce development costs.
+The spacecraft bus will be a graphite epoxy composite hexagonal structure, which houses all non-instrumentation systems including the cryocooler, ADCS, telemetry, processing, power modules, and propulsion tank.
+The bus will also provide hard points for integration with the launch vehicle.
+
+%% WFIRST structure section
+% the spacecraft bus is a
+% graphite epoxy composite hexagonal structure, consisting
+% of two modules (bus module and propulsion module)
+% that house the spacecraft and payload electronics
+% boxes and the propulsion tank. The spacecraft bus provides
+% the interfaces to the payload and the launch vehicle
+% and supports the Observatory launch mass of 2509
+% kg, including margin (see Table 15). It supports a multipanel
+% fixed solar array and a sunshield to prevent the
+% Sun from illuminating payload hardware during science
+% observations (see Figure 36). A
 
 % \section{Mission Profile}
 % \label{sec:mission-profile}
