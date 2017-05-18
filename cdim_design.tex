@@ -141,15 +141,15 @@ Candidate detectors are listed in~\autoref{tab:detectors}.
   \end{tabular}
 \end{table}
 
-Teledyne H2RG-18 HyViSI detectors offer a $2048\times2048$ pixel array format at a pixel pitch of \SI{18}{\micro\meter}~\cite{teledyneH2RG}.
 CDIM will utilize 36 detectors in a close-packed, $6\times6$ mosaic focal plane assembly (FPA).
 In the expected normal operating mode, each detector dissipates less than \SI{4}{\milli\watt}, for a total power dissipation of less than \SI{150}{\milli\watt} for the full array.
 
 Linear-variable filters (LVFs) will be placed just above the detectors to provide spectral dispersion for spectrometry.
-LVFs are simple, space-qualified solutions to permit spectral data cubes between $0.75$--$7.5$\si{\micro\meter} that are commercially available and significantly lower in cost than more complex systems. \red{Citation needed.}
+LVFs are simple, space-qualified solutions to permit spectral data cubes between $0.75$--$7.5$\si{\micro\meter} that are commercially available and significantly lower in cost than more complex systems~\cite{photonicsdotcom2016lvf}.
 
-CDIM optics, instruments, and focal plane will be housed in a light-tight box to minimize signal contamination from stray light.
-\red{The light-tight box is constructed of gold-plated aluminum.}
+CDIM optics, instruments, and focal plane will be housed in an aluminum light-tight box that is be bead blasted to a matte finish and black anodized.
+The purpose of this housing is to reduce reflections and scattered light from the exposed, reflective portions of the detectors.
+
 The optical telescope assembly (OTA) as a whole is estimated to have a mass of 200--250\si{\kilo\gram}.
 
 \section{Thermal Design}
@@ -310,8 +310,8 @@ Due to the rigorous launch environment, CDIM solar panels and passive radiators 
 \label{tab:launch-vehicles}}
   \begin{tabular}{@{}lclr@{}} \toprule
     Vehicle & Payload to \Ltwo{} & Fairing size & Cost\tnote{$\dagger$} \\ \midrule
-    Falcon 9 v1.1 & \SI{2900}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \red{\$$97$\si{M}}\\ \midrule
-    Falcon Heavy\tnote{*} & \SI{14000}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \red{\$$120$\si{M}}\\ \midrule
+    Falcon 9 v1.1 & \SI{2900}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \$$97$\si{M}\\ \midrule
+    Falcon Heavy\tnote{*} & \SI{14000}{\kilo\gram} & $5.2\times13.1$ \si{\meter} & \$$120$\si{M}\\ \midrule
     Atlas V 551 & \SI{6100}{\kilo\gram} & $4.2\times10.0$ \si{\meter} & \$$153$\si{M}\\
     & & $5.1\times11.0$ \si{\meter} & \\ \midrule
     Ariane V & \SI{6600}{\kilo\gram} & $5.4\times12.7$ \si{\meter} & \$$165$\si{M}\\
@@ -391,15 +391,15 @@ Since OTA cost is found, estimates for other cost drivers may be obtained from r
 }
 \end{figure}
 
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=.6\linewidth]{figs/total-cost-vs-diameter.png}
-  \caption{CDIM total cost relation to OTA aperture diameter under various cost models. The model described here is robust and presents a conservative estimate compared to similar models by \citeauthor{bely2011} and \citeauthor{stahl2013}, after a total cost approximation is applied following \autoref{eq:total-cost}.
-\label{fig:cost-total-compare-models}
-}
-\end{figure}
+% \begin{figure}[!h]
+%   \centering
+%   \includegraphics[width=.6\linewidth]{figs/total-cost-vs-diameter.png}
+%   \caption{CDIM total cost relation to OTA aperture diameter under various cost models. The model described here is robust and presents a conservative estimate compared to similar models by \citeauthor{bely2011} and \citeauthor{stahl2013}, after a total cost approximation is applied following \autoref{eq:total-cost}.
+% \label{fig:cost-total-compare-models}
+% }
+% \end{figure}
 
-The most robust model for the CDIM mission predicts its total cost to be \$684.7M, and even the more conservative model predicts CDIM costing to fall under \$800M.
+% The most robust model for the CDIM mission predicts its total cost to be \$684.7M, and even the more conservative model predicts CDIM costing to fall under \$800M.
 The CDIM mission has significant margin under the \$1B cap for Probe-class missions.
 
 \clearpage
