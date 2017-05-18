@@ -170,18 +170,32 @@ Passive thermal regulation is maintained using a multi-stage V-groove radiator, 
 \end{figure}
 
 V-groove radiators have been demonstrated in passive cryogenic radiators up to \SI{4}{\kelvin} with Planck, SPIRIT, and Spitzer (warm mission).\@
-Like Planck, the active coolers are also pre-cooled to less than \SI{50}{\kelvin} this way~\cite{doyle2009herschel}.
-In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point \Ltwo, a \red{$x$-stage} V-groove radiator with an \red{area of $x$ \si{\meter\squared}} is required.
+Like Planck, the active coolers are also pre-cooled to less than \SI{50}{\kelvin} this way~\cite{shinozaki2014spica}.
+In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point \Ltwo, CDIM will feature a \red{\SI{x}{\meter\squared} $x$-stage} V-groove radiator.
 \red{Since CDIM may be at various angles of incidence to solar radiation as it surveys the sky, the V-groove radiator fins will extend outward, more like SPHEREx than Planck}.
 
-CDIM's thermal requirement to have the detector array actively cooled to \SI{35}{\kelvin} in order to reduce thermal noise can be met by a commercially available mechanical cryocooler.
+CDIM's thermal requirement to reduce thermal noise in the detector array can be met by actively cooling the array to \SI{35}{\kelvin} by a mechanical cryocooler.
 Stirling-cycle mechanical refrigerators are low-vibration, high-reliability, and lightweight active cryocooling systems that have significant heritage in space applications.
+Pulse-tube mechanical cryocoolers are similar to Stirling cryocoolers in capacity, cost, and function.
+While Stirling cryocoolers use mechanisms to drive the thermodynamic cycle, Pulse-tube cryocoolers use an acoustic standing wave.
+Either type of cryocooler is suitible for CDIM, and both types have significant heritage in space applications~\cite{gilmore2003spacecraft}.
 One candidate system is Raytheon's PSC 1-stage Stirling cryocooler, capable of cooling a \SI{1.2}{\watt} parasitic heat load to \SI{35}{\kelvin}.
-This cryocooler is \SI{18.6}{\kilo\gram} and requires \SI{88}{\watt} of input power~\cite{tchandbook2003}.
+This cryocooler is \SI{18.6}{\kilo\gram} and requires \SI{88}{\watt} of input power~\cite{gilmore2003spacecraft}.
 
+In this configuration, the most significant heat loads from the cooled section come from conduction through the OTA support structure.
+Only the mirror and detectors need to be cooled to cryogenic temperatures.
+Electronics boards that control the FPA and instrumentation need not be cryocooled.
+These warm electronics are housed in CDIM's spacecraft bus with other spacecraft systems.
+Some components that require cooling below the temperature of the bus, but not so far as the FPA, may be placed between stages of the V-groove radiator.
+A notional map of heat transfer is shown in~\autoref{fig:heat-map}.
 
-Electronics boards that control the FPA and other instrumentation are not cryocooled.
-These warm electronics housed in CDIM's spacecraft bus.
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=.6\linewidth]{figs/heat-map.png}
+  \caption{Notional pathways and heat loads throughout the cooled section are shown. Relative margnitude is indicated by arrow size.
+\label{fig:heat-map}
+}
+\end{figure}
 
 % Explain generally how v-groove radiators work.
 % Used on planck and jwst.
@@ -270,6 +284,8 @@ The dark side of the array acts as a radiator to contribute to the thermal regul
 
 \section{Structure}
 \label{sec:structure}
+The mirror and detectors will be supported by low-moisture composites to provide adequate structure stiffness while minimizing mass and conductive heat loads to the cooled section.
+
 The spacecraft bus houses all non-instrumentation systems including the cryocooler, ADCS, telemetry, processing, and power modules.
 The bus will also include hard points for integration with the launch vehicle.
 CDIM will leverage high TRL or off-the-shelf components to reduce development costs.
