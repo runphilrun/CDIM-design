@@ -13,6 +13,7 @@
 \usepackage[flushleft]{threeparttable}
 \usepackage{multirow}
 \usepackage{siunitx}
+\sisetup{output-exponent-marker=\ensuremath{\mathrm{e}}}
 \usepackage[T1]{fontenc}
 \usepackage[pdftex,breaklinks,pdfauthor={Philip Linden},pdfcreator={Philip Linden},pdftitle={CDIM Spacecraft and Mission Design}]{hyperref}
 \usepackage{booktabs}
@@ -128,7 +129,7 @@ Several types of HgCdTe detectors satisfy CDIM's spatial resolution, wavelength 
 These detectors range in technology-readiness-level (TRL), but all are sufficiently developed to be considered for the 2020~Decadal and will be demonstrated on missions such as NEOCam, SPHEREx, and JWST~\cite{dore4872spherex,Gardner2006}.
 Candidate detectors are listed in~\autoref{tab:detectors}.
 
-\begin{table}[!h]
+\begin{table}[!ht]
   \centering
   \caption{Candidate Teledyne $2048\times2048$ pixel detectors for the CDIM FPA~\red{cite cdim proposal}.
 \label{tab:detectors}}
@@ -227,7 +228,7 @@ Sun sensors provide CDIM with a coarse safe-hold capability.
 
 % Briefly explain inertial and propulsive attitude control and the limitations of each.
 In a heliocentric orbit, the primary disturbance to the spacecraft's heading is solar radiation pressure (SRP).
-At \Ltwo, solar radiation pressure presents itself as torque on the spacecraft with a maximum load on the order of $10^{-5}$\si{\newton\meter}.
+Solar radiation pressure imparts a near-constant \SI{4.5e-10}{\newton\per\meter\squared} to spacecraft orbiting \Ltwo~\cite{evans2002natural}.
 
 Hydrazine monopropellant thrusters will be used for orbit station-keeping as well as momentum management.
 A desired heading is maintained by the spacecraft using a 3-axis zero-momentum inertial system, whereby the error in heading due to SRP is cancelled out by spinning up or slowing down reaction wheels.
@@ -273,16 +274,46 @@ The CDIM telemetry system, including antenna and power converter, are estimated 
 
 \section{Power}
 \label{sec:power}
-Since CDIM will be located at \Ltwo, it is exposed to constant and significant solar flux.
-All power generation will come from a fixed array of silicon photovoltaic cells facing the sun.
+Since CDIM will be located at \Ltwo, it is exposed to 1291--1421\si{\watt\per\meter\squared} solar flux~\cite{evans2002natural}, accounting for Earth's eccentricity and solar flares.
+All power generation will come from anarray of triple junction Arsenide (GaAs) photovoltaic cells facing the sun.
+Triple junction GaAs cells are more costly than silicon cells, but are more efficient.
+An array GaAs cells is more resilient to radiation and will experience less degradation over time compared to silicon cells, which is desirable for CDIM's \SI{5}{year} mission lifetime.
 % While the array may be fixed, the required area of the array is minimized if the cells are able to adjust to account for different incident angles to the sun.
 % The array will deploy after the launch and orbital insertion phases of the mission.
 
+To be conservative, the solar flux at \Ltwo, $P_{sol}$, is estimated to be \SI{1200}{\watt}~\cite{evans2002natural}.
+\SI{2000}{\watt} is the assumed power draw from all CDIM instruments and components, $P_{sc}$.
+Other margins and efficiencies are listed in~\autoref{tab:solar-array}.
 
-Based on a rough power budget and the spacecraft's position at \Ltwo, \red{the array must be min $x$--max $x$\si{\meter\squared}} in area to sustain operation.
-The dark side of the array acts as a radiator to contribute to the thermal regulation of the spacecraft bus.
+\begin{table}
+  \caption{Margins and efficiencies of triple junction Gallium Arsenide solar cells.
+\label{tab:solar-array}
+  }
+  \begin{tabular}{@{}l@{}}
 
-\red{Identify candidate systems.}
+  \end{tabular}
+\end{table}
+
+As CDIM surveys the sky, its angle of incidence to the Sun changes.
+To maintain sufficient power over the full viewing range, a fixed array must be mounted at an angle, $\theta$, with respect to CDIM's viewing axis.
+In this configuration, the angle of the array may be optimized such that the power efficiency is maximized in the regions that are most critical for CDIM's science objectives.
+\autoref{fig:solar-array} illustrates this concept for an array incident angle of \SI{30}{\degree}.
+Alternatively, CDIM could use arrays that are capable of adjusting their angle of incidence to maintain maximum efficiency.
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=.6\linewidth]{figs/solar-array-config.png}
+  \caption{Angle of incidence to the Sun of a fixed solar array set at \SI{30}{\degree} from the OTA viewing axis.}
+\label{fig:solar-array}
+\end{figure}
+
+Solar cell efficiency degrades over time from use and radiation.
+The end-of-life performance of solar cells is found from the general relationship in~\autoref{eq:p-eol}, with respect to mission duration, $L$, and estimated efficiency degradation, $D$~\cite{smad2015}.
+
+\begin{equation}
+  P_{EOL} = P_{BOL}{(1-D)}^L
+\label{eq:p-eol}
+\end{equation}
 
 \section{Structure}
 \label{sec:structure}
@@ -318,7 +349,7 @@ CDIM will orbit around Sun-Earth Lagrange point \Ltwo{} since it allows the spac
 This also leads to a very thermally stable environment.
 \Ltwo{} is near enough to Earth (roughly 1.5 million \si{\kilo\meter}) so that CDIM may communicate with ground stations without the Deep Space Network, and maintains near-constant communications geometry~\cite{canalias2004}.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \centering
   \includegraphics[width=.6\linewidth]{figs/orbits.png}
   \caption{
@@ -339,9 +370,9 @@ As such, CDIM may enter a Lissajous orbit around \Ltwo{} similar to the orbits o
 CDIM will be comfortably within the mass and spatial limits of both currently available and development launch vehicles capable of delivering payloads to Sun-Earth Lagrange Point \Ltwo.
 Future launch vehicles will be more than capable of delivering CDIM to \Ltwo, and industry trends indicate that heavy and super-heavy vehicles will continue to come online by the time CDIM launches.
 
-Due to the rigorous launch environment, CDIM solar panels and passive radiators will not be deployed until CDIM is delivered to a transfer orbit en route to \Ltwo.
+Due to the rigorous launch environment, deployable structures remain stowed until CDIM is delivered to a transfer orbit en route to \Ltwo.
 
-\begin{wstable}
+\begin{wstable}[hb]
   \caption{Available launch vehicle configurations and their capabilities to send NASA payloads to \Ltwo~\cite{rioux2016,spacelaunchreport}.
 \label{tab:launch-vehicles}}
   \begin{tabular}{@{}lclr@{}} \toprule
