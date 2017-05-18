@@ -31,7 +31,6 @@
 \title{Cosmic Dawn Intensity Mapper: \\Spacecraft and Mission Design for a Probe-Class Space Telescope}
 
 \author{Philip Linden$^{1,\dagger}$, Michael Zemcov$^{2}$}
-
 \address{
 $^{1}$Department of Mechanical Engineering, Kate Gleason College of Engineering, Rochester
 Institute of Technology, Rochester, NY 14623, USA, pjl7651@rit.edu\\
@@ -172,7 +171,7 @@ Passive thermal regulation is maintained using a multi-stage V-groove radiator, 
 
 V-groove radiators have been demonstrated in passive cryogenic radiators up to \SI{4}{\kelvin} with Planck, SPIRIT, and Spitzer (warm mission).\@
 Like Planck, the active coolers are also pre-cooled to less than \SI{50}{\kelvin} this way~\cite{shinozaki2014spica}.
-In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point \Ltwo, CDIM will feature a \red{\SI{x}{\meter\squared} $x$-stage} V-groove radiator.
+In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point \Ltwo, CDIM will feature a \red{\SI{0}{\meter\squared} $x$-stage} V-groove radiator.
 \red{Since CDIM may be at various angles of incidence to solar radiation as it surveys the sky, the V-groove radiator fins will extend outward, more like SPHEREx than Planck}.
 
 CDIM's thermal requirement to reduce thermal noise in the detector array can be met by actively cooling the array to \SI{35}{\kelvin} by a mechanical cryocooler.
@@ -181,7 +180,7 @@ Pulse-tube mechanical cryocoolers are similar to Stirling cryocoolers in capacit
 While Stirling cryocoolers use mechanisms to drive the thermodynamic cycle, Pulse-tube cryocoolers use an acoustic standing wave.
 Either type of cryocooler is suitible for CDIM, and both types have significant heritage in space applications~\cite{gilmore2003spacecraft}.
 One candidate system is Raytheon's PSC 1-stage Stirling cryocooler, capable of cooling a \SI{1.2}{\watt} parasitic heat load to \SI{35}{\kelvin}.
-This cryocooler is \SI{18.6}{\kilo\gram} and requires \SI{88}{\watt} of input power~\cite{gilmore2003spacecraft}.
+This cryocooler is \SI{18.6}{\kilo\gram} and requires \SI{88}{\watt} of input power~\cite{ross2005cryocoolers}.
 
 In this configuration, the most significant heat loads from the cooled section come from conduction through the OTA support structure, which isolates the cooled section from the warm spacecraft bus.
 Only the mirror and detectors need to be cooled to cryogenic temperatures.
@@ -275,9 +274,10 @@ The CDIM telemetry system, including antenna and power converter, are estimated 
 \section{Power}
 \label{sec:power}
 Since CDIM will be located at \Ltwo, it is exposed to constant and significant solar flux.
-All power generation will come from an array of photovoltaic cells facing the sun.
-While the array may be fixed, the required area of the array is minimized if the cells are able to adjust to account for different incident angles to the sun.
-The array will deploy after the launch and orbital insertion phases of the mission.
+All power generation will come from a fixed array of silicon photovoltaic cells facing the sun.
+% While the array may be fixed, the required area of the array is minimized if the cells are able to adjust to account for different incident angles to the sun.
+% The array will deploy after the launch and orbital insertion phases of the mission.
+
 
 Based on a rough power budget and the spacecraft's position at \Ltwo, \red{the array must be min $x$--max $x$\si{\meter\squared}} in area to sustain operation.
 The dark side of the array acts as a radiator to contribute to the thermal regulation of the spacecraft bus.
@@ -306,6 +306,12 @@ The bus will also provide hard points for integration with the launch vehicle.
 
 % \section{Mission Profile}
 % \label{sec:mission-profile}
+\begin{figure}[htp]
+  \includegraphics[width=\linewidth]{figs/cdim_annotated-cartoon}
+  \caption{CDIM consists of a passively cooled \SI{1.5}{\meter} aperture OTA, actively cooled focal plane, and off-the-shelf spacecraft components where applicable. \red{Add cutaway view.}}
+\label{fig:cdim-annotated}
+\end{figure}
+
 \section{Orbit}
 \label{sec:orbit}
 CDIM will orbit around Sun-Earth Lagrange point \Ltwo{} since it allows the spacecraft to be oriented such that half of the celestial sphere is visible at all times, and the spacecraft may oppose the Sun, Earth, and Moon concurrently and at all times.
@@ -383,9 +389,8 @@ Thus, an OTA aperture diameter of \SI{1.5}{\meter} yields a median OTA cost of \
 Since OTA cost is found, estimates for other cost drivers may be obtained from relative cost values.
 \begin{wstable}[htp]
   \centering
-  \begin{tabular}{@{}lrrr@{}}\toprule
-                           & \multicolumn{2}{l}{\SI{1.3}{\meter}} & \multicolumn{2}{c}{\SI{1.5}{\meter}} \\
-    Driver                 & \% Mission Cost       & Est. Cost    &                       &              \\ \midrlue
+  \begin{tabular}{@{}lrrrr@{}}\toprule
+    Driver                 & \multicolumn{2}{c}{\SI{1.3}{\meter} OTA} & \multicolumn{2}{c}{\SI{1.5}{\meter} OTA} \\ \midrule
     OTA                    & \SI{13}{\percent}     & \$48.0M      & \SI{0}{\percent}      & \$58.2M      \\
     Spacecraft             & \SI{20}{\percent}     & \$76.8M      & \SI{0}{\percent}      & \$91.3M      \\
     Instruments            & \SI{15}{\percent}     & \$57.6M      & \SI{0}{\percent}      & \$69.8M      \\
@@ -404,7 +409,7 @@ Since OTA cost is found, estimates for other cost drivers may be obtained from r
 }
 \end{wstable}
 
-\begin{figure}[!h]
+\begin{figure}[htp]
     \centering
     \includegraphics[width=.8\linewidth]{figs/ota_cost-diameter_stahl2010.png}
     \caption{Optical Telescope Assembly vs.\ cost correlation~\cite{stahl2013}. Given a target OTA aperture diameter of \SI{1.5}{\meter} for CDIM, a reasonable estimate of OTA cost is obtained from the median cost trendline.
@@ -412,11 +417,11 @@ Since OTA cost is found, estimates for other cost drivers may be obtained from r
 }
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[htp]
   \centering
     \centering
     \includegraphics[width=.6\linewidth]{figs/cost-breakdown-pie.png}
-    \caption{CDIM estimated cost breakdown in percent of mission cost.
+    \caption{CDIM estimated cost breakdown in percent of mission cost for a \SI{1.3}{\meter} diameter OTA.\@
 \label{fig:cost-breakdown}
 }
 \end{figure}
@@ -437,11 +442,7 @@ The CDIM mission has significant margin under the \$1B cap for Probe-class missi
 \section{Conclusion}
 \label{sec:conclusion}
 % Summarize points made above. Notable points include mirror diameter, detector, power budget, mass budget, total cost, and the fact that technologies are already significantly developed.
-\begin{figure}[htp]
-  \includegraphics[width=\linewidth]{figs/cdim_annotated-cartoon}
-  \caption{CDIM consists of a passively cooled \SI{1.5}{\meter} aperture OTA, actively cooled focal plane, and off-the-shelf spacecraft components where applicable. \red{Add cutaway view.}}
-\label{fig:cdim-annotated}
-\end{figure}
+
 \section*{Acknowledgments}
 Thanks.
 
