@@ -255,20 +255,29 @@ A survey conducted by SPHEREx using four $2048\times2048$ H2RG detectors generat
 
 CDIM will use 36 $2048\times2048$ detectors and a similar compression algorithm to SPHEREx.
 The data volume for CDIM is estimated to be:
-\begin{equation}\label{eq:telemetry}
+\begin{equation}\label{eq:telemetry-d}
   \begin{split}
     D &= \frac{36}{4} (\SI{168.39}{Gbit/day}) \\
     &= \SI{1515.51}{Gb/day}
   \end{split}
+\end{equation}
+\begin{equation} \label{eq:telemetry-dc}
   \begin{split}
-    D_c &= \SI{1515.51}{Gb/day}/2.5 \\
+    D_c &= \frac{1}{2.5}(\SI{1515.51}{Gb/day}) \\
     &= \SI{606.2}{Gb/day} \\
-    &= \SI{56.1}{Mb/s}
+    &= \SI{7.0}{Mb/s}
   \end{split}
 \end{equation}
 
 Transmission rates are dependent on the total time available for CDIM to send data to a ground station.
 For example, the spacecraft could transmit continuously at a very low transfer rate, or send larger volumes of data once per day over 1 hour at the expense of a higher transfer rate.
+\begin{equation}\label{eq:telemetry-1hr}
+  \begin{split}
+    D_c &= \SI{606.2}{Gb/hr}  \\
+     &= (\SI{606.2}{Gb/hr})(\frac{\SI{1}{hr}}{\SI{3600}{s}}) = \SI{0.1684}{Gb/s} \\
+     &= \SI{168.4}{Mb/s}
+  \end{split}
+\end{equation}
 For redundancy, CDIM is outfitted with multiple communication modes outline in~\autoref{tab:telemetry}.
 
 \begin{wstable}[htb]
@@ -279,8 +288,8 @@ For redundancy, CDIM is outfitted with multiple communication modes outline in~\
     Mode & Uplink & Downlink \\ \midrule
     Emergency & \SI{7.8}{bps} & $5$--$10$\si{bps} \\
     Engineering data & $15.6$--$2000$\si{kbps} & Up to \SI{10}{bps} \\
-    Science data & $15.6$--$2000$\si{kbps} & \SI{0.74}{Mbps} (continuous) or \\
-    & & \SI{17.7}{Mbps} (1 hour per day)\\\bottomrule
+    Science data & $15.6$--$2000$\si{kbps} & \SI{7.0}{Mbps} (continuous) or \\
+    & & \SI{168.4}{Mbps} (1 hour per day)\\\bottomrule
   \end{tabular}
 \end{wstable}
 
@@ -346,14 +355,12 @@ The total power the array must supply to the spacecraft is found by summing all 
 
 The required solar array area, $A_{sa}$ is determined from the estimated end-of-life power capacity of the array per unit area, $P_{EOL}$.
 
-\begin{equation} \label{eq:array-area}
-  \begin{align}
-    P_{o} &= P_{sol}\eta_i = (\SI{1291}{\watt\per\meter\squared})(.338) = \SI{436.4}{\watt\per\meter\squared} \\
-    P_{BOL} &= P_o\eta_p\eta_{\theta} = (\SI{436.4}{\watt\per\meter\squared})(.72)(.866) = \SI{272.1}{\watt\per\meter\squared} \\
-    P_{EOL} &= P_{BOL}\eta_{EOL} = (\SI{272.1}{\watt\per\meter\squared})(.859) = \SI{233.6}{\watt\per\meter\squared} \\
-    A_{sa} &= \frac{P_{sa}}{P_{EOL}} = \frac{\SI{2400}{\watt}}{\SI{233.6}{\watt\per\meter\squared}} = \SI{10.27}{\meter\squared}
-  \end{align}
-\end{equation}
+\begin{align}\label{eq:array-area}
+  &P_{o} = P_{sol}\eta_i = (\SI{1291}{\watt\per\meter\squared})(.338) = \SI{436.4}{\watt\per\meter\squared} \\
+  &P_{BOL} = P_o\eta_p\eta_{\theta} = (\SI{436.4}{\watt\per\meter\squared})(.72)(.866) = \SI{272.1}{\watt\per\meter\squared} \\
+  &P_{EOL} = P_{BOL}\eta_{EOL} = (\SI{272.1}{\watt\per\meter\squared})(.859) = \SI{233.6}{\watt\per\meter\squared} \\
+  &A_{sa} = \frac{P_{sa}}{P_{EOL}} = \frac{\SI{2400}{\watt}}{\SI{233.6}{\watt\per\meter\squared}} = \SI{10.27}{\meter\squared}
+\end{align}
 
 The solar array size estimate derived from~\ref{eq:array-area} is very conservative.
 The accuracy of the array size would be much improved if a more accurate estimate of power draw was known.
