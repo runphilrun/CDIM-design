@@ -78,7 +78,7 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu
 \label{fig:cover}
 \end{figure}
 
-The Cosmic Dawn Intensity Mapper (CDIM) is a concept for a Probe-class \SI{1.5}{\meter} aperture telescope, passively cooled to \SI{45}{\kelvin}, with an actively cooled $6\times6$ detector array that utilizes linear variable filters (LVFs)~\cite{cooray2016cdim2page} capable of three-dimensional spectro-imaging observations over the wavelength range of 0.75 to \SI{7.5}{\micro\meter} at a spectral resolving power R$=500$.
+The Cosmic Dawn Intensity Mapper (CDIM) is a concept for a Probe-class \SI{1.5}{\meter} aperture telescope, passively cooled to \SI{45}{\kelvin}, with an actively cooled $6\times6$ detector array that utilizes linear variable filters (LVFs) capable of three-dimensional spectro-imaging observations over the wavelength range of 0.75 to \SI{7.5}{\micro\meter} at a spectral resolving power R$=500$~\cite{cooray2016cdim2page}.
 CDIM has a \SI{10}{\deg\squared} instantaneous field of view (FoV) atop a focal plane of thirty-six $2048\times2048$ detectors.
 The survey strategy using spacecraft operations following a shift and stare mode will result in 1360 independent narrow-band spectral images of the sky on a given location.
 Surveys are planned to span from \SI{25}{\deg\squared} up to \SI{1000}{\deg\squared} over a five year lifetime in an orbit about Sun-Earth Lagrange point L$_{2}$\@.
@@ -116,7 +116,7 @@ CDIM will leverage mature and flight-proven technology to reduce development cos
 % \label{sec:mirror}
 % Recall requirements such as FoV, spectral resolution. Technical requirement of temperature.
 Preliminary explorations indicate that a $1.3$--$1.5$\si{\meter} aperture off-axis primary mirror cooled to \SI{45}{\kelvin} is required to meet CDIM's spectro-imaging  requirements~\cite{cooray2016cdim2page}.
-The primary mirror is notionally assumed to be constructed from light-weighted Corning (ultra-low expansion) silica-titania glass with a honeycomb core and a gold-deposition surface coating.
+The primary mirror is notionally assumed to be constructed from light-weighted ultra-low expansion silica-titania glass with a honeycomb core and a gold-deposition surface coating.
 For this type of mirror, the estimated mass is in the neighborhood of \SI{200}{\kilo\gram}.
 
 % \subsection{Detectors}
@@ -374,11 +374,11 @@ The total power the array must supply to the spacecraft is found by summing all 
 
 The required solar array area, $A_{sa}$ is determined from the estimated end-of-life power capacity of the array per unit area, $P_{EOL}$.
 
-\begin{align}\label{eq:array-area}
+\begin{align}
   &P_{o} = P_{sol}\eta_i = (\SI{1291}{\watt\per\meter\squared})(.338) = \SI{436.4}{\watt\per\meter\squared} \\
   &P_{BOL} = P_o\eta_p\eta_{\theta} = (\SI{436.4}{\watt\per\meter\squared})(.72)(.866) = \SI{272.1}{\watt\per\meter\squared} \\
   &P_{EOL} = P_{BOL}\eta_{EOL} = (\SI{272.1}{\watt\per\meter\squared})(.859) = \SI{233.6}{\watt\per\meter\squared} \\
-  &A_{sa} = \frac{P_{sa}}{P_{EOL}} = \frac{\SI{2400}{\watt}}{\SI{233.6}{\watt\per\meter\squared}} = \SI{10.27}{\meter\squared}
+  &A_{sa} = \frac{P_{sa}}{P_{EOL}} = \frac{\SI{2400}{\watt}}{\SI{233.6}{\watt\per\meter\squared}} = \SI{10.27}{\meter\squared} \label{eq:array-area}
 \end{align}
 
 The \SI{10}{\meter\squared} array will be a deployable mechanism, whether or not it is capable of articulating its angle of incidence.
