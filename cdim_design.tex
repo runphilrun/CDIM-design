@@ -150,7 +150,7 @@ Linear-variable filters (LVFs) will be placed just above the detectors to provid
 LVFs are precision-coated optical filters with spectral properties that vary linearly across the length of the filter, which provide high transmissibility for narrow bandwidths and deep blocking of unwanted light.
 \autoref{fig:lvf} shows how LVFs may be arranged in conjunction with CDIM's detector array.
 LVFs are simple, space-qualified solutions to permit spectral data cubes between $0.75$--$7.5$\si{\micro\meter} that are commercially available and significantly lower in cost than more complex systems~\cite{photonicsdotcom2016lvf}.
-\begin{figure}
+\begin{figure}[ht]
   \centering
   \includegraphics[width=.5\linewidth]{figs/lvf_positioning.pdf}
   \caption{A possible arrangement of linear-variable filters with a $6\times6$ detector array.}
@@ -177,17 +177,20 @@ In order to achieve passive cooling from a baseline temperature of \SI{300}{\kel
 Since CDIM may be at various angles of incidence to solar radiation as it surveys the sky, the V-groove radiator vanes will ``umbrella'' outward.
 This way, the radiator cools the OTA at any heading.
 
-\begin{figure}[!hb]
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=.8\linewidth]{figs/vgroove-concept2.png}
+  \includegraphics[width=.5\linewidth]{figs/vgroove-concept2.png}
   \caption{Low emmissivity, high specular surface vanes are nested at a slight angle to reflect thermal radiation into space, cooling the OTA to \SI{45}{\kelvin}.~\cite{rasbach1988} A mechanical cryocooler cools the FPA to \SI{35}{\kelvin}.
 \label{fig:v-groove}
 }
 \end{figure}
 
-The first, sun-facing stage of the radiator is coated \red{something} with rejects most of the solar radiation
+The first, sun-facing stage of the radiator is a thin-walled, highly reflective, low-emissivity which rejects most of the solar radiation by reflection.
+Thermal radiation is emitted by the first stage and again reflected to space by subsequent stages~\cite{gilmore2003spacecraft}.
+\red{Preliminary heat transfer calculations estimate a capacity of \SI{0}{\watt} from a \SI{0}{\meter\squared} 3-stage v-groove radiator.}
 
-\red{While the analysis presented here is high level, parametric analyses exist~\cite{couto2002radiator}.}
+The solution to achieve \SI{45}{\kelvin} at the OTA is not unique, and parameters such as radiator materials, surface finishes and coatings, relative angle, separation, and area may be adjusted accordingly.
+While the analysis presented here is high level, detailed parametric analyses exist~\cite{couto2002radiator}.
 
 CDIM's thermal requirement to reduce thermal noise in the detector array can be met by actively cooling the array to \SI{35}{\kelvin} by a mechanical cryocooler.
 Stirling-cycle mechanical refrigerators are low-vibration, high-reliability, and lightweight active cryocooling systems that have significant heritage in space applications.
@@ -197,6 +200,14 @@ Either type of cryocooler is suitible for CDIM, and both types have significant 
 One candidate system is Raytheon's PSC 1-stage Stirling cryocooler, capable of cooling a \SI{1.2}{\watt} parasitic heat load to \SI{35}{\kelvin}.
 This cryocooler is \SI{18.6}{\kilo\gram} and requires \SI{88}{\watt} of input power~\cite{ross2005cryocoolers}.
 
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=.7\linewidth]{figs/heat-map.png}
+  \caption{Notional pathways and heat loads throughout the cooled section are shown (not to scale).
+\label{fig:heat-map}
+}
+\end{figure}
+
 In this configuration, the most significant heat loads from the cooled section come from conduction through the OTA support structure, which isolates the cooled section from the warm spacecraft bus.
 Only the mirror and detectors need to be cooled to cryogenic temperatures.
 Electronics boards that control the FPA and instrumentation need not be cryocooled.
@@ -204,13 +215,7 @@ These warm electronics are housed in CDIM's spacecraft bus with other spacecraft
 Some components that require cooling below the temperature of the bus, but not so far as the FPA, may be placed between stages of the V-groove radiator.
 A notional map of heat transfer is shown in~\autoref{fig:heat-map}.
 
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=.8\linewidth]{figs/heat-map.png}
-  \caption{Notional pathways and heat loads throughout the cooled section are shown (not to scale).
-\label{fig:heat-map}
-}
-\end{figure}
+
 
 % Explain generally how v-groove radiators work.
 % Used on planck and jwst.
@@ -410,11 +415,13 @@ The bus will also provide hard points for integration with the launch vehicle.
 
 % \section{Mission Profile}
 % \label{sec:mission-profile}
-\begin{figure}[htp]
-  \includegraphics[width=.8\linewidth]{figs/cdim_annotated-cartoon}
-  \caption{CDIM consists of a passively cooled \SI{1.5}{\meter} aperture OTA, actively cooled focal plane, and off-the-shelf spacecraft components where applicable.}
-\label{fig:cdim-annotated}
-\end{figure}
+
+% \begin{figure}[htp]
+%   \centering
+%   \includegraphics[width=.8\linewidth]{figs/cdim_annotated-cartoon}
+%   \caption{CDIM consists of a passively cooled \SI{1.5}{\meter} aperture OTA, actively cooled focal plane, and off-the-shelf spacecraft components where applicable.}
+% \label{fig:cdim-annotated}
+% \end{figure}
 
 \section{Orbit}
 \label{sec:orbit}
@@ -427,7 +434,7 @@ This also leads to a very thermally stable environment.
   \includegraphics[width=.6\linewidth]{figs/orbits.png}
   \caption{
       \emph{Left:} Orthographic view of a quasi-periodic Lissajous orbit.
-      \emph{Right:} Orthographic view of a periodic halo orbit.~\cite{gordon1993orbit}
+      \emph{Right:} Orthographic view of a periodic halo orbit.~\cite{gordon1991orbit}
 \label{fig:orbits}
   }
 \end{figure}
@@ -435,7 +442,7 @@ This also leads to a very thermally stable environment.
 Around \Ltwo, two types of orbit are considered: Lissajous and halo-type orbits.
 Lissajous orbits are quasi-periodic but may be smaller in radius than periodic halo orbits.
 Halo orbits are more costly to achieve in terms of delta-v, or energy to transfer into such trajectory.
-Station-keeping costs are not significantly different between the two orbits~\cite{gordon1993orbit}.
+Station-keeping costs are not significantly different between the two orbits~\cite{gordon1991orbit}.
 As such, CDIM may enter a Lissajous orbit around \Ltwo{} similar to the orbits of JWST and Herschel missions.
 
 \section{Launch Vehicle}
