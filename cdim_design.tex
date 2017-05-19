@@ -132,7 +132,7 @@ Candidate detectors are listed in~\autoref{tab:detectors}.
 
 \begin{table}[!ht]
   \centering
-  \caption{Candidate Teledyne $2048\times2048$ pixel detectors for the CDIM FPA~\red{cite cdim proposal}.
+  \caption{Candidate Teledyne $2048\times2048$ pixel detectors for the CDIM FPA.\@
 \label{tab:detectors}}
   \begin{tabular}{@{}lccc@{}} \toprule
             & TRL & Wavelength Range          & Heritage \\ \midrule
@@ -147,7 +147,15 @@ CDIM will utilize 36 detectors in a close-packed, $6\times6$ mosaic focal plane 
 In the expected normal operating mode, each detector dissipates less than \SI{4}{\milli\watt}, for a total power dissipation of less than \SI{150}{\milli\watt} for the full array.
 
 Linear-variable filters (LVFs) will be placed just above the detectors to provide spectral dispersion for spectrometry.
+LVFs are precision-coated optical filters with spectral properties that vary linearly across the length of the filter, which provide high transmissibility for narrow bandwidths and deep blocking of unwanted light.
+\autoref{fig:lvf} shows how LVFs may be arranged in conjunction with CDIM's detector array.
 LVFs are simple, space-qualified solutions to permit spectral data cubes between $0.75$--$7.5$\si{\micro\meter} that are commercially available and significantly lower in cost than more complex systems~\cite{photonicsdotcom2016lvf}.
+\begin{figure}
+  \centering
+  \includegraphics[width=.5\linewidth]{figs/lvf_positioning.pdf}
+  \caption{A possible arrangement of linear-variable filters with a $6\times6$ detector array.}
+\label{fig:lvf}
+\end{figure}
 
 CDIM optics, instruments, and focal plane will be housed in an aluminum light-tight box that is be bead blasted to a matte finish and black anodized.
 The purpose of this housing is to reduce reflections and scattered light from the exposed, reflective portions of the detectors.
@@ -166,13 +174,14 @@ Passive thermal regulation is maintained using a multi-stage V-groove radiator, 
 
 \begin{figure}[!hb]
   \centering
-  \includegraphics[width=.5\linewidth]{figs/vgroove-concept.png}
-  \caption{Low emmissivity, high specular surface vanes are nested at a slight angle to reflect thermal radiation into space~\cite{rasbach1988}. \red{Replace this figure with a powerpoint graphic.}}
+  \includegraphics[width=.8\linewidth]{figs/vgroove-concept2.png}
+  \caption{Low emmissivity, high specular surface vanes are nested at a slight angle to reflect thermal radiation into space~\cite{rasbach1988}.
 \label{fig:v-groove}
+}
 \end{figure}
 
 V-groove radiators have been demonstrated in passive cryogenic radiators up to \SI{4}{\kelvin} with Planck, SPIRIT, and Spitzer (warm mission).\@
-Like Planck, the active coolers are also pre-cooled to less than \SI{50}{\kelvin} this way~\cite{shinozaki2014spica}.
+% Like Planck, the active coolers are also pre-cooled to less than \SI{50}{\kelvin} this way~\cite{shinozaki2014spica}.
 In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point \Ltwo, CDIM will feature a \red{\SI{0}{\meter\squared} $x$-stage} V-groove radiator.
 \red{Since CDIM may be at various angles of incidence to solar radiation as it surveys the sky, the V-groove radiator fins will extend outward, more like SPHEREx than Planck}.
 
@@ -193,8 +202,8 @@ A notional map of heat transfer is shown in~\autoref{fig:heat-map}.
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=.6\linewidth]{figs/heat-map.png}
-  \caption{Notional pathways and heat loads throughout the cooled section are shown. Relative margnitude is indicated by arrow size.
+  \includegraphics[width=.8\linewidth]{figs/heat-map.png}
+  \caption{Notional pathways and heat loads throughout the cooled section are shown (not to scale). 
 \label{fig:heat-map}
 }
 \end{figure}
@@ -308,15 +317,16 @@ An array GaAs cells is more resilient to radiation and will experience less degr
 As CDIM surveys the sky, its angle of incidence to the Sun changes.
 To maintain sufficient power over the full viewing range, a fixed array must be mounted at an angle, $\theta$, with respect to CDIM's viewing axis.
 In this configuration, the angle of the array may be optimized such that the power efficiency is maximized in the regions that are most critical for CDIM's science objectives.
-\autoref{fig:solar-array} illustrates this concept for an array incident angle of \SI{30}{\degree}.
+% \autoref{fig:solar-array} illustrates this concept for an array incident angle of \SI{30}{\degree}.
 Alternatively, CDIM could use arrays that are capable of adjusting their angle of incidence to maintain maximum efficiency.
+For a conservative estimate, it is assumed that the solar array is at \SI{30}{\degree} from normal to the Sun.
 
-\begin{figure}[hb]
-  \centering
-  \includegraphics[width=.6\linewidth]{figs/solar-array-config.png}
-  \caption{Angle of incidence to the Sun of a fixed solar array set at \SI{30}{\degree} from the OTA viewing axis.}
-\label{fig:solar-array}
-\end{figure}
+% \begin{figure}[hb]
+%   \centering
+%   \includegraphics[width=.6\linewidth]{figs/solar-array-config.png}
+%   \caption{Angle of incidence to the Sun of a fixed solar array set at \SI{30}{\degree} from the OTA viewing axis.}
+% \label{fig:solar-array}
+% \end{figure}
 
 Solar cell efficiency degrades over time from use and radiation.
 The end-of-life efficieny, $\eta_{EOL}$ is found with respect to mission duration, $L$, and estimated efficiency degradation, $D$~\cite{smad2015}.
@@ -326,19 +336,19 @@ For triple junction GaAs cells, $D$ is assumed to be 3\% per year.
   \eta_{EOL} = {(1-D)}^L
 \end{equation}
 
-\begin{table}[!ht]
+\begin{wstable}[!ht]
   \centering
   \caption{Typical efficiencies and margins for a triple junction Gallium Arsenide solar array~\cite{smad2015}.
 \label{tab:solar-array}
   }
-  \begin{tabular}{@{}llrlr@{}}\toprule
+  \begin{tabular}{@{}llrllr@{}}\toprule
     Efficiencies &&  & Margins & & \\ \cmidrule(r){1-3} \cmidrule(l){4-6}
     Ideal Conversion Efficiency & $\eta_{i}$ & 33.8\% & New Design & $m_d$ & 5\%  \\
     Production Unit Efficiency (with respect to ideal) & $\eta_{p}$  & 72.0\% & Reserves & $m_r$ & 20\% \\
     Incident Angle (\SI{30}{\degree}) & $\eta_{\theta}$ & 86.6\% & Harness Losses & $m_h$ &5\% \\
     End of Life (\SI{5}{year} mission) & $\eta_{EOL}$ & 85.9\% & Power Regulation Losses &  $m_p$ & 20\% \\ \bottomrule
   \end{tabular}
-\end{table}
+\end{wstable}
 
 To be conservative, the solar flux at \Ltwo, $P_{sol}$, is estimated to be \SI{1291}{\watt\per\meter\squared}~\cite{evans2002natural}.
 A similarly conservative estimate of \SI{1200}{\watt} is the assumed power draw from all CDIM instruments and components, $P_{sc}$.
@@ -362,7 +372,16 @@ The required solar array area, $A_{sa}$ is determined from the estimated end-of-
   &A_{sa} = \frac{P_{sa}}{P_{EOL}} = \frac{\SI{2400}{\watt}}{\SI{233.6}{\watt\per\meter\squared}} = \SI{10.27}{\meter\squared}
 \end{align}
 
-The solar array size estimate derived from~\ref{eq:array-area} is very conservative.
+\autoref{fig:solar-array} shows two possible configurations of the \SI{10}{\meter\squared} array.
+
+% \begin{figure}[hb]
+%   \centering
+%   \includegraphics[width=.6\linewidth]{figs/solar-array-config.png}
+%   \caption{Angle of incidence to the Sun of a fixed solar array set at \SI{30}{\degree} from the OTA viewing axis.}
+% \label{fig:solar-array}
+% \end{figure}
+
+The solar array size estimate derived from~\autoref{eq:array-area} is fairly conservative.
 The accuracy of the array size would be much improved if a more accurate estimate of power draw was known.
 
 \section{Structure}
