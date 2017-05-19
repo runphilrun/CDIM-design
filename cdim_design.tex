@@ -171,19 +171,23 @@ Passive cooling is used to cool the OTA and FPA from solar radiation, while acti
 
 The OTA is cooled to \SI{45}{\kelvin} to reduce background photon load in the near-IR.\@
 Passive thermal regulation is maintained using a multi-stage V-groove radiator, which bounces radiative heat into the \SI{3}{\kelvin} background of space~\cite{bard_1987}.
+V-groove radiators have been demonstrated in passive cryogenic radiators down to \SI{4}{\kelvin} with Planck, SPIRIT, and Spitzer (warm mission).\@
+% Like Planck, the active coolers are also pre-cooled to less than \SI{50}{\kelvin} this way~\cite{shinozaki2014spica}.
+In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point \Ltwo, CDIM will feature a multi-stage V-groove radiator.
+Since CDIM may be at various angles of incidence to solar radiation as it surveys the sky, the V-groove radiator vanes will ``umbrella'' outward.
+This way, the radiator cools the OTA at any heading.
 
 \begin{figure}[!hb]
   \centering
   \includegraphics[width=.8\linewidth]{figs/vgroove-concept2.png}
-  \caption{Low emmissivity, high specular surface vanes are nested at a slight angle to reflect thermal radiation into space~\cite{rasbach1988}.
+  \caption{Low emmissivity, high specular surface vanes are nested at a slight angle to reflect thermal radiation into space, cooling the OTA to \SI{45}{\kelvin}.~\cite{rasbach1988} A mechanical cryocooler cools the FPA to \SI{35}{\kelvin}.
 \label{fig:v-groove}
 }
 \end{figure}
 
-V-groove radiators have been demonstrated in passive cryogenic radiators up to \SI{4}{\kelvin} with Planck, SPIRIT, and Spitzer (warm mission).\@
-% Like Planck, the active coolers are also pre-cooled to less than \SI{50}{\kelvin} this way~\cite{shinozaki2014spica}.
-In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point \Ltwo, CDIM will feature a \red{\SI{0}{\meter\squared} $x$-stage} V-groove radiator.
-\red{Since CDIM may be at various angles of incidence to solar radiation as it surveys the sky, the V-groove radiator fins will extend outward, more like SPHEREx than Planck}.
+The first, sun-facing stage of the radiator is coated \red{something} with rejects most of the solar radiation
+
+\red{While the analysis presented here is high level, parametric analyses exist~\cite{couto2002radiator}.}
 
 CDIM's thermal requirement to reduce thermal noise in the detector array can be met by actively cooling the array to \SI{35}{\kelvin} by a mechanical cryocooler.
 Stirling-cycle mechanical refrigerators are low-vibration, high-reliability, and lightweight active cryocooling systems that have significant heritage in space applications.
@@ -203,7 +207,7 @@ A notional map of heat transfer is shown in~\autoref{fig:heat-map}.
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=.8\linewidth]{figs/heat-map.png}
-  \caption{Notional pathways and heat loads throughout the cooled section are shown (not to scale). 
+  \caption{Notional pathways and heat loads throughout the cooled section are shown (not to scale).
 \label{fig:heat-map}
 }
 \end{figure}
@@ -356,12 +360,11 @@ CDIM power draw is estimated from the known power draw for WFIRST, as it is a fa
 A summary of margins and efficiencies is listed in~\autoref{tab:solar-array}.
 
 The total power the array must supply to the spacecraft is found by summing all power margins:
-\begin{equation}
-  \begin{align}
-    M &= m_d + m_r + m_h + m_p = .05 +.2 + .05 + .2 \\
-    P_{sa} &= \frac{P_{sc}}{M} = \frac{\SI{1200}{\watt}}{0.50} = \SI{2400}{\watt}
-  \end{align}
-\end{equation}
+
+\begin{align}
+  M &= m_d + m_r + m_h + m_p = .05 +.2 + .05 + .2 \\
+  P_{sa} &= \frac{P_{sc}}{M} = \frac{\SI{1200}{\watt}}{0.50} = \SI{2400}{\watt}
+\end{align}
 
 The required solar array area, $A_{sa}$ is determined from the estimated end-of-life power capacity of the array per unit area, $P_{EOL}$.
 
@@ -372,7 +375,8 @@ The required solar array area, $A_{sa}$ is determined from the estimated end-of-
   &A_{sa} = \frac{P_{sa}}{P_{EOL}} = \frac{\SI{2400}{\watt}}{\SI{233.6}{\watt\per\meter\squared}} = \SI{10.27}{\meter\squared}
 \end{align}
 
-\autoref{fig:solar-array} shows two possible configurations of the \SI{10}{\meter\squared} array.
+The \SI{10}{\meter\squared} array will be a deployable mechanism, whether or not it is capable of articulating its angle of incidence.
+Deployable solar arrays are not novel technology so no significant development is anticipated for this subsystem.
 
 % \begin{figure}[hb]
 %   \centering
@@ -407,8 +411,8 @@ The bus will also provide hard points for integration with the launch vehicle.
 % \section{Mission Profile}
 % \label{sec:mission-profile}
 \begin{figure}[htp]
-  \includegraphics[width=\linewidth]{figs/cdim_annotated-cartoon}
-  \caption{CDIM consists of a passively cooled \SI{1.5}{\meter} aperture OTA, actively cooled focal plane, and off-the-shelf spacecraft components where applicable. \red{Add cutaway view.}}
+  \includegraphics[width=.8\linewidth]{figs/cdim_annotated-cartoon}
+  \caption{CDIM consists of a passively cooled \SI{1.5}{\meter} aperture OTA, actively cooled focal plane, and off-the-shelf spacecraft components where applicable.}
 \label{fig:cdim-annotated}
 \end{figure}
 
