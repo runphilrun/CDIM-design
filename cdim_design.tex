@@ -175,7 +175,7 @@ V-groove radiators have been demonstrated in passive cryogenic radiators down to
 % Like Planck, the active coolers are also pre-cooled to less than \SI{50}{\kelvin} this way~\cite{shinozaki2014spica}.
 In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point \Ltwo, CDIM will feature a multi-stage V-groove radiator.
 Since CDIM may be at various angles of incidence to solar radiation as it surveys the sky, the V-groove radiator vanes will ``umbrella'' outward.
-This way, the radiator cools the OTA at any heading.
+This way, the radiator cools the OTA at any attitude.
 
 \begin{figure}[!ht]
   \centering
@@ -213,6 +213,7 @@ Only the mirror and detectors need to be cooled to cryogenic temperatures.
 Electronics boards that control the FPA and instrumentation need not be cryocooled.
 These warm electronics are housed in CDIM's spacecraft bus with other spacecraft systems.
 Some components that require cooling below the temperature of the bus, but not so far as the FPA, may be placed between stages of the V-groove radiator.
+The back side of CDIM's solar array acts as a radiator to thermally regulate the spacecraft bus.
 A notional map of heat transfer is shown in~\autoref{fig:heat-map}.
 
 
@@ -233,7 +234,7 @@ A notional map of heat transfer is shown in~\autoref{fig:heat-map}.
 \section{Attitude Determination and Control}
 \label{sec:adcs}
 CDIM will be three-axis stabilized using an inertial reference unit and star-trackers.
-Star trackers identify constellations in their field of view to determine the spacecraft's heading to within 1--3 arcseconds.
+Star trackers identify constellations in their field of view to determine the spacecraft's attitude to within 1--3 arcseconds.
 These systems are used to coarsely slew CDIM to a target.
 
 Rather than using more accurate (and more expensive) inertial or star-tracking sensors, fine pointing guidance sensors may be included on the focal plane, as demonstrated by WFIRST~\cite{wfirstFinal2012}.
@@ -246,11 +247,11 @@ Sun sensors provide CDIM with a coarse safe-hold capability.
 % Explain the star tracker among other attitude control systems. Select a class of star tracker.
 
 % Briefly explain inertial and propulsive attitude control and the limitations of each.
-In a heliocentric orbit, the primary disturbance to the spacecraft's heading is solar radiation pressure (SRP).
+In a heliocentric orbit, the primary disturbance to the spacecraft's attitude is solar radiation pressure (SRP).
 Solar radiation pressure imparts a near-constant \SI{4.5e-10}{\newton\per\meter\squared} to spacecraft orbiting \Ltwo~\cite{evans2002natural}.
 
 Hydrazine monopropellant thrusters will be used for orbit station-keeping as well as momentum management.
-A desired heading is maintained by the spacecraft using a 3-axis zero-momentum inertial system, whereby the error in heading due to SRP is cancelled out by spinning up or slowing down reaction wheels.
+A desired attitude is maintained by the spacecraft using a 3-axis zero-momentum inertial system, whereby the error in attitude due to SRP is cancelled out by spinning up or slowing down reaction wheels.
 Reaction wheel systems are capable of torques ranging from $.01$ to $1$\si{\newton\meter} and store $0.4$ to $3000$\si{\newton\meter\second} of practical momentum~\cite{smad2015}.
 Power consumption varies with reaction wheel speed, with a maximum estimate of roughly \SI{100}{\watt}.
 After some time the inertial attitude control may become saturated.
@@ -260,7 +261,7 @@ Additionally, these thrusters will be used to maintain an orbit at \Ltwo{} as it
 \section{Flight Computer}
 % CDIM is capable of autonomous operation and system diagnostics.
 CDIM will be capable of autonomous operation and system diagnostics.
-Nominal operation includes maintaining a heading during imaging, slewing across the sky to conduct a survey, capturing images, and downlinking data to Earth.
+Nominal operation includes maintaining a attitude during imaging, slewing across the sky to conduct a survey, capturing images, and downlinking data to Earth.
 Images will be processed on-board CDIM using an algorithm demonstrated by SPHEREx~\cite{spherexTelemetry2016}.
 
 \section{Telemetry}
@@ -276,12 +277,12 @@ The data volume for CDIM is estimated to be:
 \begin{equation}\label{eq:telemetry-d}
   \begin{split}
     D &= \frac{36}{4} (\SI{168.39}{Gbit/day}) \\
-    &= \SI{1515.51}{Gb/day}
+    &= \SI{1515.5}{Gb/day}
   \end{split}
 \end{equation}
 \begin{equation} \label{eq:telemetry-dc}
   \begin{split}
-    D_c &= \frac{1}{2.5}(\SI{1515.51}{Gb/day}) \\
+    D_c &= \frac{1}{2.5}(\SI{1515.5}{Gb/day}) \\
     &= \SI{606.2}{Gb/day} \\
     &= \SI{7.0}{Mb/s}
   \end{split}
@@ -476,51 +477,21 @@ Due to the rigorous launch environment, deployable structures remain stowed unti
 % \subsection{Operations}
 % \subsection{End of Life}
 
-
-
 \section{Cost Estimation}
 \label{sec:cost}
 The overall cost of a space telescope may be broken down on the subsystem level.
-All conclusions based on statistical analysis are only as good as their databases.
-Fiscal data, such as what is required for proper analysis, is scarce.
-Estimations are made with engineering judgement based on available data.
+Each subsystem has its own set of cost drivers and uncertainties, but these subsystems may be analyzed on a high level as shares of a spacecraft's budget.
+% All conclusions based on statistical analysis are only as good as their databases.
+Actual historical fiscal data, such as what is required for proper analysis, is scarce.
+Estimations are made with engineering judgement based on available data along side single- and multi-variable parametric models.
 
-To estimate the cost of the CDIM mission, costs are separated into drivers of the \emph{mission cost}, which includes hardware, development, ground support, integration, testing, science, and management.
-Existing generalized parametric cost estimation approaches identify key cost drivers for mission cost~\cite{stahl2013,bely2011}, but do not take labor or overhead costs into account.
-Overhead and labor costs are included in a more robust model for \emph{total cost}, where:
+To estimate the cost of the CDIM mission, costs are separated by subsystems which influence the \emph{mission cost}, which includes hardware, development, ground support, integration, testing, science, and management.
+Existing generalized parametric cost estimation approaches identify key cost drivers for mission cost, but are based on prime contract costs which do not take NASA overhead costs into account~\cite{stahl2013,bely2011}.
+A more robust model for \emph{total cost} shall include additional factors to account for these additional costs.
+Institutional overhead costs are assumed to add 50\%, and labor costs add another 25\%.
+An additional 30\% funds shall be budgeted as reserves on top of all other mission and overhead costs to form a conservative estimate of CDIM's total cost.
 
-\begin{equation}
-  	\text{Total Cost}=(1.5)\times\text{Mission Cost}
-\label{eq:total-cost}
-\end{equation}
-
-\citeauthor{stahl2013} present an approach to estimating OTA cost based on correlations with data on flown space telescope missions.
-CDIM's projected costs may be obtained from these findings with engineering judgement, knowing that the data is drawn from a relatively small sample set.
-Thus, an OTA aperture diameter of \SI{1.5}{\meter} yields a median OTA cost of \$58.2M.
-Since OTA cost is found, estimates for other cost drivers may be obtained from relative cost values.
-\begin{wstable}[htp]
-  \centering
-  \begin{tabular}{@{}lrrrr@{}}\toprule
-    Driver                 & \multicolumn{2}{c}{\SI{1.3}{\meter} OTA} & \multicolumn{2}{c}{\SI{1.5}{\meter} OTA} \\ \midrule
-    OTA                    & \SI{13}{\percent}     & \$48.0M      & \SI{0}{\percent}      & \$58.2M      \\
-    Spacecraft             & \SI{20}{\percent}     & \$76.8M      & \SI{0}{\percent}      & \$91.3M      \\
-    Instruments            & \SI{15}{\percent}     & \$57.6M      & \SI{0}{\percent}      & \$69.8M      \\
-    Ground Support         & \SI{5}{\percent}      & \$18.8M      & \SI{0}{\percent}      & \$22.8M      \\
-    Integration \& Testing & \SI{7}{\percent}      & \$25.6M      & \SI{0}{\percent}      & \$31.0M      \\
-    Systems Engineering    & \SI{4}{\percent}      & \$16.0M      & \SI{0}{\percent}      & \$19.4M      \\
-    Management             & \SI{4}{\percent}      & \$16.0M      & \SI{0}{\percent}      & \$19.4M      \\
-    R\&D                   & \SI{21}{\percent}     & \$80.0M      & \SI{0}{\percent}      & \$97.0M      \\
-    Science Team           & \SI{10}{\percent}     & \$37.6M      & \SI{0}{\percent}      & \$45.6M      \\ \midrule
-    Mission Cost           &                       & \$188.2M     &                       & \$456.5M     \\
-    Labor \& Overhead      &                       & \$376.5M     &                       & \$228.2M     \\
-    Total Cost             &                       & \$564.7M     &                       & \$684.7M     \\ \bottomrule
-  \end{tabular}
-  \caption{CDIM total cost breakdown by driver. \red{Make total cost less dependent on OTA cost. Ground support and science costs shouldnt rise so much along with OTA cost. Maybe just show one diameter and hide the other graph.}
-\label{tab:total-cost}
-}
-\end{wstable}
-
-\begin{figure}[htp]
+\begin{figure}[!htp]
     \centering
     \includegraphics[width=.8\linewidth]{figs/ota_cost-diameter_stahl2010.png}
     \caption{Optical Telescope Assembly vs.\ cost correlation~\cite{stahl2013}. Given a target OTA aperture diameter of \SI{1.5}{\meter} for CDIM, a reasonable estimate of OTA cost is obtained from the median cost trendline.
@@ -528,28 +499,47 @@ Since OTA cost is found, estimates for other cost drivers may be obtained from r
 }
 \end{figure}
 
-\begin{figure}[htp]
+\citeauthor{stahl2013} present an approach to estimating OTA cost based on correlations with data on flown space telescope missions.
+CDIM's projected costs may be obtained from these findings with engineering judgement, knowing that the data is drawn from a relatively small sample set.
+Thus, an OTA aperture diameter of \SI{1.3}{\meter} yields a median OTA cost of \$48.0M and an OTA aperture diameter of \SI{1.5}{\meter} yields a median OTA cost of \$58.2M.
+\begin{figure}[!htp]
   \centering
     \centering
-    \includegraphics[width=.6\linewidth]{figs/cost-breakdown-pie.png}
+    \includegraphics[width=\linewidth]{figs/cost-breakdown-pie.png}
     \caption{CDIM estimated cost breakdown in percent of mission cost for a \SI{1.3}{\meter} diameter OTA.\@
 \label{fig:cost-breakdown}
 }
 \end{figure}
 
-% \begin{figure}[!h]
-%   \centering
-%   \includegraphics[width=.6\linewidth]{figs/total-cost-vs-diameter.png}
-%   \caption{CDIM total cost relation to OTA aperture diameter under various cost models. The model described here is robust and presents a conservative estimate compared to similar models by \citeauthor{bely2011} and \citeauthor{stahl2013}, after a total cost approximation is applied following \autoref{eq:total-cost}.
-% \label{fig:cost-total-compare-models}
-% }
-% \end{figure}
+Since OTA cost is found, estimates for other cost drivers may be obtained from relative cost values.
+As illustrated in \autoref{tab:total-cost}, this estimate for the CDIM mission meets its \$850M target and remains under the \$1B cap for Probe-class missions.
+
+\begin{wstable}[!htp]
+  \centering
+  \begin{tabular}{@{}lrrrr@{}}\toprule
+    Driver        & \multicolumn{2}{c}{\SI{1.3}{\meter} OTA} & \multicolumn{2}{c}{\SI{1.5}{\meter} OTA} \\ \midrule
+    OTA           & \SI{15}{\percent}     & \$48.0M      & \SI{16}{\percent}      & \$58.2M      \\
+    Spacecraft    & \SI{22}{\percent}     & \$70.4M      & \SI{21}{\percent}      & \$76.4M      \\
+    Instruments   & \SI{20}{\percent}     & \$64.0M      & \SI{20}{\percent}      & \$72.8M      \\
+    Ground Support& \SI{5}{\percent}      & \$16.0M      & \SI{5}{\percent}       & \$18.2M      \\
+    Integration \& Testing & \SI{7}{\percent}      & \$21.8M      & \SI{7}{\percent}      & \$24.7M      \\
+    Systems Engineering    & \SI{4}{\percent}      & \$13.6M      & \SI{4}{\percent}      & \$15.5M      \\
+    Management    & \SI{4}{\percent}      & \$13.6M      & \SI{4}{\percent}       & \$14.6M      \\
+    R\&D          & \SI{10}{\percent}     & \$32.0M      & \SI{10}{\percent}      & \$36.4M      \\
+    Science Team  & \SI{13}{\percent}     & \$41.6M      & \SI{13}{\percent}      & \$47.3M      \\ \midrule
+    Mission Cost  &                       & \$320.0M     &                        & \$363.8M     \\
+    Overhead      & +50\%                 & \$160.0M     & +50\%                  & \$181.9M     \\
+    Labor         & +25\%                 & \$120.0M     & +25\%                  & \$136.4M     \\
+    Reserves      & +30\%                 & \$180.0M     & +30\%                  & \$204.6M     \\
+    Total Cost    &                       & \$780.0M     &                        & \$886.6M     \\ \bottomrule
+  \end{tabular}
+  \caption{CDIM total cost breakdown by subsystem.
+\label{tab:total-cost}
+}
+\end{wstable}
 
 % The most robust model for the CDIM mission predicts its total cost to be \$684.7M, and even the more conservative model predicts CDIM costing to fall under \$800M.
-The CDIM mission has significant margin under the \$1B cap for Probe-class missions.
-
 \clearpage
-
 \section{Conclusion}
 \label{sec:conclusion}
 % Summarize points made above. Notable points include mirror diameter, detector, power budget, mass budget, total cost, and the fact that technologies are already significantly developed.
