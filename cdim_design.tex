@@ -52,7 +52,7 @@ Institute of Technology, Rochester, NY 14623, USA, zemcov@cfd.rit.edu
 
 \begin{abstract}
   Cosmic Dawn Intensity Mapper (CDIM) is a Probe-class near-IR space telescope with the scientific goal of conducting large spectro-imaging surveys over a five-year mission in the next decade.
-  A high-level system architecture was designed to identify key features and technologies aboard the CDIM spacecraft in preparation for more detailed studies such as a Team-X session at NASA Jet Propulsion Laboratory.
+  A high-level system architecture was designed to identify key features and technologies aboard the CDIM spacecraft in preparation for future detailed design studies.
 \end{abstract}
 
 \keywords{spacecraft, telescope, system, cryogenic, infrared, design.}
@@ -175,7 +175,7 @@ V-groove radiators have been demonstrated in passive cryogenic radiators down to
 % Like Planck, the active coolers are also pre-cooled to less than \SI{50}{\kelvin} this way~\cite{shinozaki2014spica}.
 In order to achieve passive cooling from a baseline temperature of \SI{300}{\kelvin} at Sun-Earth Lagrange point \Ltwo, CDIM will feature a multi-stage V-groove radiator.
 Since CDIM may be at various angles of incidence to solar radiation as it surveys the sky, the V-groove radiator vanes will ``umbrella'' outward.
-This way, the radiator cools the OTA at any attitude.
+This way, the radiator cools the OTA at any attitude facing away from the sun.
 
 \begin{figure}[!ht]
   \centering
@@ -185,12 +185,12 @@ This way, the radiator cools the OTA at any attitude.
 }
 \end{figure}
 
-The first, sun-facing stage of the radiator is a thin-walled, highly reflective, low-emissivity which rejects most of the solar radiation by reflection.
+The first, sun-facing stage of the radiator is thin-walled, highly reflective, and low-emissive material which rejects most of the solar radiation by reflection.
 Thermal radiation is emitted by the first stage and again reflected to space by subsequent stages~\cite{gilmore2003spacecraft}.
-\red{Preliminary heat transfer calculations estimate a capacity of \SI{0}{\watt} from a \SI{0}{\meter\squared} 3-stage v-groove radiator.}
+% \red{Preliminary heat transfer calculations estimate a capacity of \SI{0}{\watt} from a \SI{0}{\meter\squared} 3-stage v-groove radiator.}
 
 The solution to achieve \SI{45}{\kelvin} at the OTA is not unique, and parameters such as radiator materials, surface finishes and coatings, relative angle, separation, and area may be adjusted accordingly.
-While the analysis presented here is high level, detailed parametric analyses exist~\cite{couto2002radiator}.
+To explore this design space, detailed parametric and finite-element analyses exist~\cite{couto2002radiator,morgante2015echo} but are not discussed here.
 
 CDIM's thermal requirement to reduce thermal noise in the detector array can be met by actively cooling the array to \SI{35}{\kelvin} by a mechanical cryocooler.
 Stirling-cycle mechanical refrigerators are low-vibration, high-reliability, and lightweight active cryocooling systems that have significant heritage in space applications.
@@ -540,12 +540,18 @@ As illustrated in \autoref{tab:total-cost}, this estimate for the CDIM mission m
 
 % The most robust model for the CDIM mission predicts its total cost to be \$684.7M, and even the more conservative model predicts CDIM costing to fall under \$800M.
 \clearpage
-\section{Conclusion}
+\section{Discussion}
 \label{sec:conclusion}
 % Summarize points made above. Notable points include mirror diameter, detector, power budget, mass budget, total cost, and the fact that technologies are already significantly developed.
+In this paper we describe the primary systems of the Cosmic Dawn Intensity Mapper space telescope at a high level to provide a baseline design for future development of the spacecraft.
+The CDIM mission is very early in development, and some science objectives and system requirements subject to further design trades.
+As such, this paper aims to be a baseline architecture rather than a complete spacecraft design study.
+Nevertheless, we show that a near-IR space telescope is feasible for a sub-\$1B Probe-class NASA mission by using mature, proven technologies.
 
 \section*{Acknowledgments}
-Thanks.
+This research was completed to fulfill the requirements of the Rochester Institute of Technology Kate Gleason College of Engineering Bachelor of Science/Master of Engineering Dual-Degree program with support from the RIT College of Science Center for Detectors.
+The authors thank all those who spent some of their brainpower thinking about CDIM, especially Dr.\ Asantha Cooray (U.C.\ Irvine) and all members of the CDIM science team, and other RIT faculty members.
+Special thanks to Chi H. Nguyen (RIT), Steve Unwin (NASA JPL), and all authors and editors of \emph{Space Mission Engineering:The New SMAD}.
 
 \bibliography{cdim_design}
 
